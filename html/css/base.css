@@ -4,7 +4,7 @@
     --category-active-color: #2C2F3E;
     --category-txt-passive-color: #676767;
     --category-txt-active-color: #FFF;
-    --category-admin-active-color: #FFCB77;
+    --category-admin-active-color: #F8D86C;
     --page-title-color: #676767;
     --side-panel-color: #1A1C27;
     --main-panel-color: #2C2F3E;
@@ -14,10 +14,15 @@
     --english-font: 'Poppins', sans-serif;
 }
 
+html{
+    height: 100%;
+    width: 100%;
+}
 
 body{
     box-sizing: border-box;
     margin:0;
     height:100%;
+    width: 100%;
     font-family: 'Poppins', sans-serif;
 }

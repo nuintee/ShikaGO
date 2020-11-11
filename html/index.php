@@ -33,19 +33,39 @@
             </footer>
        </aside>
        <main>
-           <?php echo '<p class = "m-page-title">投稿一覧</p>' ?> 
+           <?php echo '<p class = "m-page-title">投稿一覧</p>' ?>
            <div class = "m-post-panels is-active">
-                <div class = "m-post-panel">
+                <div class = "m-content-panel post">
                     <img src="./images/dummy.jpg" alt="post-image">
-                    <div class = "post-content">
+                    <div class = "content post">
                         <h4 class = "post-title">投稿開始!</h4>
-                        <p class = "post-body">
+                        <p class = "content-body post">
                         カタカナ語が苦手な方は「組見本」と呼ぶとよいでしょう。本文用なので使い方を間違えると不自然に見えることもありますので要注意。これは正式な文章の代わりに入れて使うダミーテキストです。主に書籍やウェブページなどのデザインを作成する時によく使われます。文章に特に深い意味はありません。なお、組見本の「組」とは文字組のことです。活字印刷時代の用語だったと思います。
                         </p>
                         <div class = "post-footer">
                             <p class = "post-date">2020/11/18/22:30</p>
                             <p class = "post-author">投稿者 : イッシー</p>
                         </div>
+                    </div>
+                </div>
+           </div>
+           <div class = "m-about-page">
+               <?php echo '<p class = "m-page-title">概要</p>' ?>
+                <div class = "m-content-panel">
+                    <div class = "content">
+                        <h4 class = "post-title">ShicaGOとは</h4>
+                        <p class = "content-body">
+                        カタカナ語が苦手な方は「組見本」と呼ぶとよいでしょう。本文用なので使い方を間違えると不自然に見えることもありますので要注意。これは正式な文章の代わりに入れて使うダミーテキストです。主に書籍やウェブページなどのデザインを作成する時によく使われます。文章に特に深い意味はありません。なお、組見本の「組」とは文字組のことです。活字印刷時代の用語だったと思います。
+                        </p>
+                        <h4 class = "post-title">将来</h4>
+                        <p class = "content-body">
+                        カタカナ語が苦手な方は「組見本」と呼ぶとよいでしょう。本文用なので使い方を間違えると不自然に見えることもありますので要注意。これは正式な文章の代わりに入れて使うダミーテキストです。主に書籍やウェブページなどのデザインを作成する時によく使われます。文章に特に深い意味はありません。なお、組見本の「組」とは文字組のことです。活字印刷時代の用語だったと思います。
+                        </p>
+                        <h4 class = "post-title">使用技術</h4>
+                        <p class = "content-body">
+                            Docker, HTML/CSS, JavaScript, PHP, MySQL<br>
+                            (フレームワーク未使用)
+                        </p>
                     </div>
                 </div>
            </div>

@@ -1,16 +1,33 @@
 
 .m-category-btn.is-active{
     background-color:var(--category-active-color);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     color: var(--category-txt-active-color);
     font-weight: bold;
+}
+.m-category-btn:hover{
+    background-color: var(--category-active-color);
+    box-shadow: var(--common-shadow);
+    color:#FFF;
 }
 
 .m-post-panels.is-active{
     display: block;
 }
 
+.m-post-panels.is-active:hover{
+    transform: scale(1.05,1.05);
+    transition-duration: 0.5s;
+}
+
 .m-member.is-online{
     color:#FFF;
+}
+
+.m-member:hover{
+    background-color: var(--category-active-color);
+    box-shadow: var(--common-shadow);
+    transform: scale(1.1,1.1);
 }
 
 .m-member-image.is-online{

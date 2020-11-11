@@ -4,3 +4,15 @@
     color: var(--category-txt-active-color);
     font-weight: bold;
 }
+
+.m-post-panels.is-active{
+    display: block;
+}
+
+.m-member.is-online{
+    color:#FFF;
+}
+
+.m-member-image.is-online{
+    border: greenyellow solid 0.15em;
+}

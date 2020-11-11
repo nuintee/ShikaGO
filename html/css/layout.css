@@ -45,3 +45,23 @@ main{
     flex:1;
     font-family: 'Noto Sans JP', sans-serif;
 }
+
+.l-status{
+    padding-left: 2em;
+}
+
+.m-member{
+    align-items: center;
+    display: flex;
+    color:#676767;
+    cursor: pointer;
+}
+
+.m-member-image{
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+    height: 2em;
+    margin-right: 1em;
+    width: 2em;
+}

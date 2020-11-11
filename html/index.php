@@ -34,7 +34,7 @@
        </aside>
        <main>
            <?php echo '<p class = "m-page-title">投稿一覧</p>' ?> 
-           <div class = "m-post-panels">
+           <div class = "m-post-panels is-active">
                 <div class = "m-post-panel">
                     <img src="./images/dummy.jpg" alt="post-image">
                     <div class = "post-content">
@@ -53,12 +53,22 @@
        <aside class = "l-right-bar">
             <h4 id = "m-member-display">メンバー</h4>
             <hr color = "2C2F3E">
-            <ul class = "l-online">
-                <h4>オンライン</h4>
-            </ul>
-            <ul class = "l-offline">
-                <h4>オフライン</h4>
-            </ul>
+            <div class ="l-status">
+                <div class = "l-online">
+                    <h4>オンライン</h4>
+                    <div class = "m-member is-online">
+                        <img class ="m-member-image is-online" src="./images/robot.jpg" alt="membername image">
+                        <h5>イッシー</h5>
+                    </div>
+                </div>
+                <div class = "l-offline">
+                    <h4>オフライン</h4>
+                    <div class = "m-member">
+                        <img class ="m-member-image" src="./images/robot.jpg" alt="membername image">
+                        <h5>イッシー</h5>
+                    </div>
+                </div>
+            </div>
        </aside>
     </div>
 </body>

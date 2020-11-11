@@ -32,6 +32,10 @@
     margin:1em;
 }
 
+.m-post-panels{
+    display: none;
+}
+
 .m-post-panel{
     align-items: center;
     background-color: var(--main-panel-color);

@@ -1,0 +1,6 @@
+
+.m-category-btn.is-active{
+    background-color:var(--category-active-color);
+    color: var(--category-txt-active-color);
+    font-weight: bold;
+}

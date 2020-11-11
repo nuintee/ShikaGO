@@ -1,0 +1,31 @@
+
+.l-top-title h1{
+    color: #FFF;
+}
+
+.m-category-btn{
+    background-color: transparent;
+    border:none;
+    border-radius: 0px 15px 15px 0;
+    color:var(--category-txt-passive-color);
+    cursor: pointer;
+    height:5em;
+    outline: none;
+    padding: 0 1em 0 50%;
+    width: 100%;
+}
+
+.m-category-btn .fas{
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.m-page-title{
+    color: var(--page-title-color);
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+}
+
+#m-member-display{
+    margin:1em;
+}

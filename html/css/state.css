@@ -9,6 +9,14 @@
     background-color: var(--category-active-color);
     box-shadow: var(--common-shadow);
     color:#FFF;
+    font-weight: bold;
+}
+
+.m-category-btn.admin:hover{
+    background-color: var(--shika-color);
+    box-shadow: var(--common-shadow);
+    color:#2C2F3E;
+    font-weight: bold;
 }
 
 .m-post-panels.is-active{
@@ -16,6 +24,11 @@
 }
 
 .m-content-panel.post:hover{
+    transform: scale(1.05,1.05);
+    transition-duration: 0.5s;
+}
+
+.m-content-panel.project:hover{
     transform: scale(1.05,1.05);
     transition-duration: 0.5s;
 }

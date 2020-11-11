@@ -25,11 +25,11 @@
                 <li><button class = "m-category-btn is-active" data-index = "1"><i class="fas fa-paper-plane"></i>フィード</button></li>
                 <li><button class = "m-category-btn"><i class="fas fa-info" data-index = "2"></i>概要</button></li>
                 <li><button class = "m-category-btn"><i class="fas fa-lightbulb" data-index = "3"></i>プロジェクト</button></li>
-                <li><button class = "m-category-btn"><i class="fas fa-robot" data-index = "4"></i>Bot</button></li>
+                <li><button class = "m-category-btn"><i class="fas fa-robot" data-index = "4"></i>公式Bot</button></li>
             </ul>
             <hr color = "2C2F3E">
             <footer class = "l-bottom-category">
-                <button class = "m-category-btn">管理者</button>
+                <button class = "m-category-btn admin">管理者</button>
             </footer>
        </aside>
        <main>
@@ -95,23 +95,58 @@
                     </div>
                 </div>
            </div>
+           <div class = "m-project-page">
+               <?php echo '<p class = "m-page-title">プロジェクト一覧</p>' ?>
+                <div class = "m-content-panel project">
+                    <img src="./images/robot.jpg" alt="">
+                    <div class = "content project">   
+                        <h4 class = "post-title">ShicaGOとは</h4>
+                        <p class = "content-body">
+                        カタカナ語が苦手な方は「組見本」と呼ぶとよいでしょう。本文用なので使い方を間違えると不自然に見えることもありますので要注意。これは正式な文章の代わりに入れて使うダミーテキストです。主に書籍やウェブページなどのデザインを作成する時によく使われます。文章に特に深い意味はありません。なお、組見本の「組」とは文字組のことです。活字印刷時代の用語だったと思います。
+                        </p>
+                    </div>
+                </div>
+                <div class = "m-content-panel project">
+                    <img src="./images/robot.jpg" alt="">
+                    <div class = "content project">   
+                        <h4 class = "post-title">ShicaGOとは</h4>
+                        <p class = "content-body">
+                        カタカナ語が苦手な方は「組見本」と呼ぶとよいでしょう。本文用なので使い方を間違えると不自然に見えることもありますので要注意。これは正式な文章の代わりに入れて使うダミーテキストです。主に書籍やウェブページなどのデザインを作成する時によく使われます。文章に特に深い意味はありません。なお、組見本の「組」とは文字組のことです。活字印刷時代の用語だったと思います。
+                        </p>
+                    </div>
+                </div>
+           </div>
+           <div class ="admin">
+           <?php echo '<p class = "m-page-title">管理者ログイン</p>' ?>
+                <div class = "m-content-panel">
+                    <div class = "content">
+                        <form action="./includes/login.inc.php" method = "post">
+                            <h4 class = "post-title">ユーザー名</h4>
+                            <input type="text" class = "m-input single-line" placeholder = "ユーザー名">
+                            <h4 class = "post-title">パスワード</h4>
+                            <input type="password" class = "m-input single-line" placeholder = "ユーザー名">
+                            <input type="submit" class = "m-submit-btn" value = "ログイン">
+                        </form>
+                    </div>
+                </div>
+           </div>
        </main> 
        <aside class = "l-right-bar">
-            <h4 id = "m-member-display">メンバー</h4>
+            <h4 id = "m-member-display">運営メンバー</h4>
             <hr color = "2C2F3E">
             <div class ="l-status">
                 <div class = "l-online">
                     <h4>オンライン</h4>
                     <div class = "m-member is-online">
                         <img class ="m-member-image is-online" src="./images/robot.jpg" alt="membername image">
-                        <h5>イッシー</h5>
+                        <h5 class ="m-member-name">イッシー</h5>
                     </div>
                 </div>
                 <div class = "l-offline">
                     <h4>オフライン</h4>
                     <div class = "m-member">
                         <img class ="m-member-image" src="./images/robot.jpg" alt="membername image">
-                        <h5>イッシー</h5>
+                        <h5 class ="m-member-name">イッシー</h5>
                     </div>
                 </div>
             </div>

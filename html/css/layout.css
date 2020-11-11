@@ -17,17 +17,17 @@
 }
 
 .l-main{
+    box-sizing: border-box;
     display:flex;
-    flex-basis:100%;
-    height: 100%;
-    overflow: hidden;
+    flex-flow:row;
+    flex-wrap: wrap;
     width: 100%;
+    height:100%;
 }
 
 .l-left-bar{
     background:var(--side-panel-color);
     flex:1;
-    height: 100%;
 }
 
 .l-category{
@@ -43,7 +43,6 @@ main{
     background-color:var(--main-color);
     flex:4;
     padding: 3em;
-    overflow: scroll;
 }
 
 .l-right-bar{
@@ -51,7 +50,6 @@ main{
     color: var(--category-txt-passive-color);
     flex:1;
     font-family: 'Noto Sans JP', sans-serif;
-    height: 100%;
 }
 
 .l-status{
@@ -59,10 +57,13 @@ main{
 }
 
 .m-member{
+    box-sizing: border-box;
     align-items: center;
-    display: flex;
     color:#676767;
     cursor: pointer;
+    display: flex;
+    margin: 0;
+    width:100%;
 }
 
 .m-member-image{

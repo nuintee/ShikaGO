@@ -9,9 +9,11 @@
     border-radius: 0px 15px 15px 0;
     color:var(--category-txt-passive-color);
     cursor: pointer;
+    font-size: 0.9em;
     height:5em;
     outline: none;
-    padding: 0 1em 0 50%;
+    padding: 0 1.5em 0 50%;
+    text-align: right;
     width: 100%;
 }
 
@@ -28,4 +30,48 @@
 
 #m-member-display{
     margin:1em;
+}
+
+.m-post-panel{
+    align-items: center;
+    background-color: var(--main-panel-color);
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    margin: 2em 0;
+    max-height: 300px;
+}
+
+.post-title{
+    color: #FFF;
+    margin: 16px 0 0 0;
+}
+
+.post-content{
+    color:#8D8D8D;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em;
+    max-height: 300px;
+}
+
+.post-body{
+    height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.m-post-panel img{
+    border-radius: 1em;
+    box-sizing: border-box;
+    height:300px;
+    object-fit: cover;
+    object-position: top;
+    width: 300px;
+}
+.post-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

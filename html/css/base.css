@@ -9,6 +9,8 @@
     --side-panel-color: #1A1C27;
     --main-panel-color: #2C2F3E;
     --main-color: #000;
+    --japanese-font:'Noto Sans JP', sans-serif;
+    --english-font: 'Poppins', sans-serif;
 }
 
 

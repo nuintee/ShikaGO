@@ -50,3 +50,12 @@
 .m-member-image.is-online{
     border: greenyellow solid 0.15em;
 }
+
+.m-under-constuction.dis.txt{
+    color: var(--warning-red);
+}
+
+.m-submit-btn.dis{
+    background-color: var(--category-txt-passive-color) ;
+    cursor: default;
+}

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/layout.css">
@@ -101,7 +102,7 @@
            </div>
            <div class = "m-post-panels" data-index = "3">
                <?php echo '<p class = "m-page-title">プロジェクト一覧</p>' ?>
-                <div class = "m-content-panel project">
+                <div class = "m-content-panel project" data-index = "official_bot" onclick = "open_official_bot(this)">
                     <img src="./images/robot.jpg" alt="">
                     <div class = "content project">   
                         <h4 class = "post-title"><i class="fab fa-github"></i><i class="fab fa-node-js"></i>ShicaGO Bot</h4>
@@ -112,7 +113,7 @@
                 </div>
            </div>
            <div class = "m-post-panels" data-index = "4">
-                <?php echo '<p class = "m-page-title">公式bot <span class = "m-under-constuction dis txt">[開発中]</span></p>' ?>
+                <?php echo '<p class = "m-page-title">公式bot <span class = "m-under-constuction dis txt">&nbsp;開発中</span></p>' ?>
                 <div class = "m-content-panel project dis">
                     <img src="./images/robot.jpg" alt="">
                     <div class = "content project">   

@@ -148,3 +148,34 @@
     padding: 1em;
     font-weight: bold;
 }
+
+.m-modal-panel{
+    background-color: #1A1C27;
+    border-radius: 20px;
+    height:80%;
+    width: 70%;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+}
+
+.m-modal{
+    display: none;
+}
+
+.m-modal.show{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.m-modal.member{
+    display: none;
+}

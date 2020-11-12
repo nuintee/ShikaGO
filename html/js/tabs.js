@@ -18,28 +18,27 @@ for (let i = 0; i < category.length; i++) {
         document.querySelector('.is-active').classList.remove('is-active');
         e.target.classList.add('is-active');
         let ind = e.target.dataset.index;
-        console.log(ind);
+        console.log("ind = "+ind);
             switch (ind) {
                 case "1":
                     e.target.children[0].style.color = "#3190FF";
-                    console.log(pages);
-                    pages[0].style.display = "block";
+                    pages[ind - 1].style.display = "block";
                     break;
                 case "2":
                     e.target.children[0].style.color = "#E4E4E4";
-                    pages[1].style.display = "block";
+                    pages[ind - 1].style.display = "block";
                     break;
                 case "3":
                     e.target.children[0].style.color = "#FFFF31";
-                    pages[2].style.display = "block";
+                    pages[ind - 1].style.display = "block";
                     break;
                 case "4":
                     e.target.children[0].style.color = "#31FFC8";
-                    pages[3].style.display = "block";
+                    pages[ind - 1].style.display = "block";
                     break;
-                case "admin":
+                case "admin": //admin
                     e.target.children[0].style.color = "#F8D86C";
-                    pages[4].style.display = "block";
+                    pages[pages.length - 1].style.display = "block";
                     break;
                 default:
                     break;

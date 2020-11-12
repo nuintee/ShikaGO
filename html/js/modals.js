@@ -10,9 +10,11 @@ for (let i = 0; i < member.length; i++) {
         modal_bg.classList.add('show');
         if (e.target.className == "m-member is-online"){
             modal_bg.children[0].querySelector('img').style.border = "greenyellow solid 0.3em";
+            modal_bg.children[0].querySelector('.modal-txt').querySelector('h4').style.color = "#FFF";
         }
         else{
             modal_bg.children[0].querySelector('img').style.border = "none";
+            modal_bg.children[0].querySelector('.modal-txt').querySelector('h4').style.color = "#8D8D8D";
         }
     },false);
 }

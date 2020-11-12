@@ -203,3 +203,7 @@
     font-size: 2em;
     outline: none;
 }
+
+.modal-txt p{
+    color: #8D8D8D;
+}

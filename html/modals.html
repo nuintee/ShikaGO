@@ -1,11 +1,16 @@
 
 <div class ="m-modal-bg">
     <div class = "m-modal-main">
-        <img src="./images/robot.jpg" alt="member-profile">
-        <div class = "modal-txt">
+        <div class ="modal-top">
+            <img src="./images/robot.jpg" alt="member-profile">
             <h4>イッシー</h4>
-            <p>一言コメントです！</p>
-            <input type="text" class = "m-input single-line" placeholder = "メッセージ送信">
+            <a href="https://www.youtube.com/watch?v=XaWWmHnnotg" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-github"></i></a>
+        </div>
+        <div class = "modal-txt">
+            <p>一言メッセージ</p>
+            <form action="./includes/send-message.php" method = "post">
+                <input type="text" class = "m-input single-line" placeholder = "メッセージ送信" name = "user-message-input">
+            </form>
         </div>
     </div>
 </div>

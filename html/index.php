@@ -18,7 +18,6 @@
 </head>
 <body>
     <div class = "l-main">
-                <?php include_once('modals.html')?>
        <aside class = "l-left-bar">
             <div class = "l-top-title">
                 <img src="./images/deer.jpg" alt="deer-logo">
@@ -37,7 +36,7 @@
             </footer>
        </aside>
        <main>
-           <div class = "m-modal member"></div>
+       <?php include_once('modals.html')?>
            <div class = "m-post-panels is-active" data-index = "1">
             <?php echo '<p class = "m-page-title">投稿一覧</p>' ?>
                 <div class = "m-content-panel post">

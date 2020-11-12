@@ -71,6 +71,10 @@
     margin: 16px 0 0 0;
 }
 
+.fab{
+    margin-right:1em;
+}
+
 .content{
     color:#8D8D8D;
     display: flex;
@@ -150,13 +154,16 @@
 }
 
 .m-modal-panel{
-    background-color: #1A1C27;
+    /*background-color: #1A1C27;*/
+    background-color: transparent;
     border-radius: 20px;
-    height:50%;
+    height:90%;
     width: 70%;
     position: fixed;
     top:50%;
     left:50%;
+    margin:1em;
+    overflow-y: scroll;
     transform: translate(-50%,-50%);
     z-index: 9999;
 }
@@ -186,16 +193,4 @@
     position: fixed;
     top: 20%;
     right: 15%;
-}
-
-.m-modal.member{
-    display: none;
-}
-
-.modal-img.post{
-    border-radius: 20px 20px 0 0;
-    object-fit: cover;
-    object-position: top;
-    height: 45%;
-    width: 100%;
 }

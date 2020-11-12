@@ -12,6 +12,7 @@
 }
 
 .l-top-title img{
+    border-radius: 5px;
     height:2.5em;
     width: 2.5em;
 }

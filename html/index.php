@@ -35,8 +35,8 @@
             </footer>
        </aside>
        <main>
-           <?php echo '<p class = "m-page-title">投稿一覧</p>' ?>
-           <div class = "m-post-panels is-active">
+           <div class = "m-post-panels is-active" data-index = 1>
+            <?php echo '<p class = "m-page-title">投稿一覧</p>' ?>
                 <div class = "m-content-panel post">
                     <img src="./images/dummy.jpg" alt="post-image">
                     <div class = "content post">
@@ -77,7 +77,7 @@
                     </div>
                 </div>
            </div>
-           <div class = "m-about-page">
+           <div class = "m-post-panels" data-index = 2>
                <?php echo '<p class = "m-page-title">概要</p>' ?>
                 <div class = "m-content-panel">
                     <div class = "content">
@@ -97,7 +97,7 @@
                     </div>
                 </div>
            </div>
-           <div class = "m-project-page">
+           <div class = "m-post-panels" data-index = 3>
                <?php echo '<p class = "m-page-title">プロジェクト一覧</p>' ?>
                 <div class = "m-content-panel project">
                     <img src="./images/robot.jpg" alt="">
@@ -118,7 +118,7 @@
                     </div>
                 </div>
            </div>
-           <div class = "m-bot-page">
+           <div class = "m-post-panels" data-index = 4>
                 <?php echo '<p class = "m-page-title">公式bot <span class = "m-under-constuction dis txt">[開発中]</span></p>' ?>
                 <div class = "m-content-panel project dis">
                     <img src="./images/robot.jpg" alt="">
@@ -156,8 +156,8 @@
                     </div>
                 </div>
            </div>
-           <div class ="admin">
-           <?php echo '<p class = "m-page-title">管理者ログイン</p>' ?>
+           <div class ="m-post-panels" data-index = 5>
+                <?php echo '<p class = "m-page-title">管理者ログイン</p>' ?>
                 <div class = "m-content-panel">
                     <div class = "content">
                         <form action="./includes/login.inc.php" method = "post">

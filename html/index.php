@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">                    
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <title>ShikaGO</title>
+    <script src="./js/tabs.js" defer = "defer"></script>
+    <script src="./js/modlas.js" defer = "defer"></script>
 </head>
 <body>
     <div class = "l-main">
@@ -23,13 +25,13 @@
             <hr color = "2C2F3E">
             <ul class = "l-category">
                 <li><button class = "m-category-btn is-active" data-index = "1"><i class="fas fa-paper-plane"></i>フィード</button></li>
-                <li><button class = "m-category-btn"><i class="fas fa-info" data-index = "2"></i>概要</button></li>
-                <li><button class = "m-category-btn"><i class="fas fa-lightbulb" data-index = "3"></i>プロジェクト</button></li>
-                <li><button class = "m-category-btn"><i class="fas fa-robot" data-index = "4"></i>公式Bot</button></li>
+                <li><button class = "m-category-btn" data-index = "2"><i class="fas fa-info"></i>概要</button></li>
+                <li><button class = "m-category-btn" data-index = "3"><i class="fas fa-lightbulb"></i>プロジェクト</button></li>
+                <li><button class = "m-category-btn" data-index = "4"><i class="fas fa-robot"></i>公式Bot</button></li>
             </ul>
             <hr color = "2C2F3E">
             <footer class = "l-bottom-category">
-                <button class = "m-category-btn admin">管理者</button>
+                <button class = "m-category-btn" data-index = "admin"><i class="fas fa-lock"></i>管理者</button>
             </footer>
        </aside>
        <main>

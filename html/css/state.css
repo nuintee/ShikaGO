@@ -12,13 +12,6 @@
     font-weight: bold;
 }
 
-.m-category-btn.admin:hover{
-    background-color: var(--shika-color);
-    box-shadow: var(--common-shadow);
-    color:#2C2F3E;
-    font-weight: bold;
-}
-
 .m-post-panels.is-active{
     display: block;
 }

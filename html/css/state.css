@@ -33,6 +33,10 @@
     transition-duration: 0.5s;
 }
 
+.m-content-panel.project.dis:hover{
+    transform: scale(1.0,1.0);
+}
+
 .m-member.is-online{
     color:#FFF;
 }

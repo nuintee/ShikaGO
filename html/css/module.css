@@ -152,7 +152,7 @@
 .m-modal-panel{
     background-color: #1A1C27;
     border-radius: 20px;
-    height:80%;
+    height:50%;
     width: 70%;
     position: fixed;
     top:50%;
@@ -176,6 +176,26 @@
     z-index: 1;
 }
 
+.m-close-modal-btn{
+    background-color: transparent;
+    border: none;
+    color: var(--category-txt-passive-color);
+    cursor: pointer;
+    font-size: 2em;
+    outline: none;
+    position: fixed;
+    top: 20%;
+    right: 15%;
+}
+
 .m-modal.member{
     display: none;
+}
+
+.modal-img.post{
+    border-radius: 20px 20px 0 0;
+    object-fit: cover;
+    object-position: top;
+    height: 45%;
+    width: 100%;
 }

@@ -31,14 +31,19 @@ for (let i = 0; i < posts.length; i++) {
         let parent = e.target.parentNode;
         let grand_p = parent.parentNode;
         let post_img = parent.querySelector('img');
-        let post_title = "title : "+parent.querySelector('.post-title').innerHTML;
-        let post_description = "description : "+parent.querySelector('.content-body.post').innerHTML;
-        let post_date = "date : "+parent.querySelector('.post-footer').querySelector('.post-date').innerHTML;
-        let post_author = "author: "+parent.querySelector('.post-footer').querySelector('.post-author').innerHTML;
+        let post_title = parent.querySelector('.post-title').innerHTML;
+        let post_description = parent.querySelector('.content-body.post').innerHTML;
+        let post_date = parent.querySelector('.post-footer').querySelector('.post-date').innerHTML;
+        let post_author = parent.querySelector('.post-footer').querySelector('.post-author').innerHTML;
         //modal elements
-        let modal_content = modal_post.querySelector('.m-content-panel.project.dis');
-        modal_content.querySelector('img').src = post_img.src;
-        console.log()
+        let modal_parent = modal_post.querySelector('.m-content-panel.project.dis');
+        let modal_child = modal_parent.querySelector('.content.project');
+        console.log(modal_child);
+        modal_parent.querySelector('img').src = post_img.src;
+        modal_child.querySelector('.post-title').innerText = post_title;
+        modal_child.querySelector('.content-body').innerText = post_description;
+        modal_child.querySelector('.post-date').innerText = post_date;
+        modal_child.querySelector('.post-author').innerText = post_author;
     },false);
 }
 

@@ -14,9 +14,19 @@ if (isset($_POST['admin_login_btn'])){
         echo 'パスワードが未入力です。';
     }
     elseif (!empty($admin_id_input) && !empty($admin_pwd_input)){
-        $sql = "SELECT * FROM admin_users WHERE id = 1";
+        //$sql = 'INSERT INTO admin_users (admin_id, admin_pwd) VALUES ("root4","kojika123")';
+        $sql = 'SELECT * FROM admin_users WHERE admin_id = :admn_id';
         $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':admn_id',$admin_id_input);
         $stmt->execute();
+        $admin = $stmt->fetch();
+        if($admin['admin_id'] === $admin_id_input && password_verify($admin['admin_pwd'],password_hash($admin_pwd_input,PASSWORD_DEFAULT))){
+            echo "right admin";
+        }
+        else{
+            header('Location: ../../index.php');
+            echo "none";
+        }
     }
 }
 else{

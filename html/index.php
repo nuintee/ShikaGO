@@ -1,3 +1,5 @@
+<?php require_once('./includes/conn.inc.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,10 +157,10 @@
                     <div class = "content">
                         <form action="./includes/login.inc.php" method = "post">
                             <h4 class = "post-title">ユーザー名</h4>
-                            <input type="text" class = "m-input single-line" placeholder = "ユーザー名">
+                            <input type="text" class = "m-input single-line" placeholder = "ユーザー名" name = "admin_id_input">
                             <h4 class = "post-title">パスワード</h4>
-                            <input type="password" class = "m-input single-line" placeholder = "パスワード">
-                            <input type="submit" class = "m-submit-btn" value = "ログイン">
+                            <input type="password" class = "m-input single-line" placeholder = "パスワード" name = "admin_pwd_input">
+                            <input type="submit" class = "m-submit-btn" value = "ログイン" name = "admin_login_btn">
                         </form>
                     </div>
                 </div>

@@ -19,6 +19,7 @@ if(isset($_POST['pst-submit-btn'])){
         $st = $pdo->query('SELECT * FROM post_content');
         $res = $st->fetchAll();
         //print_r($res);
+        header("Location: ../php/admin.php");
         for ($i= 0; $i < count($res); $i++) { 
             echo "<div class = 'm-content-panel post'>
             <img src='./images/dummy.jpg' alt='post-image'>
@@ -32,7 +33,6 @@ if(isset($_POST['pst-submit-btn'])){
             </div>
         </div>";
         }
-        //header("Location: ../php/admin.php");
     }
     else{
         echo "empty!";

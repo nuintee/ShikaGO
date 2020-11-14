@@ -1,4 +1,5 @@
 <?php include_once './php/header.php'?>
+<?php include_once 'modals.html'?>
            <div class ="m-post-panels" data-index = "5">
                 <p class = "m-page-title">管理者ログイン</p>
                 <div class = "m-content-panel">

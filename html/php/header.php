@@ -1,10 +1,7 @@
 <?php 
     session_start();
     if (isset($_SESSION['aid'])){
-        echo "welcome admin";
-        echo '<form action="./includes/logout.inc.php" method = "post">
-            <input type="submit" value = "logout">
-        </form>';
+        header('Location: ./php/admin.php');
     }else{
         echo '<!DOCTYPE html>
         <html lang="en">

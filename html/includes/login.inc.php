@@ -1,7 +1,5 @@
-
-<?php 
-
-include_once('conn.inc.php');
+<?php
+include_once 'conn.inc.php';
 
 $admin_id_input = $_POST['admin_id_input'];
 $admin_pwd_input = $_POST['admin_pwd_input'];
@@ -13,7 +11,7 @@ if (isset($_POST['admin_login_btn'])){
     else if (empty($admin_pwd_input)){
         echo 'パスワードが未入力です。';
     }
-    elseif (!empty($admin_id_input) && !empty($admin_pwd_input)){
+    else if (!empty($admin_id_input) && !empty($admin_pwd_input)){
         //$sql = 'INSERT INTO admin_users (admin_id, admin_pwd) VALUES ("root4","kojika123")';
         $sql = 'SELECT * FROM admin_users WHERE admin_id = :admn_id';
         $stmt = $pdo->prepare($sql);
@@ -21,15 +19,19 @@ if (isset($_POST['admin_login_btn'])){
         $stmt->execute();
         $admin = $stmt->fetch();
         if($admin['admin_id'] === $admin_id_input && password_verify($admin['admin_pwd'],password_hash($admin_pwd_input,PASSWORD_DEFAULT))){
-            echo "right admin";
+            header('Location: ../../index.php');
+            session_start();
+            $_SESSION['aid'] = $admin_id_input;
+            exit();
         }
         else{
             header('Location: ../../index.php');
-            echo "none";
+            exit();
         }
     }
 }
 else{
-    echo "not working";
+    header('Location: ../../index.php');
     exit;
 }
+?>

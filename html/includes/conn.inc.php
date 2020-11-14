@@ -1,12 +1,13 @@
 <?php
 //phpinfo();
 //echo $_ENV['DB_PASSWORD'];
-$dsn = 'mysql:dbname=ShikaGO_DB;host=45a3999ae9dc;';
-$db_user = 'root';
-$db_pwd = 'secret';
+$dsn = 'mysql:dbname=heroku_cf252f380af6ab2;host=us-cdbr-east-02.cleardb.com;';
+$db_user = 'bf1be1e594e912';
+$db_pwd = '73646de4';
 
 try {
     $pdo = new PDO($dsn, $db_user, $db_pwd);
 } catch (PDOException $e) {
+    print_r("not working".$e);
     exit();
 }

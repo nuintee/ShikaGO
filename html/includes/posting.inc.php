@@ -18,8 +18,9 @@ if(isset($_POST['pst-submit-btn'])){
         $stmt->bindValue(':pst_date',date('Y/m/d H:i:s', time()));
         $stmt->execute();
         $st = $pdo->query('SELECT * FROM post_contents');
-        $res = $st->fetchAll(); 
-        header("Location: ../php/admin.php");
+        $res = $st->fetchAll();
+        //print_r($res);
+        header("Location: ../php/admin.php?ur=$img");
         exit();
     }
     else{

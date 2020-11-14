@@ -11,4 +11,4 @@
     </form>
 </div>
 
-<script src="../js/blob.js"></script>
+<script src="../js/base64.js"></script>

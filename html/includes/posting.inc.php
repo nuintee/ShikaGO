@@ -1,5 +1,5 @@
 <?php
-//session　開始 & $_SESSION[]でユーザー名取得し投稿に反映
+session_start();
 include_once 'conn.inc.php';
 
 $pst_url = $_POST['pst-url'];
@@ -13,7 +13,7 @@ if(isset($_POST['pst-submit-btn'])){
         //$stmt->bindValue(':pst_url',$pst_url);
         $stmt->bindValue(':pst_title',$pst_title);
         $stmt->bindValue(':pst_description',$pst_description);
-        $stmt->bindValue(':pst_author',"test1");
+        $stmt->bindValue(':pst_author',$_SESSION['admin_id_input']);
         $stmt->bindValue(':pst_date',date('Y/m/d H:i:s', time()));
         $stmt->execute();
         $st = $pdo->query('SELECT * FROM post_content');

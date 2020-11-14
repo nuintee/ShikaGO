@@ -21,6 +21,7 @@
             <title>ShikaGO</title>
             <script src="./js/tabs.js" defer = "defer"></script>
             <script src="./js/modals.js" defer = "defer"></script>
+            <script src="./js/blob.js" defer = "defer"></script>
         </head>
         <body>
             <div class = "l-main">

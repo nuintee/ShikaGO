@@ -45,8 +45,9 @@
                     </footer>
                </aside>
                <main>
-               <?php //include_once(modals.html)?>
+               <?php include_once "../modals.html" ?>
                    <div class = "m-post-panels is-active" data-index = "1">
+                        <p class = "m-page-title">投稿内容</p>
                         <div class = "m-content-panel post">
                             <img src="./images/dummy.jpg" alt="post-image">
                             <div class = "content post">
@@ -88,7 +89,7 @@
                         </div>
                    </div>
                    <div class = "m-post-panels" data-index = "2">
-                       <?php //echo <p class = "m-page-title">概要</p> ?>
+                    <p class = "m-page-title">概要</p>
                         <div class = "m-content-panel">
                             <div class = "content">
                                 <h4 class = "post-title">ShicaGOとは</h4>
@@ -108,7 +109,7 @@
                         </div>
                    </div>
                    <div class = "m-post-panels" data-index = "3">
-                       <?php //echo <p class = "m-page-title">プロジェクト一覧</p> ?>
+                        <p class = "m-page-title">プロジェクト一覧</p>
                         <div class = "m-content-panel project" data-index = "official_bot" onclick = "open_official_bot(this)">
                             <img src="./images/robot.jpg" alt="">
                             <div class = "content project">   
@@ -120,7 +121,7 @@
                         </div>
                    </div>
                    <div class = "m-post-panels" data-index = "4">
-                        <?php //echo <p class = "m-page-title">公式bot <span class = "m-under-constuction dis txt">&nbsp;開発中</span></p> ?>
+                        <p class = "m-page-title">公式bot <span class = "m-under-constuction dis txt">&nbsp;開発中</span></p>
                         <div class = "m-content-panel project dis">
                             <img src="./images/robot.jpg" alt="">
                             <div class = "content project">   
@@ -130,7 +131,7 @@
                                 </p>
                             </div>
                         </div>
-                        <?php //echo <p class = "m-page-title">Botコマンド一覧</p> ?>
+                        <p class = "m-page-title">Botコマンド一覧</p>
                         <div class = "m-content-panel">
                             <div class = "content">
                                 <h4 class = "post-title">!help</h4>

@@ -1,6 +1,6 @@
 <?php include_once './php/header.php'?>
            <div class ="m-post-panels" data-index = "5">
-                <?php //echo '<p class = "m-page-title">管理者ログイン</p>' ?>
+                <p class = "m-page-title">管理者ログイン</p>
                 <div class = "m-content-panel">
                     <div class = "content">
                         <form action="./includes/login.inc.php" method = "post" autocomplete="off">

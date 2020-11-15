@@ -33,8 +33,14 @@ if(isset($_POST['pst-submit-btn'])){
                 $stmt->bindValue(':pst_date',date('Y/m/d H:i:s', time()));
                 $stmt->execute();
                 $st = $pdo->query('SELECT * FROM post_contents');
+                $fk_st = $pdo->prepare('INSERT INTO post_images(file_name,file_size,file_type) VALUES (:file_name, :file_size, :file_type)');
+                $fk_st->bindValue(':file_name',$file_name_new);
+                $fk_st->bindValue(':file_size',$file_size);
+                $fk_st->bindValue(':file_type',$file_type);
+                $fk_st->execute();
+                $fk_res = $fk_st->fetchAll();
                 $res = $st->fetchAll();
-                header("Location: ../php/admin.php");
+                header("Location: ../php/admin.php?status=posted");
                 exit();
             }
             else{

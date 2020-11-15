@@ -3,7 +3,7 @@
 </form>
 
 <div class = "l-pages" id = "post_page">
-    <form action = "../includes/posting.inc.php" method = "post">
+    <form action = "../includes/posting.inc.php" method = "post" enctype = "multipart/form-data">
         <input type="file" accept = "image/*" name = "pst-img" class = "pst-imgs-input">
         <input type="text" name = "pst-title" placeholder = "記事タイトル">
         <textarea name="pst-description"　placeholder = "記事本文" id="" cols="30" rows="10"></textarea>

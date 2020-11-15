@@ -34,6 +34,10 @@
 
 .m-post-panels{
     display: none;
+    position: relative;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
 }
 
 .m-content-panel{
@@ -221,4 +225,15 @@
 
 .modal-txt p{
     color: #8D8D8D;
+}
+
+.m-no-contents-txt{
+    color: #8D8D8D;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.m-no-contents-txt i.far{
+    margin: 0 1em;
 }

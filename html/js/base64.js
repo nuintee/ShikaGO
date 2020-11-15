@@ -47,7 +47,7 @@ let imgs = document.querySelectorAll('.pst-imgs-input');
                 //document.body.appendChild(newImg);
                 reader.onload = function (e) {
                     let bs64 = e.target.result;
-                    send_to_php(e);
+                    //send_to_php(e);
                 }
            }
         },false);

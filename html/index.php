@@ -23,7 +23,7 @@
                 }
             }
             else{
-                echo "<h2 style = 'color:red'> No contents yet!<h2>";
+                echo '<h3 class = "m-no-contents-txt"><i class="far fa-frown"></i>まだ投稿はありません。<h3>';
             }
     ?>
 </div>

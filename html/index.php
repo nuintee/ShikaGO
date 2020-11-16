@@ -1,19 +1,22 @@
 <?php include_once './includes/conn.inc.php' ?>
+<?php include_once './includes/colors.inc.php';?>
 <?php include_once './php/header.php'?>
 <?php include_once "./modals.html" ?>
 <div class = "m-post-panels is-active" data-index = "1">
     <p class = "m-page-title">投稿一覧</p>
     <?php 
     $st = $pdo->query('SELECT * FROM post_contents');
+    $st_img = $pdo->query('SELECT * FROM post_images');
             $res = $st->fetchAll();
+            $res_img = $st_img->fetchAll();
             //print_r($res);
-            if (count($res) >= 1){
+            if (count($res) >= 1 && count($res_img) >= 1){
                 for ($i= 0; $i < count($res); $i++) { 
                     echo "<div class = 'm-content-panel post'>
-                    <img src='./images/dummy.jpg' alt='post-image'>
+                    <img src='./uploads/".$res_img[$i]['file_name']."'>
                     <div class = 'content post'>
-                        <h4 class = 'post-title'>".$res[$i]['post_title']."</h4>".
-                        "<p class = 'content-body post'>". $res[$i]['post_description']. "</p>
+                        <h4 class = 'post-title'>".$res[$i]['post_title']."</h4>
+                        <p class = 'content-body post'>". $res[$i]['post_description']. "</p>
                         <div class = 'post-footer'>
                             <p class = 'post-date'>".$res[$i]['post_date']."</p>
                             <p class = 'post-author'>投稿者 : ".$res[$i]['post_author']."</p>

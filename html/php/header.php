@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if (isset($_SESSION['aid'])){
-        header('Location: ./php/admin.php');
+        header('Location: ./php/admin.php?user='.$_SESSION["aid"]);
     }else{
         echo
         '<!DOCTYPE html>
@@ -25,7 +25,7 @@
         </head>
         <body>
             <div class = "l-main">
-               <aside class = "l-left-bar">
+               <aside class = "l-left-bar" style = "background-color :#'.$sp_color.'">
                     <div class = "l-top-title">
                         <img src="./images/deer.jpg" alt="deer-logo">
                         <h1>ShikaGO</h1>

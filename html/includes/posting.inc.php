@@ -22,7 +22,6 @@ if(isset($_POST['pst-submit-btn'])){
             if ($file_size < 1000000){
                 $file_name_new = uniqid('', true).".".$file_actual_extension;
                 $file_destination = '../uploads/'.$file_name_new;
-                move_uploaded_file($file_tmp_name,$file_destination);
                 $sql = 'INSERT INTO post_contents (post_title, post_description, post_image, post_author, post_date) VALUES (:pst_title, :pst_description, :pst_images, :pst_author, :pst_date)';
                 $stmt = $pdo->prepare($sql);
                 //$stmt->bindValue(':pst_url',$pst_img);
@@ -40,6 +39,7 @@ if(isset($_POST['pst-submit-btn'])){
                 $fk_st->execute();
                 $fk_res = $fk_st->fetchAll();
                 $res = $st->fetchAll();
+                move_uploaded_file($file_tmp_name,$file_destination);
                 header("Location: ../php/admin.php?status=posted");
                 exit();
             }

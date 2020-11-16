@@ -5,22 +5,33 @@
             <div class ="l-status">
                 <div class = "l-online">
                     <h4>オンライン</h4>
-                    <?php 
-                      $user =  $_GET['user'];
-                      $sql1 = 'SELECT * FROM admin_users WHERE admin_id = :adid';
+                    <?php
+                      /* Get Online Users */
+                      $sql1 = 'SELECT * FROM admin_users WHERE admin_status = :ad_statT';
                       $stmt = $pdo->prepare($sql1);
-                      $stmt->bindValue(':adid',$user);
+                      $stmt->bindValue(':ad_statT',1);
                       $stmt->execute();
-                      $res = $stmt->fetch();
+                      $resT = $stmt->fetchAll();
+                      /* Get offline Users*/
+                      $sql2 = 'SELECT * FROM admin_users WHERE admin_status = :ad_statF';
+                      $stmt = $pdo->prepare($sql2);
+                      $stmt->bindValue(':ad_statF',0);
+                      $stmt->execute();
+                      $resF = $stmt->fetchAll();
                       ?>
                     <div class = 'l-online'>
                         <div class = 'm-member is-online'>
                             <?php
-                            if ($res['admin_status'] == 1){
+                            for ($i = 0; $i < count($resT); $i++){
+                                echo "<img class ='m-member-image is-online' src='./images/robot.jpg' alt='membername image'>
+                                <h5 class ='m-member-name'>".$resT[$i]['admin_id']."</h5>";
+                            }
+                            /*
                             echo
                             "<img class ='m-member-image is-online' src='./images/robot.jpg' alt='membername image'>
-                            <h5 class ='m-member-name'>イッシー</h5>";
+                            <h5 class ='m-member-name'>".$res['admin_name']."</h5>";
                             }
+                            */
                             ?>
                         </div>
                     </div>
@@ -28,10 +39,9 @@
                     <h4>オフライン</h4>
                     <div class = "m-member">
                     <?php
-                        if ($res['admin_status'] == 0){
-                        echo
-                        "<img class ='m-member-image' src='./images/robot.jpg' alt='membername image'>
-                        <h5 class ='m-member-name'>イッシー</h5>";
+                        for ($j = 0; $j < count($resF); $j++){
+                        echo "<img class ='m-member-image' src='./images/robot.jpg' alt='membername image'>
+                        <h5 class ='m-member-name'>".$resF[$j]['admin_id']."</h5>";
                         }
                     ?>
                     </div>

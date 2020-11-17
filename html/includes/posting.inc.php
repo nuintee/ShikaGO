@@ -7,7 +7,7 @@ $pst_title = $_POST['pst-title'];
 $pst_description = $_POST['pst-description'];
 
 if(isset($_POST['pst-submit-btn'])){
-    if (!empty($pst_img) && !empty($pst_title) && !empty($pst_description)){
+    if (!empty($pst_title) && !empty($pst_description)){
         $file_name = $pst_img['name'];
         $file_tmp_name = $pst_img['tmp_name'];
         $file_size = $pst_img['size'];

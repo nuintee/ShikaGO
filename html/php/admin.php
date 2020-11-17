@@ -1,10 +1,13 @@
 <?php
     include_once '../includes/conn.inc.php';
+    #include_once '../includes/online.inc.php';
     session_start();
     #Session Statusを1にする (オンライン化)
     $sql_statusT = $pdo->prepare('UPDATE admin_users SET admin_status = 1 WHERE admin_id = :s_id');
     $sql_statusT->bindValue(":s_id",$_SESSION['aid']);
     $sql_statusT->execute();
+    $result = $sql_statusT->fetchAll();
+    echo json_encode($result);
 ?>
 
 <form action="../includes/logout.inc.php" method = "post">

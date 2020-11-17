@@ -8,13 +8,14 @@ include_once './includes/online.inc.php';
             <div class ="l-status">
                 <div class = "l-online">
                     <h4>オンライン</h4>
-                    <div class = 'l-online'>
                         <div class = 'm-member is-online'>
                             <?php
+                            
                             for ($i = 0; $i < count($resT); $i++){
                                 echo "<img class ='m-member-image is-online' src='./images/robot.jpg' alt='membername image'>
                                 <h5 class ='m-member-name'>".$resT[$i]['admin_id']."</h5>";
                             }
+                            
                             /*
                             echo
                             "<img class ='m-member-image is-online' src='./images/robot.jpg' alt='membername image'>
@@ -28,10 +29,12 @@ include_once './includes/online.inc.php';
                     <h4>オフライン</h4>
                     <div class = "m-member">
                     <?php
+                        /*
                         for ($j = 0; $j < count($resF); $j++){
                         echo "<img class ='m-member-image' src='./images/robot.jpg' alt='membername image'>
                         <h5 class ='m-member-name'>".$resF[$j]['admin_id']."</h5>";
                         }
+                        */
                     ?>
                     </div>
                 </div>

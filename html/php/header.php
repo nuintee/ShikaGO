@@ -1,10 +1,13 @@
 <?php 
     session_start();
+    /*
     if (isset($_SESSION['aid'])){
         header('Location: ./php/admin.php?user='.$_SESSION["aid"]);
     }else{
         echo
-        '<!DOCTYPE html>
+    */
+?>
+        <!DOCTYPE html>
         <html lang="en">
         <head>
             <meta charset="UTF-8">
@@ -27,7 +30,7 @@
         </head>
         <body>
             <div class = "l-main">
-               <aside class = "l-left-bar" style = "background-color :#'.$sp_color.'">
+               <aside class = "l-left-bar">
                     <div class = "l-top-title">
                         <img src="./images/deer.jpg" alt="deer-logo">
                         <h1>ShikaGO</h1>
@@ -44,6 +47,4 @@
                         <button class = "m-category-btn" data-index = "admin"><i class="fas fa-lock"></i>管理者</button>
                     </footer>
                </aside>
-               <main>';
-    }
-?>
+               <main>

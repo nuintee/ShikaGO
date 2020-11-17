@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include_once './includes/conn.inc.php' ?>
 <?php include_once './includes/colors.inc.php';?>
 <?php include_once './php/header.php'?>
@@ -100,18 +101,37 @@
                             </div>
                         </div>
                    </div>
-<div class ="m-post-panels" data-index = "5">
-                <p class = "m-page-title">管理者ログイン</p>
-                <div class = "m-content-panel">
-                    <div class = "content">
-                        <form action="./includes/login.inc.php" method = "post" autocomplete="off">
-                            <h4 class = "post-title">ユーザー名</h4>
-                            <input type="text" class = "m-input single-line" placeholder = "ユーザー名" name = "admin_id_input">
-                            <h4 class = "post-title">パスワード</h4>
-                            <input type="password" class = "m-input single-line" placeholder = "パスワード" name = "admin_pwd_input">
-                            <input type="submit" class = "m-submit-btn" value = "ログイン" name = "admin_login_btn">
-                        </form>
-                    </div>
-                </div>
+            <div class ="m-post-panels" data-index = "5">
+                <?php if (!isset($_SESSION['aid'])){
+                    echo "<p class = 'm-page-title'>管理者ログイン(session時に下に管理パネル出すのも有り)</p>
+                    <div class = 'm-content-panel'>
+                        <div class = 'content'>
+                            <form action='./includes/login.inc.php' method = 'post' autocomplete='off'>
+                                <h4 class = 'post-title'>ユーザー名</h4>
+                                <input type='text' class = 'm-input single-line' placeholder = 'ユーザー名' name = 'admin_id_input'>
+                                <h4 class = 'post-title'>パスワード</h4>
+                                <input type='password' class = 'm-input single-line' placeholder = 'パスワード' name = 'admin_pwd_input'>
+                                <input type='submit' class = 'm-submit-btn' value = 'ログイン' name = 'admin_login_btn'>
+                            </form>
+                        </div>
+                    </div>";
+                }
+                elseif (isset($_SESSION['aid'])){
+                    echo "
+                    <p class = 'm-page-title'>".$_SESSION['aid']."さん、ようこそ</p>
+                    <form action='../includes/logout.inc.php' method = 'post'>
+                            <input type='submit' value = 'logout'>
+                         </form>
+                
+                <div class = 'l-pages' id = 'post_page'>
+                    <form action = '../includes/posting.inc.php' method = 'post' enctype = 'multipart/form-data'>
+                        <input type='file' accept = 'image' name = 'pst-img' class = 'pst-imgs-input'>
+                        <input type='text' name = 'pst-title' placeholder = '記事タイトル'>
+                        <textarea name='pst-description'　placeholder = '記事本文' id='' cols='30' rows='10'></textarea>
+                        <input type='submit' value='投稿' name = 'pst-submit-btn'>
+                    </form>
+                </div>";
+                }
+                ?>
            </div>
 <?php include_once './php/footer.php'?>

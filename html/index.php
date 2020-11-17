@@ -120,11 +120,11 @@
                     echo "
                     <p class = 'm-page-title'>".$_SESSION['aid']."さん、ようこそ</p>
                     <form action='../includes/logout.inc.php' method = 'post'>
-                            <input type='submit' value = 'logout'>
-                         </form>
+                            <input type='submit' value = 'logout' class = 'm-submit-btn'>
+                    </form>
                 
                 <div class = 'l-pages' id = 'post_page'>
-                    <form action = '../includes/posting.inc.php' method = 'post' enctype = 'multipart/form-data'>
+                    <form action = '../includes/posting.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
                         <input type='file' accept = 'image' name = 'pst-img' class = 'pst-imgs-input'>
                         <input type='text' name = 'pst-title' placeholder = '記事タイトル'>
                         <textarea name='pst-description'　placeholder = '記事本文' id='' cols='30' rows='10'></textarea>

@@ -57,6 +57,6 @@ if(isset($_POST['pst-submit-btn'])){
     }
 }
 else{
-    header('Location: ../php/admin.php');
+    header('Location: ../php/index.php?error=invalid_access');
     exit();
 }

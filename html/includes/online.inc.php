@@ -1,5 +1,5 @@
 <?php
-    include_once './conn.inc.php';
+    include_once './includes/conn.inc.php';
     /* Get Online Users */
     $sql1 = 'SELECT * FROM admin_users WHERE admin_status = :ad_statT';
     $stmt = $pdo->prepare($sql1);
@@ -13,11 +13,11 @@
     $stmt->execute();
     $resF = $stmt->fetchAll();
     if ($resT['admin_status'] == 1){
-        header('Content-type: application/json');
-        echo json_encode($resT);
+        //header('Content-type: application/json');
+        //echo json_encode($resT);
     }
     else if ($resF['admin_status'] == 0){
-        header('Content-type: application/json');
-        echo json_encode($resF);
+        //header('Content-type: application/json');
+        //echo json_encode($resF);
     }
 ?>

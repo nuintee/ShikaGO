@@ -125,10 +125,10 @@
                 
                 <div class = 'l-pages' id = 'post_page'>
                     <form action = '../includes/posting.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
-                        <input type='file' accept = 'image' name = 'pst-img' class = 'pst-imgs-input'>
+                        <input type='file' accept = 'image/*' name = 'pst-img' class = 'pst-imgs-input'>
                         <input type='text' name = 'pst-title' placeholder = '記事タイトル'>
                         <textarea name='pst-description'　placeholder = '記事本文' id='' cols='30' rows='10'></textarea>
-                        <input type='submit' value='投稿' name = 'pst-submit-btn'>
+                        <input type='submit' value='投稿' name = 'pst-submit-btn' style = 'cursor:pointer'>
                     </form>
                 </div>";
                 }

@@ -40,7 +40,7 @@ if(isset($_POST['pst-submit-btn'])){
                 $fk_res = $fk_st->fetchAll();
                 $res = $st->fetchAll();
                 move_uploaded_file($file_tmp_name,$file_destination);
-                header("Location: ../php/admin.php?status=posted");
+                header("Location: ../index.php?status=posted");
                 exit();
             }
             else{

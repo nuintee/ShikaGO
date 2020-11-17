@@ -1,4 +1,5 @@
 <?php
+/*
     include_once '../includes/conn.inc.php';
     #include_once '../includes/online.inc.php';
     session_start();
@@ -24,3 +25,5 @@
 </div>
 
 <script src="../js/base64.js"></script>
+*/
+?>

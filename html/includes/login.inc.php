@@ -19,13 +19,13 @@ if (isset($_POST['admin_login_btn'])){
         $stmt->execute();
         $admin = $stmt->fetch();
         if($admin['admin_id'] === $admin_id_input && password_verify($admin['admin_pwd'],password_hash($admin_pwd_input,PASSWORD_DEFAULT))){
-            header('Location: ../../index.php');
+            header('Location: ../../index.php?login=success');
             session_start();
             $_SESSION['aid'] = $admin_id_input;
             exit();
         }
         else{
-            header('Location: ../../index.php');
+            header('Location: ../../index.php?login=failed');
             exit();
         }
     }

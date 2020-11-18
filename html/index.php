@@ -22,8 +22,13 @@
                             <p class = 'post-date'>".$res[$i]['post_date']."</p>
                             <p class = 'post-author'>投稿者 : ".$res[$i]['post_author']."</p>
                         </div>
-                        </div>
-                    </div>";
+                        </div>";
+                        if (isset($_SESSION['aid'])){
+                            echo "<form action = './includes/post_del.inc.php?posted_id=".$res[$i]['post_id']."' method = 'post'>
+                                    <input type = 'submit' value = 'delete' name = 'post-del-btn' class = 'admin_post_del_btn'>
+                                </form>";
+                            }
+                            echo"</div>";
                 }
             }
             else{

@@ -24,33 +24,41 @@ modal_bg.addEventListener('click',function(e){
     e.target.classList.remove('show');
 });
 
-/* post_modal */
+//post_modal
 for (let i = 0; i < posts.length; i++) {
     posts[i].addEventListener('click',function(e){
-        modal_post.classList.add('show');
-        let parent = e.target.parentNode;
-        let grand_p = parent.parentNode;
-        let post_img = parent.querySelector('img');
-        let post_title = parent.querySelector('.post-title').innerHTML;
-        let post_description = parent.querySelector('.content-body.post').innerHTML;
-        let post_date = parent.querySelector('.post-footer').querySelector('.post-date').innerHTML;
-        let post_author = parent.querySelector('.post-footer').querySelector('.post-author').innerHTML;
-        //modal elements
-        let modal_parent = modal_post.querySelector('.m-content-panel.project.dis');
-        let modal_child = modal_parent.querySelector('.content.project');
-        console.log(modal_child);
-        modal_parent.querySelector('img').src = post_img.src;
-        modal_child.querySelector('.post-title').innerText = post_title;
-        modal_child.querySelector('.content-body').innerText = post_description;
-        modal_child.querySelector('.post-date').innerText = post_date;
-        modal_child.querySelector('.post-author').innerText = post_author;
+        if (e.target.className != 'admin_post_del_btn'){
+            modal_post.classList.add('show');
+            let parent = e.target.parentNode;
+            let grand_p = parent.parentNode;
+            let post_img = parent.querySelector('img');
+            let post_title = parent.querySelector('.post-title').innerHTML;
+            let post_description = parent.querySelector('.content-body.post').innerHTML;
+            let post_date = parent.querySelector('.post-footer').querySelector('.post-date').innerHTML;
+            let post_author = parent.querySelector('.post-footer').querySelector('.post-author').innerHTML;
+            //modal elements
+            let modal_parent = modal_post.querySelector('.m-content-panel.project.dis');
+            let modal_child = modal_parent.querySelector('.content.project');
+            console.log(modal_child);
+            modal_parent.querySelector('img').src = post_img.src;
+            modal_child.querySelector('.post-title').innerText = post_title;
+            modal_child.querySelector('.content-body').innerText = post_description;
+            modal_child.querySelector('.post-date').innerText = post_date;
+            modal_child.querySelector('.post-author').innerText = post_author;
+        }
+        else{
+            confirm('この投稿を削除しますか？');
+        }
     },false);
 }
+
 
 modal_post.addEventListener('click',function(e){
     e.target.classList.remove('show');
 });
 
+/*
 function hide_modal(x){
     x.parentNode.classList.remove('show');
 }
+*/

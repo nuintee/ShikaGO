@@ -25,7 +25,7 @@
                         </div>";
                         if (isset($_SESSION['aid'])){
                             echo "<form action = './includes/post_del.inc.php?posted_id=".$res[$i]['post_id']."' method = 'post'>
-                                    <input type = 'submit' value = 'delete' name = 'post-del-btn' class = 'admin_post_del_btn'>
+                                    <button type = 'submit' value = 'delete' name = 'post-del-btn' class = 'admin_post_del_btn' style = 'background-color:#1A1C27;border:none;border-radius:20px;outline:none;cursor:pointer;height:50px;position:absolute;top:0;right:0;width:50px;'><i class='fas fa-trash-alt' style = 'color:#FF5252;pointer-events:none;object-fit:cover;'></i></button>
                                 </form>";
                             }
                             echo"</div>";
@@ -59,7 +59,7 @@
                    <div class = "m-post-panels" data-index = "3">
                         <p class = "m-page-title">プロジェクト一覧</p>
                         <div class = "m-content-panel project" data-index = "official_bot" onclick = "open_official_bot(this)">
-                            <img src="./images/robot.jpg" alt="">
+                            <img src="./images/deer.jpg" alt="">
                             <div class = "content project">   
                                 <h4 class = "post-title"><i class="fab fa-github"></i><i class="fab fa-node-js"></i>ShicaGO Bot</h4>
                                 <p class = "content-body">
@@ -71,7 +71,7 @@
                    <div class = "m-post-panels" data-index = "4">
                         <p class = "m-page-title">公式bot <span class = "m-under-constuction dis txt">&nbsp;開発中</span></p>
                         <div class = "m-content-panel project dis">
-                            <img src="./images/robot.jpg" alt="">
+                            <img src="./images/deer.jpg" alt="">
                             <div class = "content project">   
                                 <h4 class = "post-title"><i class="fab fa-github"></i><i class="fab fa-node-js"></i>ShicaGO Bot</h4>
                                 <p class = "content-body">
@@ -108,7 +108,7 @@
                    </div>
             <div class ="m-post-panels" data-index = "5">
                 <?php if (!isset($_SESSION['aid'])){
-                    echo "<p class = 'm-page-title'>管理者ログイン(session時に下に管理パネル出すのも有り)</p>
+                    echo "<p class = 'm-page-title'>管理者ログイン</p>
                     <div class = 'm-content-panel'>
                         <div class = 'content'>
                             <form action='./includes/login.inc.php' method = 'post' autocomplete='off'>
@@ -123,17 +123,54 @@
                 }
                 elseif (isset($_SESSION['aid'])){
                     echo "
+                <div>
                     <p class = 'm-page-title'>".$_SESSION['aid']."さん、ようこそ</p>
                     <form action='../includes/logout.inc.php' method = 'post'>
-                            <input type='submit' value = 'logout' class = 'm-submit-btn'>
+                        <input type='submit' value = 'ログアウト' class = 'm-submit-btn'>
                     </form>
-                
+                    
+                </div>
                 <div class = 'l-pages' id = 'post_page'>
+                    <p class = 'm-page-title'>記事投稿</p>
                     <form action = '../includes/posting.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
-                        <input type='file' accept = 'image/*' name = 'pst-img' class = 'pst-imgs-input'>
+                        <input type='file' accept = 'image/*' name = 'pst-img' class = 'pst-imgs-input' >
                         <input type='text' name = 'pst-title' placeholder = '記事タイトル'>
                         <textarea name='pst-description'　placeholder = '記事本文' id='' cols='30' rows='10'></textarea>
                         <input type='submit' value='投稿' name = 'pst-submit-btn' style = 'cursor:pointer'>
+                    </form>
+                </div>
+                <div class = 'l-pages' id = 'color_page'>
+                    <p class = 'm-page-title'>色設定</p>
+                    <form action = '../includes/posting.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
+                        <div>
+                            <input type = 'color' class = 'page_color' name = 'title_color_input' value = '#FFFFFF'>
+                            <label>タイトル色</label>
+                        </div>
+                        <div>
+                            <input type = 'color' class = 'page_color' name = 'side_panel_color_input' value = '#1A1C27'>
+                            <label>サイドパネル色</label>
+                        </div>
+                        <div>
+                            <input type = 'color' class = 'page_color' name = 'middle_pannel_color_input' value = '#000000'>
+                            <label>ミドルパネル色</label>
+                        </div>
+                        <div>
+                            <input type = 'color' class = 'page_color' name = 'text_color_input' value = '#8D8D8D'>
+                            <label>文字色</label>
+                        </div>
+                        <div>
+                            <input type = 'color' class = 'page_color' name = 'main_panel_color_input' value = '#2C2F3E'>
+                            <label>メインパネル色</label>
+                        </div>
+                        <div>
+                            <input type = 'color' class = 'page_color' name = 'selected_tab_color_input' value = '#2C2F3E'>
+                            <label>選択済みタブ色</label>
+                        </div>
+                        <div>
+                            <input type = 'color' class = 'page_color' name = 'shika_color_input' value = '#F8D86C'>
+                            <label>テーマ色</label>
+                        </div>
+                        <input type='submit' value='変更' name = 'color-submit-btn' style = 'cursor:pointer'>
                     </form>
                 </div>";
                 }

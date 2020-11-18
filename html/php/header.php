@@ -2,7 +2,7 @@
     session_start();
     /*
     if (isset($_SESSION['aid'])){
-        header('Location: ./php/admin.php?user='.$_SESSION["aid"]);
+        header('Location: ./php/admin.php?user='.$_SESSION['aid']);
     }else{
         echo
     */
@@ -26,7 +26,7 @@
             <script src="./js/modals.js" defer = "defer"></script>
             <script src="./js/base64.js" defer = "defer"></script>
             <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js" defer = "defer"></script>
-            <script src = "../js/ajax.js" defer = "defer"></script>
+            <script src = "../js/feed_ajax.js" defer = "defer"></script>
         </head>
         <body>
             <div class = "l-main">
@@ -44,7 +44,14 @@
                     </ul>
                     <hr color = "2C2F3E">
                     <footer class = "l-bottom-category">
-                        <button class = "m-category-btn" data-index = "admin"><i class="fas fa-lock"></i>管理者</button>
+                        <?php 
+                            if (!isset($_SESSION['aid'])){
+                                echo "<button class = 'm-category-btn' data-index = 'admin'><i class='fas fa-lock'></i>管理者</button>";
+                            }
+                            else{
+                                echo "<button class = 'm-category-btn' data-index = 'admin'><i class='fas fa-lock-open'></i>".$_SESSION['aid']."</button>";
+                            }
+                        ?>
                     </footer>
                </aside>
                <main>

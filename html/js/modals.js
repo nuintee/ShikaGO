@@ -47,7 +47,7 @@ for (let i = 0; i < posts.length; i++) {
             modal_child.querySelector('.post-author').innerText = post_author;
         }
         else{
-            confirm('この投稿を削除しますか？');
+            console.log("deleted");
         }
     },false);
 }

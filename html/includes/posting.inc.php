@@ -44,17 +44,32 @@ if(isset($_POST['pst-submit-btn'])){
                 exit();
             }
             else{
-                echo $file_size;
+                header('Location: ../index.php?post=invalid_file_size&size='.$file_size);
+                exit();
             }
         }
         else {
-            echo "an error occured";
+            header('Location: ../index.php?post=invalid_file');
+            exit();
         }
     }
-    else{
-        echo "empty!";
+    else if(empty($pst_img)){
+        header('Location: ../index.php?error=empty_image');
         exit();
     }
+    else if(empty($pst_title)){
+        header('Location: ../index.php?error=empty_title');
+        exit();
+    }
+    else if(empty($pst_description)){
+        header('Location: ../index.php?error=empty_description');
+        exit();
+    }
+    else{
+        header('Location: ../index.php?error=empty_post');
+        exit();
+    }
+    
 }
 else{
     header('Location: ../php/index.php?error=invalid_access');

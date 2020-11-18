@@ -21,7 +21,7 @@ if (isset($_POST['admin_login_btn'])){
         if($admin['admin_id'] === $admin_id_input && password_verify($admin['admin_pwd'],password_hash($admin_pwd_input,PASSWORD_DEFAULT))){
             header('Location: ../../index.php?login=success');
             session_start();
-            $_SESSION['aid'] = $admin_id_input;
+            $_SESSION['aid'] = $admin['admin_name'];
             exit();
         }
         else{

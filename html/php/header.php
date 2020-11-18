@@ -26,7 +26,8 @@
             <script src="./js/modals.js" defer = "defer"></script>
             <script src="./js/base64.js" defer = "defer"></script>
             <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js" defer = "defer"></script>
-            <script src = "../js/feed_ajax.js" defer = "defer"></script>
+            <script src = "../js/a.member.js" defer = "defer"></script>
+            <!--<script src = "../js/a.feed.js" defer = "defer"></script>-->
         </head>
         <body>
             <div class = "l-main">

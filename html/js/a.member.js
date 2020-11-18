@@ -7,7 +7,6 @@ let t_div = document.createElement('div');
     t_div.className = "m-member is-online";
 let t_h5 = document.createElement('h5');
     t_h5.className = "m-member-name";
-console.log(l_online);
 
 //Offline Members
 const l_offline = document.querySelector('.l-offline');
@@ -16,13 +15,11 @@ let f_div = document.createElement('div');
 let f_h5 = document.createElement('h5');
     f_h5.className = "m-member-name";
     f_h5.innerHTML = "Online-User";
-console.log(l_offline);
-
 
 setInterval(function(){
 
 $.ajax({
-    url: "../php/ajax.php",
+    url: "../includes/a.member.inc.php",
     dataType: "json"
 })
 .then(
@@ -36,6 +33,9 @@ $.ajax({
                 l_online.appendChild(t_div);
             }
             */
+           for (let i = 0; i < data.length; i++) {
+                console.log(data[i]['admin_name']+" : "+data[i]['admin_status']);
+           }
         }
         else{
             /*
@@ -46,6 +46,7 @@ $.ajax({
                 l_online.appendChild(f_div);
             }
             */
+           console.log('0 data');
         }
         //console.log(admin_status);
         //document.querySelector(".m-member-name").innerHTML = admin_status;

@@ -19,9 +19,13 @@ if (isset($_POST['admin_login_btn'])){
         $stmt->execute();
         $admin = $stmt->fetch();
         if($admin['admin_id'] === $admin_id_input && password_verify($admin['admin_pwd'],password_hash($admin_pwd_input,PASSWORD_DEFAULT))){
-            header('Location: ../../index.php?login=success');
             session_start();
             $_SESSION['aid'] = $admin['admin_name'];
+            $sql_status = 'UPDATE admin_users SET admin_status = 1 WHERE admin_id = :admin_id_input';
+            $stmt_status = $pdo->prepare($sql_status);
+            $stmt_status->bindValue(':admin_id_input',$admin_id_input);
+            $stmt_status->execute();
+            header('Location: ../../index.php?login=success');
             exit();
         }
         else{

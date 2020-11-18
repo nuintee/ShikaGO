@@ -102,7 +102,7 @@
                                 <p class = "content-body">
                                 該当映画の評価を行う (1 - 10点)<br>要TMDBアカウント<br>*TMDB API使用
                                 </p>
-                                <a href = "paypal.com" class = "m-submit-btn"><i class="fab fa-paypal"></i>ドネート</a>
+                                <a href = "paypal.com" class = "m-submit-btn" style = "text-decoration:none;background-color:#FFF"><i class="fab fa-paypal" style = "margin-right:1em;color:light-blue"></i>ドネート (Paypal.Me使用)</a>
                                 <input type="submit" class = "m-submit-btn dis" value = "サーバーに招待する [現在不可]">
                             </div>
                         </div>

@@ -25,27 +25,15 @@ $.ajax({
 .then(
     function (data){
         if (data.length >= 1){
-            /*
-            for (let i = 0; i < data.length; i++) {
-                t_div.appendChild(img);
-                t_h5.innerHTML = data[0]['admin_name'];
-                t_div.appendChild(t_h5);
-                l_online.appendChild(t_div);
-            }
-            */
            for (let i = 0; i < data.length; i++) {
                 console.log(data[i]['admin_name']+" : "+data[i]['admin_status']);
+                t_div.appendChild(img);
+                t_h5.innerHTML = data[i]['admin_name'];
+                t_div.appendChild(t_h5);
+                l_online.appendChild(t_div);
            }
         }
         else{
-            /*
-            for (let i = 0; i < data.length; i++) {
-                f_div.appendChild(img);
-                f_h5.innerHTML = data[0]['admin_name'];
-                f_div.appendChild(f_h5);
-                l_online.appendChild(f_div);
-            }
-            */
            console.log('0 data');
         }
         //console.log(admin_status);

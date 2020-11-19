@@ -13,9 +13,12 @@ include_once './includes/online.inc.php';
                             <?php
                             /*
                             for ($i = 0; $i < count($resT); $i++){
+                                */
                                 echo "<img class ='m-member-image is-online' src='./images/robot.jpg' alt='membername image'>
                                 <h5 class ='m-member-name'>".$resT[$i]['admin_id']."</h5>";
-                            }
+                            //}
+                            
+                            /*
                             echo
                             "<img class ='m-member-image is-online' src='./images/robot.jpg' alt='membername image'>
                             <h5 class ='m-member-name'>".$res['admin_name']."</h5>";

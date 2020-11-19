@@ -26,11 +26,13 @@ $.ajax({
     function (data){
         if (data.length >= 1){
            for (let i = 0; i < data.length; i++) {
+               /*
                 console.log(data[i]['admin_name']+" : "+data[i]['admin_status']);
                 t_div.appendChild(img);
                 t_h5.innerHTML = data[i]['admin_name'];
                 t_div.appendChild(t_h5);
                 l_online.appendChild(t_div);
+                */
            }
         }
         else{

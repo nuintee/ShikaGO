@@ -8,6 +8,11 @@
     <?php 
     $st = $pdo->query('SELECT * FROM post_contents');
     $st_img = $pdo->query('SELECT * FROM post_images');
+    //Show Users
+    $st2 = $pdo->prepare('SELECT * FROM admin_users ORDER BY admin_name = :a_i DESC, admin_name ASC');
+    $st2->bindValue(':a_i',$_SESSION['aid']);
+    $st2->execute();
+    $members = $st2->fetchAll(PDO::FETCH_ASSOC);
             $res = $st->fetchAll();
             $res_img = $st_img->fetchAll();
             //print_r($res);
@@ -129,7 +134,6 @@
                     <form action='../includes/logout.inc.php' method = 'post'>
                         <input type='submit' value = 'ログアウト' class = 'm-submit-btn'>
                     </form>
-                    
                 </div>
                 <div class = 'l-pages' id = 'post_page'>
                     <p class = 'm-page-title'>記事投稿</p>
@@ -173,7 +177,32 @@
                         </div>
                         <input type='submit' value='変更' name = 'color-submit-btn' style = 'cursor:pointer'>
                     </form>
-                </div>";
+                </div>
+                <div class = 'l-pages' id = 'post_page'>
+                    <p class = 'm-page-title'>管理者登録</p>
+                    <form action = '../includes/acc_create.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
+                        <input type='file' accept = 'image/*' name = 'adm-img' class = 'adm-imgs-input' >
+                        <input type='text' name = 'adm-id' placeholder = 'ユーザーID'>
+                        <input type='text' name = 'adm-name' placeholder = '表示名'>
+                        <input type='password' name = 'adm-name' placeholder = 'パスワード'>
+                        <input type='submit' value='投稿' name = 'adm-submit-btn' style = 'cursor:pointer'>
+                    </form>
+                </div>
+                <div class = 'l-pages' id = 'post_page'>
+                    <p class = 'm-page-title'>管理者一覧</p>";
+                for ($i=0; $i < count($members) ; $i++) { 
+                    echo "
+                    <div>
+                    <h1 style = 'color:#FFF'>";
+                    if ($i == 0){
+                        echo $members[$i]['admin_name']."(自分)"."<button>削除</button>";
+                    }
+                    else{
+                        echo $members[$i]['admin_name']."<button>削除</button>";
+                    }
+                    echo "</h1>";
+                }
+                echo "</div>";
                 }
                 ?>
            </div>

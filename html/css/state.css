@@ -68,3 +68,8 @@
     -webkit-box-shadow:0 0 0 1px rgba(255, 255, 255, .5);
     box-shadow:0 0 0 10000px #11131a;
 }
+
+details[open] .m-summary{
+    color:#FFF;
+    font-weight: bold;
+}

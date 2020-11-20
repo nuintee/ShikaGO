@@ -261,8 +261,18 @@
 }
 
 .m-page_color::-webkit-color-swatch{
-    /*background-color:#1A1C27;*/
     border: 1em solid #1A1C27;
     border-radius: 20px;
     outline: none;
+}
+
+.m-summary{
+    color:var(--category-txt-passive-color);
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 1em;
+}
+
+.m-summary::-webkit-details-marker{
+    display: none;
 }

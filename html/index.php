@@ -129,17 +129,35 @@
                 }
                 elseif (isset($_SESSION['aid'])){
                     echo "
-                <div>
-                    <p class = 'm-page-title'>".$_SESSION['aid']."さん、ようこそ</p>
-                    <form action='../includes/logout.inc.php' method = 'post'>
-                        <input type='submit' value = 'ログアウト' class = 'm-submit-btn white'>
-                    </form>
-                </div>
+                    <div style = 'display:flex;flex-flow:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;'>
+                        <p class = 'm-page-title'>".$_SESSION['aid']."さん、ようこそ</p>
+                        <form action='../includes/logout.inc.php' method = 'post'>
+                            <input type='submit' value = 'ログアウト' class = 'm-submit-btn white'>
+                        </form>
+                    </div>
+                    <div class = 'l-pages'>
+                        <div>
+                            <form action = '../includes/update_acc.inc.php' method = 'post'>
+                                <details>
+                                    <summary class = 'm-summary'>表示名の変更</summary>
+                                    <input type='password' name = 'adm-name' placeholder = 'ユーザー名' class = 'm-input single-line'>
+                                </details>
+                                <details>
+                                    <summary class = 'm-summary'>パスワードの変更</summary>
+                                    <input type='password' name = 'adm-name' placeholder = '旧パスワード' class = 'm-input single-line'>
+                                    <input type='password' name = 'adm-name' placeholder = '新パスワード' class = 'm-input single-line'>
+                                </details>
+                                <input type='submit' value = '保存' class = 'm-submit-btn white'>
+                            </form>
+                        </div>
+                    </div>
                 <p class = 'm-page-title'>記事投稿</p>
                 <div class = 'l-pages' id = 'post_page'>
                     <form action = '../includes/posting.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
                         <input type='file' accept = 'image/*' name = 'pst-img' class = 'pst-imgs-input' >
+                        <h4 class='post-title'>題名</h4>
                         <input type='text' name = 'pst-title' placeholder = '記事タイトル' class = 'm-input single-line'>
+                        <h4 class='post-title'>本文</h4>
                         <textarea name='pst-description'　placeholder = '記事本文' id='' cols='30' rows='10' class = 'm-input single-line'></textarea>
                         <input type='submit' value='投稿' name = 'pst-submit-btn' style = 'cursor:pointer' class = 'm-submit-btn'>
                     </form>
@@ -189,8 +207,11 @@
                 <div class = 'l-pages' id = 'post_page'>
                     <form action = '../includes/acc_create.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
                         <input type='file' accept = 'image/*' name = 'adm-img' class = 'adm-imgs-input' >
+                        <h4 class='post-title'>ユーザーID</h4>
                         <input type='text' name = 'adm-id' placeholder = 'ユーザーID' class = 'm-input single-line'>
+                        <h4 class='post-title'>ユーザーネーム</h4>
                         <input type='text' name = 'adm-name' placeholder = '表示名' class = 'm-input single-line'>
+                        <h4 class='post-title'>パスワード</h4>
                         <input type='password' name = 'adm-name' placeholder = 'パスワード' class = 'm-input single-line'>
                         <input type='submit' value='登録' name = 'adm-submit-btn' style = 'cursor:pointer' class = 'm-submit-btn'>
                     </form>
@@ -204,14 +225,14 @@
                         echo 
                         "<div>".
                         $members[$i]['admin_name']."(自分)".
-                        "<button class = 'm-submit-btn red'>アカウント削除</button>".
+                        "<button class = 'm-submit-btn red' style = 'cursor:pointer'>アカウント削除</button>".
                         "</div>";
                     }
                     else{
                         echo
                         "<div>".
                         $members[$i]['admin_name'].
-                        "<button class = 'm-submit-btn red'>アカウント削除</button>".
+                        "<button class = 'm-submit-btn red' style = 'cursor:pointer'>アカウント削除</button>".
                         "</div>";
                     }
                     echo "</h5>";

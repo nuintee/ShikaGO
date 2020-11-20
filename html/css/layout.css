@@ -69,12 +69,22 @@ main{
     margin: 2em 0em;
 }
 
+.l-pages div{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 #l-color_page div{
     display: flex;
-    flex-flow: column;
-    flex-wrap: wrap;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 #l-color_page div label{
     display: inline-block;
+    margin-left: 1em;
 }

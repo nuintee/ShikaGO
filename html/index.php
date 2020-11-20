@@ -107,7 +107,7 @@
                                 <p class = "content-body">
                                 該当映画の評価を行う (1 - 10点)<br>要TMDBアカウント<br>*TMDB API使用
                                 </p>
-                                <a href = "paypal.com" class = "m-submit-btn" style = "text-decoration:none;background-color:#FFF"><i class="fab fa-paypal" style = "margin-right:1em;color:light-blue"></i>ドネート (Paypal.Me使用)</a>
+                                <a href = "paypal.com" class = "m-submit-btn white" style = "text-decoration:none;"><i class="fab fa-paypal" style = "margin-right:1em;color:light-blue"></i>ドネート (Paypal.Me使用)</a>
                                 <input type="submit" class = "m-submit-btn dis" value = "サーバーに招待する [現在不可]">
                             </div>
                         </div>
@@ -132,7 +132,7 @@
                 <div>
                     <p class = 'm-page-title'>".$_SESSION['aid']."さん、ようこそ</p>
                     <form action='../includes/logout.inc.php' method = 'post'>
-                        <input type='submit' value = 'ログアウト' class = 'm-submit-btn'>
+                        <input type='submit' value = 'ログアウト' class = 'm-submit-btn white'>
                     </form>
                 </div>
                 <p class = 'm-page-title'>記事投稿</p>
@@ -141,7 +141,7 @@
                         <input type='file' accept = 'image/*' name = 'pst-img' class = 'pst-imgs-input' >
                         <input type='text' name = 'pst-title' placeholder = '記事タイトル' class = 'm-input single-line'>
                         <textarea name='pst-description'　placeholder = '記事本文' id='' cols='30' rows='10' class = 'm-input single-line'></textarea>
-                        <input type='submit' value='投稿' name = 'pst-submit-btn' style = 'cursor:pointer'>
+                        <input type='submit' value='投稿' name = 'pst-submit-btn' style = 'cursor:pointer' class = 'm-submit-btn'>
                     </form>
                 </div>
                 <p class = 'm-page-title'>色設定</p>
@@ -150,32 +150,39 @@
                         <div>
                             <input type = 'color' class = 'm-page_color' name = 'title_color_input' value = '#FFFFFF'>
                             <label>タイトル色</label>
+                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
                         </div>
                         <div>
                             <input type = 'color' class = 'm-page_color' name = 'side_panel_color_input' value = '#1A1C27'>
                             <label>サイドパネル色</label>
+                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
                         </div>
                         <div>
                             <input type = 'color' class = 'm-page_color' name = 'middle_pannel_color_input' value = '#000000'>
                             <label>ミドルパネル色</label>
+                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
                         </div>
                         <div>
                             <input type = 'color' class = 'm-page_color' name = 'text_color_input' value = '#8D8D8D'>
                             <label>文字色</label>
+                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
                         </div>
                         <div>
                             <input type = 'color' class = 'm-page_color' name = 'main_panel_color_input' value = '#2C2F3E'>
                             <label>メインパネル色</label>
+                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
                         </div>
                         <div>
                             <input type = 'color' class = 'm-page_color' name = 'selected_tab_color_input' value = '#2C2F3E'>
                             <label>選択済みタブ色</label>
+                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
                         </div>
                         <div>
                             <input type = 'color' class = 'm-page_color' name = 'shika_color_input' value = '#F8D86C'>
                             <label>テーマ色</label>
+                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
                         </div>
-                        <input type='submit' value='変更' name = 'color-submit-btn' style = 'cursor:pointer'>
+                        <input type='submit' value='変更' name = 'color-submit-btn' style = 'cursor:pointer' class = 'm-submit-btn white'>
                     </form>
                 </div>
                 <p class = 'm-page-title'>管理者登録</p>
@@ -185,24 +192,30 @@
                         <input type='text' name = 'adm-id' placeholder = 'ユーザーID' class = 'm-input single-line'>
                         <input type='text' name = 'adm-name' placeholder = '表示名' class = 'm-input single-line'>
                         <input type='password' name = 'adm-name' placeholder = 'パスワード' class = 'm-input single-line'>
-                        <input type='submit' value='投稿' name = 'adm-submit-btn' style = 'cursor:pointer'>
+                        <input type='submit' value='登録' name = 'adm-submit-btn' style = 'cursor:pointer' class = 'm-submit-btn'>
                     </form>
                 </div>
                 <p class = 'm-page-title'>管理者一覧</p>
                 <div class = 'l-pages' id = 'admin_list'>";
                 for ($i=0; $i < count($members) ; $i++) { 
                     echo "
-                    <div>
-                    <h1 style = 'color:#FFF'>";
+                    <h5 style = 'color:#FFF' class ='m-member-name'>";
                     if ($i == 0){
-                        echo $members[$i]['admin_name']."(自分)"."<button>削除</button>";
+                        echo 
+                        "<div>".
+                        $members[$i]['admin_name']."(自分)".
+                        "<button class = 'm-submit-btn red'>アカウント削除</button>".
+                        "</div>";
                     }
                     else{
-                        echo $members[$i]['admin_name']."<button>削除</button>";
+                        echo
+                        "<div>".
+                        $members[$i]['admin_name'].
+                        "<button class = 'm-submit-btn red'>アカウント削除</button>".
+                        "</div>";
                     }
-                    echo "</h1>";
+                    echo "</h5>";
                 }
-                echo "</div>";
                 }
                 ?>
            </div>

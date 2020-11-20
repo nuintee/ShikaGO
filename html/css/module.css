@@ -172,6 +172,15 @@
     font-weight: bold;
 }
 
+.m-submit-btn.white{
+    background-color: #FFF;
+}
+
+.m-submit-btn.red{
+    background-color: #FF5252;
+    color:#FFF;
+}
+
 .m-modal-bg{
     display: none;
     background-color: rgba(0, 0, 0, 0.7);
@@ -246,11 +255,14 @@
     cursor: pointer;
     height: 6em;
     margin-bottom: 1em;
+    outline: none;
     padding:0;
     width: 6em;
 }
 
-.m-page_color::-webkit-input-placeholder{
-    color: transparent;
-    border: none;
+.m-page_color::-webkit-color-swatch{
+    /*background-color:#1A1C27;*/
+    border: 1em solid #1A1C27;
+    border-radius: 20px;
+    outline: none;
 }

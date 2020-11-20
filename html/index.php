@@ -139,11 +139,11 @@
                         <div>
                             <form action = '../includes/update_acc.inc.php' method = 'post'>
                                 <details>
-                                    <summary class = 'm-summary'>表示名の変更</summary>
+                                    <summary class = 'm-summary' id = 'username-summary'>表示名の変更</summary>
                                     <input type='password' name = 'adm-name' placeholder = 'ユーザー名' class = 'm-input single-line'>
                                 </details>
                                 <details>
-                                    <summary class = 'm-summary'>パスワードの変更</summary>
+                                    <summary class = 'm-summary' id = 'pwd-summary'>パスワードの変更</summary>
                                     <input type='password' name = 'adm-name' placeholder = '旧パスワード' class = 'm-input single-line'>
                                     <input type='password' name = 'adm-name' placeholder = '新パスワード' class = 'm-input single-line'>
                                 </details>

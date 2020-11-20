@@ -73,3 +73,17 @@ details[open] .m-summary{
     color:#FFF;
     font-weight: bold;
 }
+
+#username-summary:before{
+    content: "\f007";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 1em;
+}
+
+#pwd-summary:before{
+    content: "\f084";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 1em;
+}

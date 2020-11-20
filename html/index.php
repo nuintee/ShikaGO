@@ -218,15 +218,22 @@
                 </div>
                 <p class = 'm-page-title'>管理者一覧</p>
                 <div class = 'l-pages' id = 'admin_list'>";
-                for ($i=0; $i < count($members) ; $i++) { 
+                echo "";
+                for ($i=0; $i < count($members) ; $i++) {
+                    echo "
+                    <form action = '../includes/acc_delete.inc.php' method = 'post'>
+                        <h4>Hello</h4>
+                        <input type='submit' value='削除' name = 'adm-submit-btn' style = 'background-color:#FF5252;cursor:pointer;color:#FFF;' class = 'm-submit-btn'>
+                    </form>";
+                    /*
                     echo "
                     <h5 style = 'color:#FFF' class ='m-member-name'>";
                     if ($i == 0){
                         echo 
-                        "<div>".
+                        "<form>".
                         $members[$i]['admin_name']."(自分)".
-                        "<button class = 'm-submit-btn red' style = 'cursor:pointer'>アカウント削除</button>".
-                        "</div>";
+                        "<input type = 'submit' class = 'm-submit-btn' style = 'cursor:pointer' value = 'アカウント削除'>
+                        </form>";
                     }
                     else{
                         echo
@@ -236,6 +243,7 @@
                         "</div>";
                     }
                     echo "</h5>";
+                    */
                 }
                 }
                 ?>

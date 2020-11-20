@@ -135,61 +135,61 @@
                         <input type='submit' value = 'ログアウト' class = 'm-submit-btn'>
                     </form>
                 </div>
+                <p class = 'm-page-title'>記事投稿</p>
                 <div class = 'l-pages' id = 'post_page'>
-                    <p class = 'm-page-title'>記事投稿</p>
                     <form action = '../includes/posting.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
                         <input type='file' accept = 'image/*' name = 'pst-img' class = 'pst-imgs-input' >
-                        <input type='text' name = 'pst-title' placeholder = '記事タイトル'>
-                        <textarea name='pst-description'　placeholder = '記事本文' id='' cols='30' rows='10'></textarea>
+                        <input type='text' name = 'pst-title' placeholder = '記事タイトル' class = 'm-input single-line'>
+                        <textarea name='pst-description'　placeholder = '記事本文' id='' cols='30' rows='10' class = 'm-input single-line'></textarea>
                         <input type='submit' value='投稿' name = 'pst-submit-btn' style = 'cursor:pointer'>
                     </form>
                 </div>
-                <div class = 'l-pages' id = 'color_page'>
-                    <p class = 'm-page-title'>色設定</p>
+                <p class = 'm-page-title'>色設定</p>
+                <div class = 'l-pages' id = 'l-color_page'>
                     <form action = '../includes/posting.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
                         <div>
-                            <input type = 'color' class = 'page_color' name = 'title_color_input' value = '#FFFFFF'>
+                            <input type = 'color' class = 'm-page_color' name = 'title_color_input' value = '#FFFFFF'>
                             <label>タイトル色</label>
                         </div>
                         <div>
-                            <input type = 'color' class = 'page_color' name = 'side_panel_color_input' value = '#1A1C27'>
+                            <input type = 'color' class = 'm-page_color' name = 'side_panel_color_input' value = '#1A1C27'>
                             <label>サイドパネル色</label>
                         </div>
                         <div>
-                            <input type = 'color' class = 'page_color' name = 'middle_pannel_color_input' value = '#000000'>
+                            <input type = 'color' class = 'm-page_color' name = 'middle_pannel_color_input' value = '#000000'>
                             <label>ミドルパネル色</label>
                         </div>
                         <div>
-                            <input type = 'color' class = 'page_color' name = 'text_color_input' value = '#8D8D8D'>
+                            <input type = 'color' class = 'm-page_color' name = 'text_color_input' value = '#8D8D8D'>
                             <label>文字色</label>
                         </div>
                         <div>
-                            <input type = 'color' class = 'page_color' name = 'main_panel_color_input' value = '#2C2F3E'>
+                            <input type = 'color' class = 'm-page_color' name = 'main_panel_color_input' value = '#2C2F3E'>
                             <label>メインパネル色</label>
                         </div>
                         <div>
-                            <input type = 'color' class = 'page_color' name = 'selected_tab_color_input' value = '#2C2F3E'>
+                            <input type = 'color' class = 'm-page_color' name = 'selected_tab_color_input' value = '#2C2F3E'>
                             <label>選択済みタブ色</label>
                         </div>
                         <div>
-                            <input type = 'color' class = 'page_color' name = 'shika_color_input' value = '#F8D86C'>
+                            <input type = 'color' class = 'm-page_color' name = 'shika_color_input' value = '#F8D86C'>
                             <label>テーマ色</label>
                         </div>
                         <input type='submit' value='変更' name = 'color-submit-btn' style = 'cursor:pointer'>
                     </form>
                 </div>
+                <p class = 'm-page-title'>管理者登録</p>
                 <div class = 'l-pages' id = 'post_page'>
-                    <p class = 'm-page-title'>管理者登録</p>
                     <form action = '../includes/acc_create.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
                         <input type='file' accept = 'image/*' name = 'adm-img' class = 'adm-imgs-input' >
-                        <input type='text' name = 'adm-id' placeholder = 'ユーザーID'>
-                        <input type='text' name = 'adm-name' placeholder = '表示名'>
-                        <input type='password' name = 'adm-name' placeholder = 'パスワード'>
+                        <input type='text' name = 'adm-id' placeholder = 'ユーザーID' class = 'm-input single-line'>
+                        <input type='text' name = 'adm-name' placeholder = '表示名' class = 'm-input single-line'>
+                        <input type='password' name = 'adm-name' placeholder = 'パスワード' class = 'm-input single-line'>
                         <input type='submit' value='投稿' name = 'adm-submit-btn' style = 'cursor:pointer'>
                     </form>
                 </div>
-                <div class = 'l-pages' id = 'post_page'>
-                    <p class = 'm-page-title'>管理者一覧</p>";
+                <p class = 'm-page-title'>管理者一覧</p>
+                <div class = 'l-pages' id = 'admin_list'>";
                 for ($i=0; $i < count($members) ; $i++) { 
                     echo "
                     <div>

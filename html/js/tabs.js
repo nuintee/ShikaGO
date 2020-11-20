@@ -1,9 +1,9 @@
 let category = document.querySelectorAll('.m-category-btn');
 let project_panels = document.querySelectorAll('.m-content-panel.project');
-let pages = document.querySelectorAll('.m-post-panels');
 document.querySelector('.is-active').children[0].style.color = "#3190FF";
 
 function page_hide(){
+    let pages = document.querySelectorAll('.m-post-panels');
     for (let i = 0; i < pages.length; i++) {
         pages[i].style.display = "none";
     }

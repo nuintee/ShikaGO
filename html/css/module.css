@@ -237,3 +237,19 @@
 .m-no-contents-txt i.far{
     margin: 0 1em;
 }
+
+.m-page_color{
+    background-color:transparent;
+    border:none;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 6em;
+    margin-bottom: 1em;
+    padding:0;
+    width: 6em;
+}
+
+.m-page_color::-webkit-input-placeholder{
+    color: transparent;
+    border: none;
+}

@@ -58,3 +58,23 @@ main{
 .l-status{
     padding-left: 2em;
 }
+
+.l-pages{
+    background-color:#2C2F3E;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 2em;
+    margin: 2em 0em;
+}
+
+#l-color_page div{
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+}
+
+#l-color_page div label{
+    display: inline-block;
+}

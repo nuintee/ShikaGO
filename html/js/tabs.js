@@ -12,7 +12,7 @@ function page_hide(){
 
 function tab_detector(ind,e){
     let category = document.querySelectorAll('.m-category-btn');
-    console.log(ind);
+    console.log(ind,e);
     switch (ind) {
         case "1":
             e.children[0].style.color = "#3190FF";
@@ -34,13 +34,11 @@ function tab_detector(ind,e){
             e.children[0].style.color = "#F8D86C";
             pages[pages.length - 1].style.display = "block";
             break;
-        /*
         case "official_bot":
             //e.children[0].style.color = "#31FFC8";
             category[3].click();
             pages[pages.length - 2].style.display = "block";
             break;
-        */
         default:
             break;
     }

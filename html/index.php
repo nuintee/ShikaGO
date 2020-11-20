@@ -205,14 +205,14 @@
                 </div>
                 <p class = 'm-page-title'>管理者登録</p>
                 <div class = 'l-pages' id = 'post_page'>
-                    <form action = '../includes/acc_create.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
-                        <input type='file' accept = 'image/*' name = 'adm-img' class = 'adm-imgs-input' >
+                    <form action = '../includes/acc_create.inc.php' method = 'post' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
+                        <!--<input type='file' accept = 'image/*' name = 'adm-img' class = 'adm-imgs-input' >-->
                         <h4 class='post-title'>ユーザーID</h4>
                         <input type='text' name = 'adm-id' placeholder = 'ユーザーID' class = 'm-input single-line'>
                         <h4 class='post-title'>ユーザーネーム</h4>
                         <input type='text' name = 'adm-name' placeholder = '表示名' class = 'm-input single-line'>
                         <h4 class='post-title'>パスワード</h4>
-                        <input type='password' name = 'adm-name' placeholder = 'パスワード' class = 'm-input single-line'>
+                        <input type='password' name = 'adm-pwd' placeholder = 'パスワード' class = 'm-input single-line'>
                         <input type='submit' value='登録' name = 'adm-submit-btn' style = 'cursor:pointer' class = 'm-submit-btn'>
                     </form>
                 </div>

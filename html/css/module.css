@@ -20,6 +20,7 @@
 .m-category-btn .fas{
     font-size: 1em;
     margin-right: 10px;
+    pointer-events: none;
 }
 
 .m-page-title{

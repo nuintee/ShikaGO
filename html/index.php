@@ -124,7 +124,10 @@ session_start();
                                 <h4 class = 'post-title'>ユーザー名</h4>
                                 <input type='text' class = 'm-input single-line' placeholder = 'ユーザー名' name = 'admin_id_input'>
                                 <h4 class = 'post-title'>パスワード</h4>
-                                <input type='password' class = 'm-input single-line' placeholder = 'パスワード' name = 'admin_pwd_input'>
+                                <div class = 'l-pwd-pack' style = 'display:flex;flex-flow:row;flex-direction: row;flex-wrap:nowrap;'>
+                                    <input type='password' class = 'm-input single-line pwd' placeholder = 'パスワード' name = 'admin_pwd_input'>
+                                    <button type = 'button' class = 'm-pwd-toggle-button fas fa-eye'></button>
+                                </div>
                                 <input type='submit' class = 'm-submit-btn' value = 'ログイン' name = 'admin_login_btn'>
                             </form>
                         </div>

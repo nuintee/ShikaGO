@@ -137,17 +137,17 @@
                     </div>
                     <div class = 'l-pages'>
                         <div>
-                            <form action = '../includes/update_acc.inc.php' method = 'post'>
+                            <form action = '../includes/acc_update.inc.php?user=".$_SESSION['adid']."'"."method = 'post'>
                                 <details>
                                     <summary class = 'm-summary' id = 'username-summary'>表示名の変更</summary>
-                                    <input type='password' name = 'adm-name' placeholder = 'ユーザー名' class = 'm-input single-line'>
+                                    <input type='text' name = 'adm-name' placeholder = 'ユーザー名' value = ".$_SESSION['aid']." class = 'm-input single-line'>
                                 </details>
                                 <details>
                                     <summary class = 'm-summary' id = 'pwd-summary'>パスワードの変更</summary>
-                                    <input type='password' name = 'adm-name' placeholder = '旧パスワード' class = 'm-input single-line'>
-                                    <input type='password' name = 'adm-name' placeholder = '新パスワード' class = 'm-input single-line'>
+                                    <input type='password' name = 'adm-old-pwd' placeholder = '旧パスワード' class = 'm-input single-line'>
+                                    <input type='password' name = 'adm-new-pwd' placeholder = '新パスワード' class = 'm-input single-line'>
                                 </details>
-                                <input type='submit' value = '保存' class = 'm-submit-btn white'>
+                                <input type='submit' value = '保存' class = 'm-submit-btn white' name = 'adm-update-btn'>
                             </form>
                         </div>
                     </div>
@@ -219,7 +219,7 @@
                 <p class = 'm-page-title'>管理者一覧</p>
                 <div class = 'l-pages' id = 'admin_list'>";
                     for ($i=0; $i < count($members) ; $i++) {
-                        if ($members[0]){
+                        if ($i == 0){
                             echo 
                                 "<form action = '../includes/acc_delete.inc.php?account=".$members[$i]['admin_name']."&id=".$members[$i]['admin_id']."'"."method = 'post' style = 'display:flex;align-items:center;justify-content:space-between;' onsubmit='return confirm_test(this)'>
                                     <div>

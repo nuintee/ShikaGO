@@ -19,7 +19,7 @@
             
 
             //Name Change
-            if ($member != $current_user_name && !empty($member) && empty($old_pwd) || empty($new_pwd)){
+            if (!empty($member) && empty($old_pwd) || empty($new_pwd)){
                 
                 $sql = 'UPDATE admin_users SET admin_name = :new_admin_name WHERE admin_id = :admin_id';
                 $st = $pdo->prepare($sql);
@@ -49,7 +49,7 @@
                 }
             }
             //All Update at once;
-            else if ($member != $current_user_name &&!empty($member) && !empty($old_pwd) && !empty($new_pwd)){
+            else if (!empty($member) && !empty($old_pwd) && !empty($new_pwd)){
                 
                 $sql = 'UPDATE admin_users SET admin_pwd = :new_admin_pwd, admin_name = :new_admin_name WHERE admin_id = :admin_id';
                 $st = $pdo->prepare($sql);

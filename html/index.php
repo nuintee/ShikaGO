@@ -1,5 +1,5 @@
 <?php 
-session_set_cookie_params(60 * 1);
+session_set_cookie_params(60 * 5);
 session_start(); 
 ?>
 <?php include_once './includes/conn.inc.php' ?>
@@ -147,9 +147,15 @@ session_start();
                                 </details>
                                 <details>
                                     <summary class = 'm-summary' id = 'pwd-summary'>パスワードの変更</summary>
-                                    <input type='password' name = 'adm-old-pwd' placeholder = '旧パスワード' class = 'm-input single-line'>
-                                    <input type='password' name = 'adm-new-pwd' placeholder = '新パスワード' class = 'm-input single-line'>
-                                </details>
+                                    <div style = 'display:flex;flex-flow:row;flex-wrap:nowrap;'>
+                                        <input type='password' name = 'adm-old-pwd' placeholder = '旧パスワード' class = 'm-input single-line'>
+                                        <button type = 'button' class = 'm-pwd-toggle-button'>Show</button>
+                                    </div>
+                                    <div style = 'display:flex;flex-flow:row;flex-wrap:nowrap;'>
+                                        <input type='password' name = 'adm-new-pwd' placeholder = '新パスワード' class = 'm-input single-line'>
+                                        <button type = 'button' class = 'm-pwd-toggle-button'>Show</button>
+                                    </div>
+                                    </details>
                                 <input type='submit' value = '保存' class = 'm-submit-btn white' name = 'adm-update-btn'>
                             </form>
                         </div>

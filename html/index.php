@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+session_set_cookie_params(60 * 1);
+session_start(); 
+?>
 <?php include_once './includes/conn.inc.php' ?>
 <?php include_once './includes/colors.inc.php';?>
 <?php include_once './php/header.php'?>

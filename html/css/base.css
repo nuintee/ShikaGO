@@ -11,6 +11,7 @@
     --main-color: #000;
     --common-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     --shika-color:#F8D86C;
+    --warning-red-color:#FF5252;
     --japanese-font:'Noto Sans JP', sans-serif;
     --english-font: 'Poppins', sans-serif;
 }

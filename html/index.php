@@ -221,10 +221,11 @@
                 echo "";
                 for ($i=0; $i < count($members) ; $i++) {
                     echo "
-                    <form action = '../includes/acc_delete.inc.php' method = 'post'>
-                        <h4>Hello</h4>
-                        <input type='submit' value='削除' name = 'adm-submit-btn' style = 'background-color:#FF5252;cursor:pointer;color:#FFF;' class = 'm-submit-btn'>
-                    </form>";
+                    <form action = '../includes/acc_delete.inc.php' method = 'post' style = 'display:flex;align-items:center;justify-content:space-between;' onsubmit='return confirm_test()'>
+                        <h4 class ='m-member-name' style = 'color:#FFF'>".$members[$i]['admin_name']."</h4>
+                        <input type='submit' value='アカウント削除' name = 'adm-delete-btn' style = 'background-color:#FF5252;color:#FFF;cursor:pointer' class = 'm-submit-btn'>
+                    </form>
+                    <hr size = '2' width='100%' color='#1A1C27'>";
                     /*
                     echo "
                     <h5 style = 'color:#FFF' class ='m-member-name'>";

@@ -7,9 +7,11 @@ for (let i = 0; i < pwd_btn.length; i++) {
         let txt_state = e.target.parentNode.querySelector('input[type="text"]');
         if (pwd_state){
             pwd_state.setAttribute('type','text');
+            e.target.classList.toggle('show-pwd')
         }
         else if(txt_state){
             txt_state.setAttribute('type','password');
+            e.target.classList.toggle('show-pwd')
         }
         else{console.log('error');}
     },false);

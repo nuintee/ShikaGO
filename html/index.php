@@ -218,37 +218,30 @@
                 </div>
                 <p class = 'm-page-title'>管理者一覧</p>
                 <div class = 'l-pages' id = 'admin_list'>";
-                echo "";
-                for ($i=0; $i < count($members) ; $i++) {
-                    echo 
-                        "<form action = '../includes/acc_delete.inc.php?account=".$members[$i]['admin_name']."&id=".$members[$i]['admin_id']."'"."method = 'post' style = 'display:flex;align-items:center;justify-content:space-between;' onsubmit='return confirm_test(this)'>
-                            <div>
-                                <h4 class ='m-member-name' style = 'color:#FFF'>".$members[$i]['admin_name']."</h4>
-                                <h5 class ='m-member-name' style = 'color:#FFF'>"."(ID: ".$members[$i]['admin_id'].")"."</h5>
-                            </div>
-                        <input type='submit' value='アカウント削除' name = 'adm-delete-btn' style = 'background-color:#FF5252;color:#FFF;cursor:pointer' class = 'm-submit-btn'>
-                    </form>
-                    <hr size = '2' width='100%' color='#1A1C27'>";
-                    /*
-                    echo "
-                    <h5 style = 'color:#FFF' class ='m-member-name'>";
-                    if ($i == 0){
-                        echo 
-                        "<form>".
-                        $members[$i]['admin_name']."(自分)".
-                        "<input type = 'submit' class = 'm-submit-btn' style = 'cursor:pointer' value = 'アカウント削除'>
-                        </form>";
+                    for ($i=0; $i < count($members) ; $i++) {
+                        if ($members[0]){
+                            echo 
+                                "<form action = '../includes/acc_delete.inc.php?account=".$members[$i]['admin_name']."&id=".$members[$i]['admin_id']."'"."method = 'post' style = 'display:flex;align-items:center;justify-content:space-between;' onsubmit='return confirm_test(this)'>
+                                    <div>
+                                        <h4 class ='m-member-name' style = 'color:#FFF'>".$members[$i]['admin_name']."(自分)"."</h4>
+                                        <h5 class ='m-member-name' style = 'color:#FFF'> "."ID: ".$members[$i]['admin_id']." </h5>
+                                    </div>
+                                <input type='submit' value='アカウント削除' name = 'adm-delete-btn' style = 'background-color:#FF5252;color:#FFF;cursor:pointer' class = 'm-submit-btn'>
+                            </form>
+                            <hr size = '2' width='100%' color='#1A1C27'>";
+                        }
+                        else{
+                            echo 
+                                "<form action = '../includes/acc_delete.inc.php?account=".$members[$i]['admin_name']."&id=".$members[$i]['admin_id']."'"."method = 'post' style = 'display:flex;align-items:center;justify-content:space-between;' onsubmit='return confirm_test(this)'>
+                                    <div>
+                                        <h4 class ='m-member-name' style = 'color:#FFF'>".$members[$i]['admin_name']."</h4>
+                                        <h5 class ='m-member-name' style = 'color:#FFF'> "."ID: ".$members[$i]['admin_id']." </h5>
+                                    </div>
+                                <input type='submit' value='アカウント削除' name = 'adm-delete-btn' style = 'background-color:#FF5252;color:#FFF;cursor:pointer' class = 'm-submit-btn'>
+                            </form>
+                            <hr size = '2' width='100%' color='#1A1C27'>";
+                        }
                     }
-                    else{
-                        echo
-                        "<div>".
-                        $members[$i]['admin_name'].
-                        "<button class = 'm-submit-btn red' style = 'cursor:pointer'>アカウント削除</button>".
-                        "</div>";
-                    }
-                    echo "</h5>";
-                    */
-                }
                 }
                 ?>
            </div>

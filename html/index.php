@@ -221,7 +221,7 @@
                 echo "";
                 for ($i=0; $i < count($members) ; $i++) {
                     echo "
-                    <form action = '../includes/acc_delete.inc.php' method = 'post' style = 'display:flex;align-items:center;justify-content:space-between;' onsubmit='return confirm_test()'>
+                    <form action = '../includes/acc_delete.inc.php' method = 'post' style = 'display:flex;align-items:center;justify-content:space-between;' onsubmit='return confirm_test(this)'>
                         <h4 class ='m-member-name' style = 'color:#FFF'>".$members[$i]['admin_name']."</h4>
                         <input type='submit' value='アカウント削除' name = 'adm-delete-btn' style = 'background-color:#FF5252;color:#FFF;cursor:pointer' class = 'm-submit-btn'>
                     </form>

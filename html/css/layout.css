@@ -88,3 +88,12 @@ main{
     display: inline-block;
     margin-left: 1em;
 }
+
+.l-pwd-pack{
+    align-items: center;
+    position: relative;
+    display : flex;
+    flex-flow : row;
+    flex-direction : row;
+    flex-wrap : nowrap;
+}

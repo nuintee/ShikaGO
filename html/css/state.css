@@ -87,3 +87,5 @@ details[open] .m-summary{
     font-weight: 900;
     margin-right: 1em;
 }
+
+.m-pwd-toggle-button.show-pwd{color: #FFF;}

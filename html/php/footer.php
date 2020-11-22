@@ -11,7 +11,7 @@ include_once './includes/online.inc.php';
                 $st = $pdo->query('SELECT * FROM admin_users');
                 $res = $st->fetchAll(PDO::FETCH_ASSOC);
                 for ($i = 0; $i < count($res); $i++){
-                    echo "<div class = 'm-member'>";
+                    echo "<div class = 'm-member' data-comment = 'comment status".$i."'".">";
                     echo "<img class ='m-member-image' src = '../images/deer.jpg' alt = 'i'>";
                     echo "<h5 class = 'm-member-name'>".$res[$i]['admin_name']."</h5>";
                     echo "</div>";

@@ -16,6 +16,12 @@ for (let i = 0; i < member.length; i++) {
         else{
             modal_member.children[0].querySelector('img').style.border = "none";
             modal_member.children[0].querySelector('.modal-top').querySelector('h4').style.color = "#8D8D8D";
+            modal_member.children[0].querySelector('.modal-top').querySelector('h4').innerHTML = e.target.querySelector('.m-member-name').innerHTML;
+            modal_member.children[0].querySelector('img').src = e.target.querySelector('img').src;
+            if (e.target.dataset.comment){
+                modal_member.children[0].querySelector('p').innerHTML = e.target.dataset.comment;
+            }
+            else;
         }
     },false);
 }

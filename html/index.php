@@ -5,7 +5,7 @@ session_start();
 <?php include_once './includes/conn.inc.php' ?>
 <?php include_once './includes/colors.inc.php';?>
 <?php include_once './php/header.php'?>
-<?php include_once "./modals.html" ?>
+<?php include_once "./php/modals.php" ?>
 <div class = "m-post-panels is-active" data-index = "1">
     <p class = "m-page-title">投稿一覧</p>
     <?php 

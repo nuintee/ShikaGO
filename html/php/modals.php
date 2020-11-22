@@ -1,4 +1,7 @@
-
+<?php 
+    session_start();
+    include_once './includes/conn.inc.php';
+?>
 <div class ="m-modal-bg member">
     <div class = "m-modal-main">
         <div class ="modal-top">
@@ -7,10 +10,12 @@
             <a href="https://www.youtube.com/watch?v=XaWWmHnnotg" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-github"></i></a>
         </div>
         <div class = "modal-txt">
-            <p>一言メッセージ</p>
+            <p></p>
+            <!--
             <form action="./includes/send-message.php" method = "post">
                 <input type="text" class = "m-input single-line" placeholder = "メッセージ送信" name = "user-message-input">
             </form>
+            -->
         </div>
     </div>
 </div>

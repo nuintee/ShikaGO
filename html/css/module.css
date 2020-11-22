@@ -207,7 +207,6 @@
     display:block;
 }
 
-/*
 .m-modal-main{
     align-items: center;
     background-color: #2C2F3E;
@@ -222,11 +221,9 @@
     left:50%;
     text-align: center;
     transform: translate(-50%,-50%);
-    height:100px;
     justify-content: space-around;
     width: 350px;
 }
-*/
 
 .modal-top img{
     border-radius: 100%;

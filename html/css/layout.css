@@ -45,7 +45,7 @@ main{
     flex:4;
     overflow-y:scroll;
     padding: 3em;
-    margin: 0;
+    margin-bottom: 2em;
 }
 
 .l-right-bar{
@@ -77,6 +77,7 @@ main{
     justify-content: space-between;
 }
 
+
 #l-color_page div{
     display: flex;
     flex-flow: row;
@@ -97,3 +98,4 @@ main{
     flex-direction : row;
     flex-wrap : nowrap;
 }
+

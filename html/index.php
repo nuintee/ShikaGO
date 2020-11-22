@@ -121,7 +121,7 @@ session_start();
                     <div class = 'm-content-panel'>
                         <div class = 'content'>
                             <form action='./includes/login.inc.php' method = 'post' autocomplete='off'>
-                                <h4 class = 'post-title'>ユーザー名</h4>
+                                <h4 class = 'post-title'>ユーザーID</h4>
                                 <input type='text' class = 'm-input single-line' placeholder = 'ユーザー名' name = 'admin_id_input'>
                                 <h4 class = 'post-title'>パスワード</h4>
                                 <div class = 'l-pwd-pack' style = 'display:flex;flex-flow:row;flex-direction: row;flex-wrap:nowrap;'>
@@ -174,6 +174,7 @@ session_start();
                         <input type='submit' value='投稿' name = 'pst-submit-btn' style = 'cursor:pointer' class = 'm-submit-btn'>
                     </form>
                 </div>
+                <!--
                 <p class = 'm-page-title'>色設定</p>
                 <div class = 'l-pages' id = 'l-color_page'>
                     <form action = '../includes/posting.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
@@ -215,6 +216,7 @@ session_start();
                         <input type='submit' value='変更' name = 'color-submit-btn' style = 'cursor:pointer' class = 'm-submit-btn white'>
                     </form>
                 </div>
+                -->
                 <p class = 'm-page-title'>管理者登録</p>
                 <div class = 'l-pages' id = 'post_page'>
                     <form action = '../includes/acc_create.inc.php' method = 'post' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>

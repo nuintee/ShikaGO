@@ -9,7 +9,6 @@ include_once './includes/online.inc.php';
             <div class ="l-status">
                 <div class = "l-online">
                     <h4>オンライン</h4>
-                        <div class = 'm-member is-online'>
                             <?php
                             /*
                             for ($i = 0; $i < count($resT); $i++){
@@ -25,7 +24,6 @@ include_once './includes/online.inc.php';
                             }
                             */
                             ?>
-                        </div>
                     </div>
                 <div class = "l-offline">
                     <h4>オフライン</h4>

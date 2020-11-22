@@ -16,7 +16,6 @@
     --english-font: 'Poppins', sans-serif;
 }
 
-
 main::-webkit-scrollbar {
     width: 10px;
 }
@@ -41,6 +40,7 @@ html,body{
 }
 
 body{
+    background-color: var(--main-color);
     font-family: 'Poppins', sans-serif;
     position: fixed;
     overflow: hidden;

@@ -27,7 +27,7 @@ $.ajax({
            for (let i = 0; i < data.length; i++){
                if (total_member_count.length != data.length){
                    //console.log(data[i]['admin_status'].length);
-                    if (data[i]['admin_status'] == 0){
+                    if (data[i]['admin_status'] == 0 && da){
                          let f_div = document.createElement('div');
                          f_div.className = "m-member";
                          let img_f = document.createElement('img');

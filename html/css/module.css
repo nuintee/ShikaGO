@@ -130,7 +130,7 @@
     color:#676767;
     cursor: pointer;
     display: flex;
-    margin: 0;
+    margin: 1em 0;
     padding: 0 1em;
     width:100%;
 }

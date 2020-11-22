@@ -16,11 +16,17 @@ $.ajax({
 })
 .then(
     function (data){
-        let member_counts = document.querySelectorAll('.m-member');
-        console.log(member_counts.length);
+        let total_member_count = document.querySelectorAll('.m-member');
+        let t_member_count = document.querySelectorAll('.m-member.is-online');
+        let f_member_count_len = total_member_count.length - t_member_count.length;
+        console.log('Data: '+data.length);
+        console.log('All: '+total_member_count.length);
+        console.log('Online: '+t_member_count.length);
+        console.log('Offline: '+f_member_count_len);
         if (data.length >= 1){
-           for (let i = 0; i < data.length; i++) {
-               if (member_counts.length <= data.length){
+           for (let i = 0; i < data.length; i++){
+               if (total_member_count.length != data.length){
+                   //console.log(data[i]['admin_status'].length);
                     if (data[i]['admin_status'] == 0){
                          let f_div = document.createElement('div');
                          f_div.className = "m-member";
@@ -68,3 +74,19 @@ $.ajax({
     }
 )
 },1000);
+
+function check_num(data,param,search){
+    //arrの中にx(0/1)が何個あるか
+    let set = 0;
+    for (let j = 0; j < data.length; j++){
+        console.log('data['+j+']['+param+']'+'='+data[j][param]);
+        if (data[j][param] == search){
+            set++;
+        }
+        else{
+            console.log("couldn't find!");
+        }
+    }
+    console.log('Found'+set+' '+search+'s');
+    return set;
+}

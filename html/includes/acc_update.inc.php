@@ -8,6 +8,7 @@
     $old_pwd = $_POST['adm-old-pwd']; //Must password verify
     $new_pwd = $_POST['adm-new-pwd'];
     $hashed_pwd = password_hash($new_pwd,PASSWORD_DEFAULT);
+    $comment = $_POST['adm-comment'];
 
     if (isset($_POST['adm-update-btn'])){
         try{
@@ -19,24 +20,22 @@
             
 
             //Name Change
-            if (!empty($member) && empty($old_pwd) || empty($new_pwd)){
-                
+            if (!empty($member) && (empty($old_pwd) || empty($new_pwd)) && empty($comment)){
                 $sql = 'UPDATE admin_users SET admin_name = :new_admin_name WHERE admin_id = :admin_id';
                 $st = $pdo->prepare($sql);
                 $st->bindValue(':new_admin_name',$member);
                 $st->bindValue(':admin_id',$current_user_id);
                 $st->execute();
                 $result = $st->fetch(PDO::FETCH_ASSOC);
-                unset($_SESSION['aid']);
                 $_SESSION['aid'] = $result['admin_name'];
                 header('Location: ../index.php?success=username_updated');
                 exit;
             }
 
             //Password Change
-            else if (empty($member) && !empty($old_pwd) && !empty($new_pwd)){
+            else if (empty($member) && !empty($old_pwd) && !empty($new_pwd) && empty($comment)){
                 if (password_verify($old_pwd,$res['admin_pwd'])){
-                    $sql = 'UPDATE admin_users SET admin_pwd = :new_admin_pwd WHERE admin_id = :admin_id';
+                    $sql = 'UPDATE admin_users SET admin_comment = :new_admin_pwd WHERE admin_id = :admin_id';
                     $st = $pdo->prepare($sql);
                     $st->bindValue(':new_admin_pwd',$hashed_pwd);
                     $st->bindValue(':admin_id',$current_user_id);
@@ -48,14 +47,25 @@
                     echo "password does not match!";
                 }
             }
+            //Comment Change
+            else if ((!empty($member) || empty($old_pwd) || empty($new_pwd)) && !empty($comment)){
+                $sql = 'UPDATE admin_users SET admin_comment = :new_comment WHERE admin_id = :admin_id';
+                $st = $pdo->prepare($sql);
+                $st->bindValue(':new_comment',$comment);
+                $st->bindValue(':admin_id',$current_user_id);
+                $st->execute();
+                header('Location: ../index.php?success=comment_updated');
+                exit;
+            }
             //All Update at once;
-            else if (!empty($member) && !empty($old_pwd) && !empty($new_pwd)){
+            else if (!empty($member) && !empty($old_pwd) && !empty($new_pwd) && !empty($comment)){
                 
-                $sql = 'UPDATE admin_users SET admin_pwd = :new_admin_pwd, admin_name = :new_admin_name WHERE admin_id = :admin_id';
+                $sql = 'UPDATE admin_users SET admin_pwd = :new_admin_pwd, admin_name = :new_admin_name, admin_comment = :new_comment WHERE admin_id = :admin_id';
                 $st = $pdo->prepare($sql);
                 $st->bindValue(':new_admin_pwd',$hashed_pwd);
                 $st->bindValue(':admin_id',$current_user_id);
                 $st->bindValue(':new_admin_name',$member);
+                $st->bindValue(':new_comment',$comment);
                 $st->execute();
                 
                 header('Location: ../index.php?success=account_updated');

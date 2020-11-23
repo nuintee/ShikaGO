@@ -88,4 +88,11 @@ details[open] .m-summary{
     margin-right: 1em;
 }
 
+#comment-summary:before{
+    content: "\f075";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 1em;
+}
+
 .m-pwd-toggle-button.show-pwd{color: #FFF;}

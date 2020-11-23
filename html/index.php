@@ -134,6 +134,11 @@ session_start();
                     </div>";
                 }
                 elseif (isset($_SESSION['aid'])){
+                    //Gather Comment At the time;
+                    $st = $pdo->prepare('SELECT * FROM admin_users WHERE admin_id = :adid');
+                    $st->bindValue(':adid',$_SESSION['adid']);
+                    $st->execute();
+                    $res = $st->fetch(PDO::FETCH_ASSOC);
                     echo "
                     <div style = 'display:flex;flex-flow:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;'>
                         <p class = 'm-page-title'>".$_SESSION['aid']."さん、ようこそ</p>
@@ -158,7 +163,11 @@ session_start();
                                         <input type='password' name = 'adm-new-pwd' placeholder = '新パスワード' class = 'm-input single-line pwd'>
                                         <button type = 'button' class = 'm-pwd-toggle-button fas fa-eye'></button>
                                     </div>
-                                    </details>
+                                </details>
+                                <details>
+                                    <summary class = 'm-summary' id = 'comment-summary'>一言コメントの変更</summary>
+                                    <input type='text' name = 'adm-comment' placeholder = 'コメント' value = '".$res['admin_comment']."' class = 'm-input single-line'>
+                                </details>
                                 <input type='submit' value = '保存' class = 'm-submit-btn white' name = 'adm-update-btn'>
                             </form>
                         </div>

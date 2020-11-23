@@ -20,10 +20,10 @@ if (isset($_POST['admin_login_btn'])){
         $login_stmt->bindValue(':admn_id',$admin_id_input);
         $login_stmt->execute();
         $admin = $login_stmt->fetch(PDO::FETCH_ASSOC);
-
         if($admin['admin_id'] === $admin_id_input && password_verify($admin_pwd_input,$admin['admin_pwd'])){
             $_SESSION['aid'] = $admin['admin_name'];
             $_SESSION['adid'] = $admin['admin_id'];
+            $_SESSION['adcomment'] = $admin['admin_comment'];
             $sql_status = 'UPDATE admin_users SET admin_status = 1 WHERE admin_id = :admin_id_input';
             $stmt_status = $pdo->prepare($sql_status);
             $stmt_status->bindValue(':admin_id_input',$admin_id_input);

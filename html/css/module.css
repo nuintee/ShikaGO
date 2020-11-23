@@ -230,6 +230,8 @@
     height:8em;
     object-fit: cover;
     width:8em;
+    object-position: top;
+    pointer-events: none;
 }
 
 .m-close-modal-btn{

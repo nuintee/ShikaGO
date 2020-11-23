@@ -6,7 +6,6 @@ let inputs = document.querySelectorAll('.l-input-container');
 
 let upload_input = document.querySelectorAll('.m-img_upload_label');
 
-/*
 for (let i = 0; i < upload_input.length; i++) {
     upload_input[i].addEventListener('dragover',function(e){
         e.preventDefault();
@@ -26,16 +25,15 @@ for (let i = 0; i < upload_input.length; i++) {
         file_input.files = files;
         e.target.style.backgroundColor = '#1A1C27';
         e.target.style.color = '#676767';
-        previeFile(files[0],e.target);
+        previewFile(files[0],e.target);
     },false);
 }
 
 file_input.addEventListener('change',function(e){
     e.preventDefault();
     console.log(e.target.files);
-    previeFile(e.target.files[0],e.target.parentNode);
+    previewFile(e.target.files[0],e.target.parentNode);
 },false);
-*/
 
 console.log(inputs);
 
@@ -44,18 +42,6 @@ for (let i = 0; i < inputs.length; i++) {
         previewFile(e.target.files[0],e.target.parentNode);
     }, false);
 }
-
-/*
-create_upload_input.addEventListener('change',function(e){
-    e.preventDefault();
-    console.log('changed');
-    return;
-    e.preventDefault();
-    console.log(e.target);
-    previeFile(e.target.files[0],e.target);
-},false);
-*/
-
 
 function previewFile(file,area){
     let reader = new FileReader();

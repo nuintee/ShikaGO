@@ -8,11 +8,12 @@
             $ad_pass = $_POST['adm-pwd'];
            try{
                 // Add Admin Account To DB
-                $sql = 'INSERT INTO admin_users (admin_id,admin_pwd,admin_name,admin_status) VALUES (:aid,:apd,:ana,:ads)';
+                $sql = 'INSERT INTO admin_users (admin_id,admin_pwd,admin_name,admin_comment,admin_status) VALUES (:aid,:apd,:ana,:aco,:ads)';
                 $add_stmt = $pdo->prepare($sql);
                 $add_stmt->bindValue(':aid',$_POST['adm-id']);
                 $add_stmt->bindValue(':apd',password_hash($ad_pass,PASSWORD_DEFAULT));
                 $add_stmt->bindValue(':ana',$_POST['adm-name']);
+                $add_stmt->bindValue(':aco',null);
                 $add_stmt->bindValue(':ads',0);
                 $add_result = $add_stmt->execute();
                 if ($add_result){

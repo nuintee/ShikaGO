@@ -226,7 +226,10 @@ session_start();
                         <h4 class='post-title'>ユーザーネーム</h4>
                         <input type='text' name = 'adm-name' placeholder = '表示名' class = 'm-input single-line'>
                         <h4 class='post-title'>パスワード</h4>
-                        <input type='password' name = 'adm-pwd' placeholder = 'パスワード' class = 'm-input single-line'>
+                        <div class = 'l-pwd-pack' style = 'display:flex;flex-flow:row;flex-direction: row;flex-wrap:nowrap;'>
+                            <input type='password' name = 'adm-pwd' placeholder = 'パスワード' class = 'm-input single-line pwd'>
+                            <button type = 'button' class = 'm-pwd-toggle-button fas fa-eye'></button>
+                        </div>
                         <input type='submit' value='登録' name = 'adm-submit-btn' style = 'cursor:pointer' class = 'm-submit-btn'>
                     </form>
                 </div>

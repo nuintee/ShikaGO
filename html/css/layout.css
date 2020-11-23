@@ -119,8 +119,7 @@ main{
 }
 
 .l-input-container{
-    flex:1;
-    height: 200px;
+    display: none;
 }
 
 /*To move submit button on left side*/

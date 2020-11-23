@@ -236,6 +236,10 @@ session_start();
                 <div class = 'l-pages' id = 'post_page'>
                     <form action = '../includes/acc_create.inc.php' method = 'post' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
                         <!--<input type='file' accept = 'image/*' name = 'adm-img' class = 'adm-imgs-input' >-->
+                        <label for = 'm-create_img_upload_input' class = 'm-img_upload_label'>
+                            <span style = 'pointer-events:none;'>画像を選択</span>
+                            <input type = 'file' class = 'l-input-container' id = 'm-create_img_upload_input'>
+                        </label>
                         <h4 class='post-title'>ユーザーID</h4>
                         <input type='text' name = 'adm-id' placeholder = 'ユーザーID' class = 'm-input single-line'>
                         <h4 class='post-title'>ユーザーネーム</h4>
@@ -250,7 +254,7 @@ session_start();
                 </div>
                 <p class = 'm-page-title'>管理者一覧</p>
                 <div class = 'l-pages' id = 'admin_list'>";
-                    for ($i=0; $i < count($members) ; $i++) {
+                    for ($i=0; $i < count($members); $i++){
                         if ($i == 0){
                             echo 
                                 "<form action = '../includes/acc_delete.inc.php?account=".$members[$i]['admin_name']."&id=".$members[$i]['admin_id']."'"."method = 'post' style = 'display:flex;align-items:center;justify-content:space-between;' onsubmit='return confirm_test(this)'>

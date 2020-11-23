@@ -303,3 +303,23 @@
     top:0;
     transform: translateY(16px);
 }
+
+.m-img_upload_label{
+    background-color: var(--side-panel-color);
+    border-radius: 20px;
+    color: var(--category-txt-passive-color);
+    cursor: pointer;
+    display: flex;
+    flex-flow:column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 10em;
+    min-width: 10em;
+    margin-left:1em;
+}
+
+/*Hiding default file input*/
+#m-admin_img_upload_input{
+    display: none;
+}

@@ -64,7 +64,7 @@ main{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 2em;
     margin: 2em 0em;
 }
@@ -73,7 +73,7 @@ main{
     align-items: center;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
 }
 
@@ -99,3 +99,30 @@ main{
     flex-wrap : nowrap;
 }
 
+.l-admin-container{
+    display: flex;
+    flex-flow:row;
+    flex-wrap:nowrap;
+}
+
+.l-texts-wrapper{
+    align-items: flex-start;
+    display: flex;
+    flex-flow:column !important;
+    flex:2;
+    text-align:left;
+}
+
+.l-texts-wrapper details{
+    width: 100%;
+}
+
+.l-input-container{
+    flex:1;
+    height: 200px;
+}
+
+/*To move submit button on left side*/
+.l-submit-btn{
+    width: 100%;
+}

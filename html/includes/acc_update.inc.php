@@ -48,7 +48,7 @@
                 }
             }
             //Comment Change
-            else if ((!empty($member) || empty($old_pwd) || empty($new_pwd)) && !empty($comment)){
+            else if ((!empty($member) || empty($old_pwd) || empty($new_pwd)) && (!empty($comment) || empty($comment))){
                 $sql = 'UPDATE admin_users SET admin_comment = :new_comment WHERE admin_id = :admin_id';
                 $st = $pdo->prepare($sql);
                 $st->bindValue(':new_comment',$comment);

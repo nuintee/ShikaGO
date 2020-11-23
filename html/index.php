@@ -147,30 +147,36 @@ session_start();
                         </form>
                     </div>
                     <div class = 'l-pages'>
-                        <div>
-                            <form action = '../includes/acc_update.inc.php?user=".$_SESSION['adid']."'"."method = 'post'>
+                        <form action = '../includes/acc_update.inc.php?user=".$_SESSION['adid']."'"."method = 'post' class = 'l-admin-container'>
+                            <div class = 'l-texts-wrapper'>
                                 <details>
                                     <summary class = 'm-summary' id = 'username-summary'>表示名の変更</summary>
                                     <input type='text' name = 'adm-name' placeholder = 'ユーザー名' value = ".$_SESSION['aid']." class = 'm-input single-line'>
                                 </details>
                                 <details>
                                     <summary class = 'm-summary' id = 'pwd-summary'>パスワードの変更</summary>
-                                    <div class = 'l-pwd-pack' style = 'display:flex;flex-flow:row;flex-direction: row;flex-wrap:nowrap;'>
-                                        <input type='password' name = 'adm-old-pwd' placeholder = '旧パスワード' class = 'm-input single-line pwd'>
-                                        <button type = 'button' class = 'm-pwd-toggle-button fas fa-eye'></button>
-                                    </div>
-                                    <div class = 'l-pwd-pack' style = 'display:flex;flex-flow:row;flex-direction: row;flex-wrap:nowrap;'>
-                                        <input type='password' name = 'adm-new-pwd' placeholder = '新パスワード' class = 'm-input single-line pwd'>
-                                        <button type = 'button' class = 'm-pwd-toggle-button fas fa-eye'></button>
-                                    </div>
+                                        <div class = 'l-pwd-pack' style = 'display:flex;flex-flow:row;flex-direction: row;flex-wrap:nowrap;'>
+                                            <input type='password' name = 'adm-old-pwd' placeholder = '旧パスワード' class = 'm-input single-line pwd'>
+                                            <button type = 'button' class = 'm-pwd-toggle-button fas fa-eye'></button>
+                                        </div>
+                                        <div class = 'l-pwd-pack' style = 'display:flex;flex-flow:row;flex-direction: row;flex-wrap:nowrap;'>
+                                            <input type='password' name = 'adm-new-pwd' placeholder = '新パスワード' class = 'm-input single-line pwd'>
+                                            <button type = 'button' class = 'm-pwd-toggle-button fas fa-eye'></button>
+                                        </div>
                                 </details>
                                 <details>
                                     <summary class = 'm-summary' id = 'comment-summary'>一言コメントの変更</summary>
-                                    <input type='text' name = 'adm-comment' placeholder = 'コメント' value = '".$res['admin_comment']."' class = 'm-input single-line'>
+                                        <input type='text' name = 'adm-comment' placeholder = 'コメント' value = '".$res['admin_comment']."' class = 'm-input single-line'>
                                 </details>
-                                <input type='submit' value = '保存' class = 'm-submit-btn white' name = 'adm-update-btn'>
-                            </form>
-                        </div>
+                                <div class = 'l-submit-btn'>
+                                    <input type='submit' value = '保存' class = 'm-submit-btn white' name = 'adm-update-btn'>
+                                </div>
+                                        </div>
+                            <label for = 'm-admin_img_upload_input' class = 'm-img_upload_label'>
+                                    <span　class = ''>画像を選択</span>
+                                    <input type = 'file' class = 'l-input-container' id = 'm-admin_img_upload_input'>
+                            </label>
+                        </form>
                     </div>
                 <p class = 'm-page-title'>記事投稿</p>
                 <div class = 'l-pages' id = 'post_page'>

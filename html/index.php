@@ -173,7 +173,7 @@ session_start();
                                 </div>
                                         </div>
                             <label for = 'm-admin_img_upload_input' class = 'm-img_upload_label'>
-                                    <span　class = ''>画像を選択</span>
+                                    <span style = 'pointer-events:none;'>画像を選択</span>
                                     <input type = 'file' class = 'l-input-container' id = 'm-admin_img_upload_input'>
                             </label>
                         </form>

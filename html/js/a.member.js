@@ -19,10 +19,10 @@ $.ajax({
         let total_member_count = document.querySelectorAll('.m-member');
         let t_member_count = document.querySelectorAll('.m-member.is-online');
         let f_member_count_len = total_member_count.length - t_member_count.length;
-        console.log('Data: '+data.length);
-        console.log('All: '+total_member_count.length);
-        console.log('Online: '+t_member_count.length);
-        console.log('Offline: '+f_member_count_len);
+        // console.log('Data: '+data.length);
+        // console.log('All: '+total_member_count.length);
+        // console.log('Online: '+t_member_count.length);
+        // console.log('Offline: '+f_member_count_len);
         if (data.length >= 1){
            for (let i = 0; i < data.length; i++){
                if (total_member_count.length != data.length){
@@ -58,7 +58,7 @@ $.ajax({
                     }
                 }
                 else{
-                    console.log('Already Updated');
+                    //console.log('Already Updated');
                     return;
                 }
            }
@@ -79,7 +79,7 @@ function check_num(data,param,search){
     //arrの中にx(0/1)が何個あるか
     let set = 0;
     for (let j = 0; j < data.length; j++){
-        console.log('data['+j+']['+param+']'+'='+data[j][param]);
+        //console.log('data['+j+']['+param+']'+'='+data[j][param]);
         if (data[j][param] == search){
             set++;
         }
@@ -87,6 +87,6 @@ function check_num(data,param,search){
             console.log("couldn't find!");
         }
     }
-    console.log('Found'+set+' '+search+'s');
+    //console.log('Found'+set+' '+search+'s');
     return set;
 }

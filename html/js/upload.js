@@ -22,7 +22,7 @@ for (let i = 0; i < upload_input.length; i++) {
     upload_input[i].addEventListener('drop',function(e){
         e.preventDefault();
         let files = e.dataTransfer.files;
-        file_input.files = files;
+        inputs[i].files = files;
         e.target.style.backgroundColor = '#1A1C27';
         e.target.style.color = '#676767';
         previewFile(files[0],e.target);

@@ -12,7 +12,7 @@ include_once './includes/online.inc.php';
                 $res = $st->fetchAll(PDO::FETCH_ASSOC);
                 for ($i = 0; $i < count($res); $i++){
                     echo "<div class = 'm-member' data-comment = '".$res[$i]['admin_comment']."'>";
-                    echo "<img class ='m-member-image' src = '../images/".$i.".jpg' alt = 'i'>";
+                    echo "<img class ='m-member-image' src = '../uploads/users/".$res[$i]['admin_image']."' alt = 'i'>";
                     echo "<h5 class = 'm-member-name'>".$res[$i]['admin_name']."</h5>";
                     echo "</div>";
                 }

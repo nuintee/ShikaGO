@@ -21,7 +21,7 @@ if(isset($_POST['pst-submit-btn'])){
         if ($file_error === 0){
             if ($file_size < 1000000){
                 $file_name_new = uniqid('', true).".".$file_actual_extension;
-                $file_destination = '../uploads/'.$file_name_new;
+                $file_destination = '../uploads/posts/'.$file_name_new;
                 $sql = 'INSERT INTO post_contents (post_title, post_description, post_image, post_author, post_date) VALUES (:pst_title, :pst_description, :pst_images, :pst_author, :pst_date)';
                 $stmt = $pdo->prepare($sql);
                 //$stmt->bindValue(':pst_url',$pst_img);
@@ -71,6 +71,7 @@ if(isset($_POST['pst-submit-btn'])){
     }
     
 }
+
 else{
     header('Location: ../php/index.php?error=invalid_access');
     exit();

@@ -22,7 +22,7 @@ session_start();
             if (count($res) >= 1 && count($res_img) >= 1){
                 for ($i= 0; $i < count($res); $i++) { 
                     echo "<div class = 'm-content-panel post'>
-                    <img src='./uploads/".$res_img[$i]['file_name']."'>
+                    <img src='./uploads/posts/".$res_img[$i]['file_name']."'>
                     <div class = 'content post'>
                         <h4 class = 'post-title'>".$res[$i]['post_title']."</h4>
                         <p class = 'content-body post'>". $res[$i]['post_description']. "</p>
@@ -147,7 +147,7 @@ session_start();
                         </form>
                     </div>
                     <div class = 'l-pages'>
-                        <form action = '../includes/acc_update.inc.php?user=".$_SESSION['adid']."'"."method = 'post' class = 'l-admin-container'>
+                        <form action = '../includes/acc_update.inc.php?user=".$_SESSION['adid']."'"."method = 'post' class = 'l-admin-container' enctype='multipart/form-data'>
                             <div class = 'l-texts-wrapper'>
                                 <details>
                                     <summary class = 'm-summary' id = 'username-summary'>表示名の変更</summary>
@@ -234,11 +234,10 @@ session_start();
                 -->
                 <p class = 'm-page-title'>管理者登録</p>
                 <div class = 'l-pages' id = 'post_page'>
-                    <form action = '../includes/acc_create.inc.php' method = 'post' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
-                        <!--<input type='file' accept = 'image/*' name = 'adm-img' class = 'adm-imgs-input' >-->
+                    <form action = '../includes/acc_create.inc.php' method = 'post' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'  enctype='multipart/form-data'>      
                         <label for = 'm-create_img_upload_input' class = 'm-img_upload_label'>
                             <span style = 'pointer-events:none;'>画像を選択</span>
-                            <input type = 'file' class = 'l-input-container' id = 'm-create_img_upload_input'>
+                            <input type = 'file' accept = 'image/*' class = 'l-input-container' id = 'm-create_img_upload_input' name = 'adm-img'>
                         </label>
                         <h4 class='post-title'>ユーザーID</h4>
                         <input type='text' name = 'adm-id' placeholder = 'ユーザーID' class = 'm-input single-line'>

@@ -31,7 +31,7 @@ for (let i = 0; i < upload_input.length; i++) {
 
 file_input.addEventListener('change',function(e){
     e.preventDefault();
-    console.log(e.target.files);
+    console.log(e.target.files[0]);
     previewFile(e.target.files[0],e.target.parentNode);
 },false);
 
@@ -39,6 +39,7 @@ console.log(inputs);
 
 for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('change', function(e){
+        console.log(inputs[i].files);
         previewFile(e.target.files[0],e.target.parentNode);
     }, false);
 }
@@ -47,7 +48,7 @@ function previewFile(file,area){
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.addEventListener('load',function(){
-        console.log(area);
+        //console.log(area);
         area.style.backgroundImage = 'url('+reader.result+')';
         area.style.backgroundSize = 'cover';
         area.style.backgroundPosition = 'center';

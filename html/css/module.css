@@ -48,7 +48,7 @@
     display: flex;
     flex-flow: row;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content: start;
     margin: 2em 1em;
     
 }
@@ -107,7 +107,7 @@
 }
 
 .content-body.post{
-    height: 200px;
+    max-height: 200px;
     overflow: hidden;
     pointer-events: none;
     text-overflow: ellipsis;

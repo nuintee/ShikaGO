@@ -35,7 +35,7 @@ modal_bg.addEventListener('click',function(e){
 //post_modal
 for (let i = 0; i < posts.length; i++) {
     posts[i].addEventListener('click',function(e){
-        if (e.target.className != 'admin_post_del_btn'){
+        if (e.target.className != 'm-admin_post_del_btn'){
             modal_post.classList.add('show');
             let parent = e.target.parentNode;
             let grand_p = parent.parentNode;

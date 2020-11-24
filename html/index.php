@@ -33,8 +33,8 @@ session_start();
                         </div>";
                         if (isset($_SESSION['aid'])){
                             echo "
-                                <div class = 'l-post-del-btn'>
-                                    <form action = './includes/post_del.inc.php?posted_id=".$res[$i]['post_id']."' method = 'post'>
+                                <div>
+                                    <form action = './includes/post_del.inc.php?posted_id=".$res[$i]['post_id']."' method = 'post' onsubmit = 'return confirm_post_del();' class = 'l-post-del-btn'>
                                         <button type = 'submit' value = 'delete' name = 'post-del-btn' class = 'm-admin_post_del_btn' ><i class='fas fa-trash-alt' style = 'color:#FF5252;pointer-events:none;object-fit:cover;'></i></button>
                                     </form>
                                 </div>";

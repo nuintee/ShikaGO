@@ -32,6 +32,7 @@ session_start();
                         </div>
                         </div>";
                         if (isset($_SESSION['aid'])){
+                            
                             echo "
                                 <div>
                                     <form action = './includes/post_del.inc.php?posted_id=".$res[$i]['post_id']."' method = 'post' onsubmit = 'return confirm_post_del();' class = 'l-post-del-btn'>

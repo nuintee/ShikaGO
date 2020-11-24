@@ -11,6 +11,7 @@
             $stmt->bindValue(':admin_name',$member);
             $stmt->bindValue(':admin_id',$member_id);
             $stmt->execute();
+
             header('Location: ../index.php?success=account_deleted');
             exit;
         }

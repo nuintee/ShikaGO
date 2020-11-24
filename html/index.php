@@ -32,9 +32,12 @@ session_start();
                         </div>
                         </div>";
                         if (isset($_SESSION['aid'])){
-                            echo "<form action = './includes/post_del.inc.php?posted_id=".$res[$i]['post_id']."' method = 'post'>
-                                    <button type = 'submit' value = 'delete' name = 'post-del-btn' class = 'admin_post_del_btn' style = 'background-color:#1A1C27;border:none;border-radius:20px;outline:none;cursor:pointer;height:50px;position:absolute;top:0;right:0;width:50px;'><i class='fas fa-trash-alt' style = 'color:#FF5252;pointer-events:none;object-fit:cover;'></i></button>
-                                </form>";
+                            echo "
+                                <div class = 'l-post-del-btn'>
+                                    <form action = './includes/post_del.inc.php?posted_id=".$res[$i]['post_id']."' method = 'post'>
+                                        <button type = 'submit' value = 'delete' name = 'post-del-btn' class = 'm-admin_post_del_btn' ><i class='fas fa-trash-alt' style = 'color:#FF5252;pointer-events:none;object-fit:cover;'></i></button>
+                                    </form>
+                                </div>";
                             }
                             echo"</div>";
                 }
@@ -181,7 +184,7 @@ session_start();
                 <p class = 'm-page-title'>記事投稿</p>
                 <div class = 'l-pages' id = 'post_page'>
                     <form action = '../includes/posting.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
-                        <label for = 'm-post_upload_input' class = 'm-img_upload_label'>
+                        <label for = 'm-post_upload_input' class = 'm-img_upload_label full'>
                             <span style = 'pointer-events:none;'>画像を選択</span>
                             <input type = 'file' accept = 'image/*' class = 'l-input-container' id = 'm-post_upload_input' name = 'pst-img'>
                         </label>

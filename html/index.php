@@ -174,14 +174,17 @@ session_start();
                                         </div>
                             <label for = 'm-admin_img_upload_input' class = 'm-img_upload_label'>
                                     <span style = 'pointer-events:none;'>画像を選択</span>
-                                    <input type = 'file' class = 'l-input-container' id = 'm-admin_img_upload_input'>
+                                    <input type = 'file' class = 'l-input-container' id = 'm-admin_img_upload_input' name = 'update_img'>
                             </label>
                         </form>
                     </div>
                 <p class = 'm-page-title'>記事投稿</p>
                 <div class = 'l-pages' id = 'post_page'>
                     <form action = '../includes/posting.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
-                        <input type='file' accept = 'image/*' name = 'pst-img' class = 'pst-imgs-input' >
+                        <label for = 'm-post_upload_input' class = 'm-img_upload_label'>
+                            <span style = 'pointer-events:none;'>画像を選択</span>
+                            <input type = 'file' accept = 'image/*' class = 'l-input-container' id = 'm-post_upload_input' name = 'pst-img'>
+                        </label>
                         <h4 class='post-title'>題名</h4>
                         <input type='text' name = 'pst-title' placeholder = '記事タイトル' class = 'm-input single-line'>
                         <h4 class='post-title'>本文</h4>

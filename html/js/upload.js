@@ -2,6 +2,7 @@
 
 let file_input = document.getElementById('m-admin_img_upload_input');
 let create_upload_input = document.getElementById('m-create_img_upload_input');
+let post_file_input = document.getElementById('m-post_upload_input');
 let inputs = document.querySelectorAll('.l-input-container');
 
 let upload_input = document.querySelectorAll('.m-img_upload_label');
@@ -29,13 +30,13 @@ for (let i = 0; i < upload_input.length; i++) {
     },false);
 }
 
+/*
 file_input.addEventListener('change',function(e){
     e.preventDefault();
     console.log(e.target.files[0]);
     previewFile(e.target.files[0],e.target.parentNode);
 },false);
-
-console.log(inputs);
+*/
 
 for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('change', function(e){

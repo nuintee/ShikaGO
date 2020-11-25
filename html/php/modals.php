@@ -16,7 +16,18 @@
             <?php
                 for ($i = 0; $i < count($links_arr); $i++){
                     if (!empty($links_arr[$i])){
-                        echo '<a href="" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-github"></i></a>';
+                        switch ($i){
+                            //番号で表示アイコン制御
+                            case 0:
+                                echo '<a href="" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-github"></i></a>';
+                                break;
+                            case 1:
+                                echo '<a href="" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-twitter"></i></a>';
+                                break;
+                            case 2:
+                                echo '<a href="" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-discord"></i></a>';
+                                break;
+                        }
                     }
                     else{
                         echo null;

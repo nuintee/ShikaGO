@@ -199,7 +199,7 @@ session_start();
                         <h4 class='post-title'>題名</h4>
                         <input type='text' name = 'pst-title' placeholder = '記事タイトル' class = 'm-input single-line'>
                         <h4 class='post-title'>本文</h4>
-                        <textarea name='pst-description'　placeholder = '記事本文' id='' cols='30' rows='10' class = 'm-input single-line'></textarea>
+                        <textarea name='pst-description'　placeholder = '記事本文' id='' cols='30' rows='10' class = 'm-input single-line' oninput = 'sanitize(this);'></textarea>
                         <input type='submit' value='投稿' name = 'pst-submit-btn' style = 'cursor:pointer' class = 'm-submit-btn'>
                     </form>
                 </div>

@@ -31,6 +31,7 @@
             <script src = "../js/password.js" defer = "defer"></script>
             <script src = "../js/a.member.js" defer = "defer"></script>
             <script src = "../js/upload.js" defer = "defer"></script>
+            <script src = "../js/sanitize.js" defer = "defer"></script>
             <!--<script src = "../js/a.feed.js" defer = "defer"></script>-->
         </head>
         <body>

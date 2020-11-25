@@ -128,3 +128,10 @@ main{
     width: 100%;
 }
 
+.post-date{
+    margin-right: 0.5em;
+}
+
+.post-author{
+    margin-left:0.5em;
+}

@@ -6,7 +6,7 @@
     <div class = "m-modal-main">
         <div class ="modal-top">
             <img src="./images/robot.jpg" alt="member-profile">
-            <h4>イッシー</h4>
+            <h4>Boy</h4>
             <a href="https://www.youtube.com/watch?v=XaWWmHnnotg" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-github"></i></a>
         </div>
         <div class = "modal-txt">

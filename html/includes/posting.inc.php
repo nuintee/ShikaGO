@@ -19,7 +19,7 @@ if(isset($_POST['pst-submit-btn'])){
 
         $allowed = array('jpg','jpeg','png','HEIC');
         if ($file_error === 0){
-            if ($file_size < 1000000){
+            if ($file_size < 2000000){
                 $file_name_new = uniqid('', true).".".$file_actual_extension;
                 $file_destination = '../uploads/posts/'.$file_name_new;
                 $sql = 'INSERT INTO post_contents (post_title, post_description, post_image, post_author, post_date) VALUES (:pst_title, :pst_description, :pst_images, :pst_author, :pst_date)';

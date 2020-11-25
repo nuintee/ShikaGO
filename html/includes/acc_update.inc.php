@@ -9,7 +9,76 @@
     $new_pwd = $_POST['adm-new-pwd'];
     $hashed_pwd = password_hash($new_pwd,PASSWORD_DEFAULT);
     $comment = $_POST['adm-comment'];
+
     $image = $_FILES['update_img'];
+
+    $twitter = $_POST['adm-twitter'];
+    $github = $_POST['adm-github'];
+    $discord = $_POST['adm-discord'];
+    $total = 0;
+
+    if (isset($twitter) || isset($github) || isset($discord)){
+
+        $links_arr = array($github,$twitter,$discord);
+        for ($i = 0; $i < count($links_arr); $i ++){
+            /*
+            if (empty($links_arr[$i])){
+                //空白数計算
+                $total++;
+                switch ($total){
+                    case count($links_arr):
+                        header('Location: ../index.php');
+                    break;
+                    default:
+                        //空白のDB挿入
+                        if ($i == 0){
+
+                        }
+                        elseif ($i == 1){
+
+                        }
+                        elseif ($i == 2){
+
+                        }
+
+                    break;
+                }
+            }
+            */
+            if (filter_var($links_arr[$i],FILTER_VALIDATE_URL) || empty($links_arr[$i])){
+                switch ($i){
+                    case 0:
+                        // echo 'github<br>';
+                        $l_st = $pdo->prepare('UPDATE admin_users SET admin_github = :link WHERE admin_id = :current_id');
+                        $l_st->bindValue(':current_id', $current_user_id);
+                        $l_st->bindValue(':link',$github);
+                        $l_st->execute(); 
+                        break;
+                    case 1:
+                        // echo 'twitter<br>';
+                        $l_st = $pdo->prepare('UPDATE admin_users SET admin_twitter = :link WHERE admin_id = :current_id');
+                        $l_st->bindValue(':current_id', $current_user_id);
+                        $l_st->bindValue(':link',$twitter);
+                        $l_st->execute(); 
+                        break;
+                    case 2:
+                        // echo 'discord<br>';
+                        $l_st = $pdo->prepare('UPDATE admin_users SET admin_discord = :link WHERE admin_id = :current_id');
+                        $l_st->bindValue(':current_id', $current_user_id);
+                        $l_st->bindValue(':link',$discord);
+                        $l_st->execute(); 
+                        break;
+                }
+                header('Location: ../index.php?updated_links');
+            }
+            else {
+                header('Location: ../index.php?invalid=links');
+            }
+        }
+    }
+    else{
+        header('Location: ../index.php?error=nothing_was_posted');
+    }
 
     if (isset($_POST['adm-update-btn'])){
         try{
@@ -18,6 +87,7 @@
             $stmt->execute();
             $res = $stmt->fetch();
 
+            /*
             //Name Change
             if (!empty($member) && (empty($old_pwd) || empty($new_pwd)) && empty($comment) && empty($image)){
                 $sql = 'UPDATE admin_users SET admin_name = :new_admin_name WHERE admin_id = :admin_id';
@@ -90,6 +160,19 @@
                     header('Location: ../index.php?post=invalid_file');
                     exit();
                 }
+            }
+            */
+            //Links Update
+            if (empty($github)){
+                // $st = $pdo->prepare('UPDATE admin_users SET :serv = :link WHERE :admin_id = :current_id');
+                // $st->bindValue(':admin_id',$current_user_id);
+                echo 'hello github';
+            }
+            else if (empty($twitter)){
+                echo 'twitter';
+            }
+            else if (empty($discord)){
+                echo 'discord';
             }
             //All Update at once;
             else if (!empty($member) && !empty($old_pwd) && !empty($new_pwd) && !empty($comment) && !empty($image)){

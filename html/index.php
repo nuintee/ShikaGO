@@ -174,9 +174,9 @@ session_start();
                                 </details>
                                 <details>
                                     <summary class = 'm-summary' id = 'link-summary'>関連リンク</summary>
-                                        <input type='text' name = 'adm-github' placeholder = 'Github' class = 'm-input single-line'>
-                                        <input type='text' name = 'adm-twitter' placeholder = 'Twitter' class = 'm-input single-line'>
-                                        <input type='text' name = 'adm-discord' placeholder = 'Discord' class = 'm-input single-line'>
+                                        <input type='text' name = 'adm-github' placeholder = 'Github' value = '".$res['admin_github']."' class = 'm-input single-line'>
+                                        <input type='text' name = 'adm-twitter' placeholder = 'Twitter' value = '".$res['admin_twitter']."' class = 'm-input single-line'>
+                                        <input type='text' name = 'adm-discord' placeholder = 'Discord' value = '".$res['admin_discord']."' class = 'm-input single-line'>
                                         
                                 </details>
                                 <div class = 'l-submit-btn'>

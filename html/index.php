@@ -145,7 +145,7 @@ session_start();
                     $res = $st->fetch(PDO::FETCH_ASSOC);
                     echo "
                     <div style = 'display:flex;flex-flow:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;'>
-                        <p class = 'm-page-title'>".$_SESSION['aid']."さん、ようこそ</p>
+                        <p class = 'm-page-title'>".$res['admin_name']."さん、ようこそ</p>
                         <form action='../includes/logout.inc.php' method = 'post'>
                             <input type='submit' value = 'ログアウト' class = 'm-submit-btn white'>
                         </form>
@@ -155,7 +155,7 @@ session_start();
                             <div class = 'l-texts-wrapper'>
                                 <details>
                                     <summary class = 'm-summary' id = 'username-summary'>表示名の変更</summary>
-                                    <input type='text' name = 'adm-name' placeholder = 'ユーザー名' value = ".$_SESSION['aid']." class = 'm-input single-line'>
+                                    <input type='text' name = 'adm-name' placeholder = 'ユーザー名' value = ".$res['admin_name']." class = 'm-input single-line'>
                                 </details>
                                 <details>
                                     <summary class = 'm-summary' id = 'pwd-summary'>パスワードの変更</summary>

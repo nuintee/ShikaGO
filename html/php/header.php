@@ -6,6 +6,7 @@
     }else{
         echo
     */
+    include_once './includes/conn.inc.php';
 ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -49,11 +50,15 @@
                     <hr color = "2C2F3E">
                     <footer class = "l-bottom-category">
                         <?php 
+                            $st = $pdo->prepare('SELECT * FROM admin_users WHERE admin_id = :admin_id');
+                            $st->bindValue(':admin_id',$_SESSION['adid']);
+                            $st->execute();
+                            $res = $st->fetch();
                             if (!isset($_SESSION['aid'])){
                                 echo "<button class = 'm-category-btn' data-index = 'admin'><i class='fas fa-lock'></i>管理者</button>";
                             }
                             else{
-                                echo "<button class = 'm-category-btn' data-index = 'admin'><i class='fas fa-lock-open'></i>".$_SESSION['aid']."</button>";
+                                echo "<button class = 'm-category-btn' data-index = 'admin'><i class='fas fa-lock-open'></i>".$res['admin_name']."</button>";
                             }
                         ?>
                     </footer>

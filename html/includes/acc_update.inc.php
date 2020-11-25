@@ -22,46 +22,6 @@
     $st->execute();
     $admin = $st->fetch();
 
-    /*
-    if (isset($twitter) || isset($github) || isset($discord)){
-        $links_arr = array($github,$twitter,$discord);
-        for ($i = 0; $i < count($links_arr); $i ++){
-            if (filter_var($links_arr[$i],FILTER_VALIDATE_URL) || empty($links_arr[$i])){
-                switch ($i){
-                    case 0:
-                        // echo 'github<br>';
-                        $l_st = $pdo->prepare('UPDATE admin_users SET admin_github = :link WHERE admin_id = :current_id');
-                        $l_st->bindValue(':current_id', $current_user_id);
-                        $l_st->bindValue(':link',$github);
-                        $l_st->execute(); 
-                        break;
-                    case 1:
-                        // echo 'twitter<br>';
-                        $l_st = $pdo->prepare('UPDATE admin_users SET admin_twitter = :link WHERE admin_id = :current_id');
-                        $l_st->bindValue(':current_id', $current_user_id);
-                        $l_st->bindValue(':link',$twitter);
-                        $l_st->execute(); 
-                        break;
-                    case 2:
-                        // echo 'discord<br>';
-                        $l_st = $pdo->prepare('UPDATE admin_users SET admin_discord = :link WHERE admin_id = :current_id');
-                        $l_st->bindValue(':current_id', $current_user_id);
-                        $l_st->bindValue(':link',$discord);
-                        $l_st->execute(); 
-                        break;
-                }
-                header('Location: ../index.php?updated_links');
-            }
-            else {
-                header('Location: ../index.php?invalid=links');
-            }
-        }
-    }
-    else{
-        header('Location: ../index.php?error=nothing_was_posted');
-    }
-    */
-
     if (isset($_POST['adm-update-btn'])){
         $update_arr = array($member,$old_pwd,$new_pwd,$comment,$image,$github,$twitter,$discord);
         for ($i = 0; $i < count($update_arr); $i++){
@@ -99,8 +59,38 @@
                 $stmt->execute();
             }
             else if ($i == 4){
-                //Image
-                //echo $i.' : '.$update_arr[$i].'<br>';
+                //Image Handling
+                $file_name = $image['name'];
+                $file_tmp_name = $image['tmp_name'];
+                $file_size = $image['size'];
+                $file_error = $image['error'];
+                $file_type= $image['type'];
+                $file_extension = explode('.',$file_name);
+                $file_actual_extension = strtolower(end($file_extension));
+                
+                $allowed = array('jpg','jpeg','png','HEIC');
+                if ($file_error === 0){
+                    if ($file_size < 2000000){
+                        $file_name_new = uniqid('', true).".".$file_actual_extension;
+                        $file_destination = '../uploads/users/'.$file_name_new;
+                        $sql = 'UPDATE admin_users SET admin_image = :new_image WHERE admin_id = :admin_id';
+                        $st = $pdo->prepare($sql);
+                        $st->bindValue(':admin_id',$current_user_id);
+                        $st->bindValue(':new_image',$file_name_new);
+                        $st->execute();
+                        move_uploaded_file($file_tmp_name,$file_destination);
+                        header("Location: ../index.php?status=posted");
+                        exit();
+                    }
+                    else{
+                        header('Location: ../index.php?post=invalid_file_size&size='.$file_size);
+                        exit();
+                    }
+                }
+                else {
+                    header('Location: ../index.php?post=invalid_file');
+                    exit();
+                }
             }
             else if ($i == 5 || $i == 6 || $i == 7){
                 //Links
@@ -187,38 +177,7 @@
             }
             //Image Update
             else if (!empty($image)){
-                //Image Handling
-                $file_name = $image['name'];
-                $file_tmp_name = $image['tmp_name'];
-                $file_size = $image['size'];
-                $file_error = $image['error'];
-                $file_type= $image['type'];
-                $file_extension = explode('.',$file_name);
-                $file_actual_extension = strtolower(end($file_extension));
-                
-                $allowed = array('jpg','jpeg','png','HEIC');
-                if ($file_error === 0){
-                    if ($file_size < 2000000){
-                        $file_name_new = uniqid('', true).".".$file_actual_extension;
-                        $file_destination = '../uploads/users/'.$file_name_new;
-                        $sql = 'UPDATE admin_users SET admin_image = :new_image WHERE admin_id = :admin_id';
-                        $st = $pdo->prepare($sql);
-                        $st->bindValue(':admin_id',$current_user_id);
-                        $st->bindValue(':new_image',$file_name_new);
-                        $st->execute();
-                        move_uploaded_file($file_tmp_name,$file_destination);
-                        header("Location: ../index.php?status=posted");
-                        exit();
-                    }
-                    else{
-                        header('Location: ../index.php?post=invalid_file_size&size='.$file_size);
-                        exit();
-                    }
-                }
-                else {
-                    header('Location: ../index.php?post=invalid_file');
-                    exit();
-                }
+                c
             }
             //Links Update
             

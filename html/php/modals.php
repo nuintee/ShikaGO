@@ -6,8 +6,10 @@
     <div class = "m-modal-main">
         <div class ="modal-top">
             <img src="./images/robot.jpg" alt="member-profile">
-            <h4>Boy</h4>
-            <a href="https://www.youtube.com/watch?v=XaWWmHnnotg" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-github"></i></a>
+            <h4></h4>
+            <a href="" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-github"></i></a>
+            <a href="" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-twitter"></i></a>
+            <a href="" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-discord"></i></a>
         </div>
         <div class = "modal-txt">
             <p></p>

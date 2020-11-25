@@ -103,6 +103,7 @@ main{
     align-items: center;
     display: flex;
     flex-flow:row;
+    align-items: flex-start;
     flex-wrap:nowrap;
 }
 

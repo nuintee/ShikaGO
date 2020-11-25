@@ -172,10 +172,17 @@ session_start();
                                     <summary class = 'm-summary' id = 'comment-summary'>一言コメントの変更</summary>
                                         <input type='text' name = 'adm-comment' placeholder = 'コメント' value = '".$res['admin_comment']."' class = 'm-input single-line'>
                                 </details>
+                                <details>
+                                    <summary class = 'm-summary' id = 'link-summary'>関連リンク</summary>
+                                        <input type='text' name = 'adm-github' placeholder = 'Github' class = 'm-input single-line'>
+                                        <input type='text' name = 'adm-twitter' placeholder = 'Twitter' class = 'm-input single-line'>
+                                        <input type='text' name = 'adm-discord' placeholder = 'Discord' class = 'm-input single-line'>
+                                        
+                                </details>
                                 <div class = 'l-submit-btn'>
                                     <input type='submit' value = '保存' class = 'm-submit-btn white' name = 'adm-update-btn'>
                                 </div>
-                                        </div>
+                            </div>
                             <label for = 'm-admin_img_upload_input' class = 'm-img_upload_label'>
                                     <span style = 'pointer-events:none;'>画像を選択</span>
                                     <input type = 'file' class = 'l-input-container' id = 'm-admin_img_upload_input' name = 'update_img'>

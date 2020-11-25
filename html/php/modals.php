@@ -1,15 +1,28 @@
 <?php 
     session_start();
     include_once './includes/conn.inc.php';
+
+    $st = $pdo->prepare('SELECT * FROM admin_users WHERE admin_id = :admin_id');
+    $st->bindValue(':admin_id',$_SESSION['adid']);
+    $st->execute();
+    $res = $st->fetch();
+    $links_arr = array($res['admin_github'],$res['admin_twitter'],$res['admin_discord']);
 ?>
 <div class ="m-modal-bg member">
     <div class = "m-modal-main">
         <div class ="modal-top">
             <img src="./images/robot.jpg" alt="member-profile">
             <h4></h4>
-            <a href="" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-github"></i></a>
-            <a href="" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-twitter"></i></a>
-            <a href="" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-discord"></i></a>
+            <?php
+                for ($i = 0; $i < count($links_arr); $i++){
+                    if (!empty($links_arr[$i])){
+                        echo '<a href="" target="_blank" style="color: #FFF; font-size: 1.5em;"><i class="fab fa-github"></i></a>';
+                    }
+                    else{
+                        echo null;
+                    }
+                }
+            ?>
         </div>
         <div class = "modal-txt">
             <p></p>

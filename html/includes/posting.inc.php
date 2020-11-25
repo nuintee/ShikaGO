@@ -3,8 +3,8 @@ session_start();
 include_once 'conn.inc.php';
 
 $pst_img = $_FILES['pst-img'];
-$pst_title = $_POST['pst-title'];
-$pst_description = $_POST['pst-description'];
+$pst_title = htmlspecialchars($_POST['pst-title'],ENT_QUOTES,'UTF-8');
+$pst_description = htmlspecialchars($_POST['pst-description'],ENT_QUOTES,'UTF-8');
 
 if(isset($_POST['pst-submit-btn'])){
     if (!empty($pst_img) && !empty($pst_title) && !empty($pst_description)){

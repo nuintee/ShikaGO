@@ -26,6 +26,18 @@
 /*PC*/
 @media screen and (min-width:1180px){
 
+    .m-member{
+        border-radius: 20px 0 0 20px;
+        box-sizing: border-box;
+        align-items: center;
+        color:#676767;
+        cursor: pointer;
+        display: flex;
+        margin: 1em 0;
+        padding: 0 1em;
+        width:100%;
+    }
+
     .m-page-title{
         color: var(--page-title-color);
         font-family: 'Noto Sans JP', sans-serif;
@@ -220,7 +232,7 @@
         cursor: pointer;
         display: flex;
         margin: 1em 0;
-        padding: 0 1em;
+        padding: 0 2em 0 0.75em;
         width:100%;
         height: 4rem;
     }
@@ -230,12 +242,13 @@
         object-fit: cover;
         object-position: top;
         height: 2em;
-        margin-right: 1em;
+        margin-right: 1.5em;
         pointer-events: none;
         width: 2em;
     }
     
     .m-member-name{
+        display:none;
         pointer-events: none;
     }
 
@@ -432,18 +445,6 @@
 .content.post{
     max-height: 300px;
     flex:1;
-}
-
-.m-member{
-    border-radius: 20px 0 0 20px;
-    box-sizing: border-box;
-    align-items: center;
-    color:#676767;
-    cursor: pointer;
-    display: flex;
-    margin: 1em 0;
-    padding: 0 1em;
-    width:100%;
 }
 
 .m-member-image{

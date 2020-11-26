@@ -248,9 +248,13 @@
     }
     
     .m-member-name{
-        display:none;
         pointer-events: none;
     }
+
+    .m-member h5{
+        display: none;
+    }
+    
 
     .m-content-panel{
         align-items: left;

@@ -61,6 +61,14 @@
     .l-status{
         padding-left: 2em;
     }
+
+    .l-admin-container{
+        align-items: center;
+        display: flex;
+        flex-flow:row;
+        align-items: flex-start;
+        flex-wrap:nowrap;
+    }
 }
 
 /*SP*/
@@ -110,6 +118,34 @@
     .l-status{
         padding-left: 1em;
     }
+
+    .l-admin-container{
+        align-items: center;
+        display: flex;
+        flex-flow:row;
+        align-items: flex-start;
+        flex-wrap:nowrap;
+    }
+}
+
+/*Only For Admin Image Uploader*/
+@media screen and (max-width:610px){
+    .l-admin-container{
+        align-items: center;
+        display: flex;
+        flex-flow:column-reverse;
+        align-items: flex-start;
+        flex-wrap:nowrap;
+    }
+}
+
+/*Only For Admin List*/
+@media screen and (max-width:380px){
+    #admin_list form{
+        display: flex;
+        flex-flow: column;
+        flex-wrap: wrap;
+    }
 }
 
 .l-pages{
@@ -150,14 +186,6 @@
     flex-flow : row;
     flex-direction : row;
     flex-wrap : nowrap;
-}
-
-.l-admin-container{
-    align-items: center;
-    display: flex;
-    flex-flow:row;
-    align-items: flex-start;
-    flex-wrap:nowrap;
 }
 
 .l-texts-wrapper{

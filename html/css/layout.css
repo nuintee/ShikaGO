@@ -128,7 +128,7 @@
     }
 }
 
-/*Only For Admin Image Uploader*/
+/*Middle Size*/
 @media screen and (max-width:610px){
     .l-admin-container{
         align-items: center;
@@ -136,6 +136,11 @@
         flex-flow:column-reverse;
         align-items: flex-start;
         flex-wrap:nowrap;
+    }
+
+    /*Addin Space Bwtween UserID and Deletion Button*/
+    #admin_list form div{
+        margin-right: 1em;
     }
 }
 

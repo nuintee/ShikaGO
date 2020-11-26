@@ -29,6 +29,39 @@
     margin: 0;
 }
 
+/*SP*/
+@media screen and (max-width:1179px){
+    .l-top-title h1{
+        display: none;
+    }
+    
+    .m-category-btn{
+        background-color: transparent;
+        border:none;
+        border-radius: 0px 15px 15px 0;
+        color:var(--category-txt-passive-color);
+        cursor: pointer;
+        font-size: 0em;
+        height:3rem;
+        outline: none;
+        padding: 0 1.5em 0 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .m-category-btn .fas{
+        font-size:1.25rem;
+        margin-left: 15px;
+        pointer-events: none;
+    }
+
+    .m-page-title{
+        color: var(--page-title-color);
+        font-family: 'Noto Sans JP', sans-serif;
+        margin: 0;
+    }
+}
+
 #m-member-display{
     margin:1em;
 }

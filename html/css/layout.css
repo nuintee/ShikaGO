@@ -1,20 +1,7 @@
 
-.l-top-title{
-    align-items: center;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 16px;
-    padding-left: 2em;
-}
 
 .l-top-title h1{
     margin: 1em;
-}
-
-.l-top-title img{
-    border-radius: 5px;
-    height:2.5em;
-    width: 2.5em;
 }
 
 .l-main{
@@ -26,34 +13,97 @@
     width: 100%;
 }
 
-.l-left-bar{
-    background:var(--side-panel-color);
-    flex:1;
+.l-top-title img{
+    border-radius: 5px;
+    height:2.5em;
+    width: 2.5em;
 }
 
-.l-category{
-    padding: 0 2em 0 0;
+@media screen and (min-width:1180px){
+    
+    .l-top-title{
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 16px;
+        padding-left: 2em;
+    }
+
+    .l-left-bar{
+        background:var(--side-panel-color);
+        flex:1;
+    }
+
+    main{
+        background-color:var(--main-color);
+        flex:4;
+        overflow-y:scroll;
+        padding: 3em;
+        margin-bottom: 2em;
+    }
+
+    .l-right-bar{
+        background-color:var(--side-panel-color);
+        color: var(--category-txt-passive-color);
+        flex:1;
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    .l-category{
+        padding: 0 2em 0 0;
+    }
+    
+    .l-category li{
+        list-style: none;
+        margin: 1em 0;
+    }
 }
 
-.l-category li{
-    list-style: none;
-    margin: 1em 0;
+/*SP*/
+@media screen and (max-width:1179px){
+
+    .l-top-title{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .l-top-title img{
+        border-radius: 5px;
+        height:2.5em;
+        width: 2.5em;
+        margin: 28px 0 20px 0; 
+    }
+
+    .l-left-bar{
+        background-color:var(--side-panel-color);
+        width: 5em;
+    }
+    main{
+        background-color:var(--main-color);
+        flex:5;
+        overflow-y:scroll;
+        padding: 3em;
+        margin-bottom: 2em;
+    }
+
+    .l-right-bar{
+        background-color:var(--side-panel-color);
+        color: var(--category-txt-passive-color);
+        width: 5em;
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    .l-category{
+        padding: 0 1em 0 0;
+    }
+
+    .l-category li{
+        list-style: none;
+        margin: 1em 0;
+    }
 }
 
-main{
-    background-color:var(--main-color);
-    flex:4;
-    overflow-y:scroll;
-    padding: 3em;
-    margin-bottom: 2em;
-}
-
-.l-right-bar{
-    background-color:var(--side-panel-color);
-    color: var(--category-txt-passive-color);
-    flex:1;
-    font-family: 'Noto Sans JP', sans-serif;
-}
 
 .l-status{
     padding-left: 2em;

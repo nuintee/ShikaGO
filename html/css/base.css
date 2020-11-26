@@ -72,9 +72,23 @@ html,body{
     box-sizing: border-box;
 }
 
-body{
-    background-color: var(--main-color);
-    font-family: 'Poppins', sans-serif;
-    position: fixed;
-    overflow: auto;
+/*SP*/
+@media screen and (max-width:1179px){
+    body{
+        background-color: var(--main-color);
+        font-family: 'Poppins', sans-serif;
+        position: fixed;
+        overflow: auto;
+        font-size: 12px;
+    }
+}
+
+/*PC*/
+@media screen and (min-width:1180px){
+    body{
+        background-color: var(--main-color);
+        font-family: 'Poppins', sans-serif;
+        position: fixed;
+        overflow: auto;
+    }
 }

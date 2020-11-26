@@ -115,7 +115,7 @@ session_start();
                                 該当映画の評価を行う (1 - 10点)<br>要TMDBアカウント<br>*TMDB API使用
                                 </p>
                                 <a href = "paypal.com" class = "m-submit-btn white" style = "text-decoration:none;"><i class="fab fa-paypal" style = "margin-right:1em;color:light-blue"></i>ドネート (Paypal.Me使用)</a>
-                                <input type="submit" class = "m-submit-btn dis" value = "サーバーに招待する [現在不可]">
+                                <input type="submit" class = "m-submit-btn dis" value = "サーバーへ招待(準備中)">
                             </div>
                         </div>
                    </div>

@@ -48,9 +48,19 @@
     color: var(--shika-color);
 }
 
-.m-submit-btn.dis{
-    background-color: var(--category-txt-passive-color) ;
-    cursor: default;
+@media screen and (max-width:1179px){
+    .m-submit-btn.dis{
+        background-color: var(--category-txt-passive-color) ;
+        cursor: default;
+    }
+}
+
+@media screen and (min-width:1180px){
+
+    .m-submit-btn.dis{
+        background-color: var(--category-txt-passive-color) ;
+        cursor: default;
+    }
 }
 
 .m-modal-panel::-webkit-scrollbar {

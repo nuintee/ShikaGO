@@ -81,6 +81,7 @@ html,body{
         position: fixed;
         overflow: auto;
         font-size: 0.75rem;
+        touch-action: manipulation;
     }
 }
 
@@ -91,5 +92,6 @@ html,body{
         font-family: 'Poppins', sans-serif;
         position: fixed;
         overflow: auto;
+        touch-action: manipulation;
     }
 }

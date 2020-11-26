@@ -111,6 +111,22 @@
         background-color: #FF5252;
         color:#FFF;
     }
+
+    .m-pwd-toggle-button.fas{
+        background-color: var(--category-passive-color);
+        border: none;
+        border-radius: 0 20px 20px 0;
+        color: var(--category-txt-passive-color);
+        cursor: pointer;
+        font-size: 1em;
+        outline: none;
+        position: absolute;
+        height: calc(100% - 32px);
+        width:50px;
+        right:0;
+        top:0;
+        transform: translateY(16px);
+    }
 }
 
 /*SP*/
@@ -260,6 +276,7 @@
         outline: none;
         padding: 1em;
         font-weight: bold;
+        font-size: 12px;
     }
     
     .m-submit-btn.white{
@@ -269,6 +286,22 @@
     .m-submit-btn.red{
         background-color: #FF5252;
         color:#FFF;
+    }
+
+    .m-pwd-toggle-button.fas{
+        background-color: var(--category-passive-color);
+        border: none;
+        border-radius: 0 20px 20px 0;
+        color: var(--category-txt-passive-color);
+        cursor: pointer;
+        font-size: 1.25em;
+        outline: none;
+        position: absolute;
+        height: calc(100% - 24px);
+        width:50px;
+        right:0;
+        top:0;
+        transform: translateY(12px);
     }
 }
 
@@ -455,22 +488,6 @@
 
 .m-summary::-webkit-details-marker{
     display: none;
-}
-
-.m-pwd-toggle-button.fas{
-    background-color: var(--category-passive-color);
-    border: none;
-    border-radius: 0 20px 20px 0;
-    color: var(--category-txt-passive-color);
-    cursor: pointer;
-    font-size: 1em;
-    outline: none;
-    position: absolute;
-    height: calc(100% - 32px);
-    width:50px;
-    right:0;
-    top:0;
-    transform: translateY(16px);
 }
 
 .m-img_upload_label{

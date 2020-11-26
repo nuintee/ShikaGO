@@ -127,6 +127,17 @@
         top:0;
         transform: translateY(16px);
     }
+
+    .m-admin_post_del_btn{
+        background-color:#1A1C27;
+        border:none;
+        border-radius:20px;
+        outline:none;
+        cursor:pointer;
+        height:50px;
+        width: 50px;
+        margin-right: 2em;
+    }
 }
 
 /*SP*/
@@ -302,6 +313,17 @@
         right:0;
         top:0;
         transform: translateY(12px);
+    }
+
+    .m-admin_post_del_btn{
+        background-color:#1A1C27;
+        border:none;
+        border-radius:20px;
+        outline:none;
+        cursor:pointer;
+        height:50px;
+        width: 50px;
+        margin: 0 1em 1em 1em;
     }
 }
 
@@ -520,17 +542,6 @@
     background:contain center no-repeat;
     width: 100%;
     margin:unset;
-}
-
-.m-admin_post_del_btn{
-    background-color:#1A1C27;
-    border:none;
-    border-radius:20px;
-    outline:none;
-    cursor:pointer;
-    height:50px;
-    width: 50px;
-    margin-right: 2em;
 }
 
 textarea{

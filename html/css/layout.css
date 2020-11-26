@@ -57,6 +57,10 @@
         list-style: none;
         margin: 1em 0;
     }
+
+    .l-status{
+        padding-left: 2em;
+    }
 }
 
 /*SP*/
@@ -83,7 +87,7 @@
         background-color:var(--main-color);
         flex:5;
         overflow-y:scroll;
-        padding: 3em;
+        padding: 1.5em;
         margin-bottom: 2em;
     }
 
@@ -102,11 +106,10 @@
         list-style: none;
         margin: 1em 0;
     }
-}
 
-
-.l-status{
-    padding-left: 2em;
+    .l-status{
+        padding-left: 1em;
+    }
 }
 
 .l-pages{

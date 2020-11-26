@@ -23,7 +23,7 @@ if (isset($_POST['post-del-btn'])){
         $st_i->bindValue(':fid_del',$pid_del);
         $st_i->execute();
         //Uploadsからも削除
-        unlink('../uploads/posts/'.$res_find['file_name']);
+        //unlink('../uploads/posts/'.$res_find['file_name']);
         header('Location: ../index.php?post=deleted');
     }
     else{

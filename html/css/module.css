@@ -204,6 +204,7 @@
         width: 100%;
     }
     .content.post{
+        box-sizing: border-box;
         margin:0;
         max-height: 300px;
         padding: 1em;

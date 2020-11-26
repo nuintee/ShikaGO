@@ -90,6 +90,7 @@
     .l-left-bar{
         background-color:var(--side-panel-color);
         width: 5em;
+        touch-action: manipulation;
     }
     main{
         background-color:var(--main-color);
@@ -97,6 +98,7 @@
         overflow-y:scroll;
         padding: 1.5em;
         margin-bottom: 2em;
+        touch-action: manipulation;
     }
 
     .l-right-bar{
@@ -104,6 +106,7 @@
         color: var(--category-txt-passive-color);
         width: 5em;
         font-family: 'Noto Sans JP', sans-serif;
+        touch-action: manipulation;
     }
 
     .l-category{

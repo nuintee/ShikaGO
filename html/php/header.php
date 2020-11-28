@@ -16,14 +16,14 @@
             <meta name="apple-mobile-web-app-capable" content="yes">
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
             <meta http-equiv="Cache-Control" content="no-cache">
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+            <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
             <link rel="stylesheet" href="./css/base.css">
             <link rel="stylesheet" href="./css/layout.css">
             <link rel="stylesheet" href="./css/module.css">
             <link rel="stylesheet" href="./css/state.css">
             <link rel="icon" href="./images/deer.jpg">
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">                    
-            <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"> -->
             <title>ShikaGO</title>
             <script src="./js/tabs.js" defer = "defer"></script>
             <script src="./js/modals.js" defer = "defer"></script>

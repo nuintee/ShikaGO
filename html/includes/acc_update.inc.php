@@ -77,6 +77,13 @@
                         $st->bindValue(':admin_id',$current_user_id);
                         $st->bindValue(':new_image',$file_name_new);
                         $st->execute();
+                        if (file_exists('../uploads/users/'.$admin['admin_image'])){
+                            unlink('../uploads/users/'.$admin['admin_image']);
+                        }
+                        else{
+                            header("Location: ../index.php?error=failed_to_updateImage");
+                            exit;
+                        }
                         move_uploaded_file($file_tmp_name,$file_destination);
                         header("Location: ../index.php?status=posted");
                         exit();

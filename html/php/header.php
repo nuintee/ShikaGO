@@ -1,11 +1,5 @@
 <?php
     session_start();
-    /*
-    if (isset($_SESSION['aid'])){
-        header('Location: ./php/admin.php?user='.$_SESSION['aid']);
-    }else{
-        echo
-    */
     include_once './includes/conn.inc.php';
 ?>
         <!DOCTYPE html>
@@ -34,7 +28,6 @@
             <script src = "../js/a.member.js" defer = "defer"></script>
             <script src = "../js/upload.js" defer = "defer"></script>
             <script src = "../js/sanitize.js" defer = "defer"></script>
-            <!--<script src = "../js/a.feed.js" defer = "defer"></script>-->
         </head>
         <body>
             <div class = "l-main">

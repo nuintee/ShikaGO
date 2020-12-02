@@ -37,11 +37,6 @@
         </div>
         <div class = "modal-txt">
             <p></p>
-            <!--
-            <form action="./includes/send-message.php" method = "post">
-                <input type="text" class = "m-input single-line" placeholder = "メッセージ送信" name = "user-message-input">
-            </form>
-            -->
         </div>
     </div>
 </div>

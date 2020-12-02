@@ -6,19 +6,20 @@
         try{
             $member = $_GET['account'];
             $member_id = $_GET['id'];
-            $sql = 'DELETE FROM admin_users WHERE admin_name = :admin_name AND admin_id = :admin_id';
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindValue(':admin_name',$member);
-            $stmt->bindValue(':admin_id',$member_id);
-            $stmt->execute();
             //Get Image Directory
             $st = $pdo->prepare('SELECT * FROM admin_users WHERE admin_id = :admin_id');
             $st->bindValue(':admin_id',$member_id);
+            $st->execute();
             $res = $st->fetch(PDO::FETCH_ASSOC);
             $image_dir = $res['admin_image'];
 
+
             if (file_exists('../uploads/users/'.$image_dir)){
                 unlink('../uploads/users/'.$image_dir);
+                $sql = 'DELETE FROM admin_users WHERE admin_id = :admin_id';
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindValue(':admin_id',$member_id);
+                $stmt->execute();
             }
             else{
                 header('Location: ../index.php?error=failed_to_delete_account');

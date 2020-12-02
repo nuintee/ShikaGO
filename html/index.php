@@ -9,20 +9,21 @@ session_start();
 <div class = "m-post-panels is-active" data-index = "1">
     <p class = "m-page-title">投稿一覧</p>
     <?php 
-    $st = $pdo->query('SELECT * FROM post_contents');
-    $st_img = $pdo->query('SELECT * FROM post_images');
+    $st = $pdo->prepare('SELECT * FROM post_contents');
+    $st->execute();
+    $res = $st->fetchAll();
+    //$st_img = $pdo->query('SELECT * FROM post_images');
     //Show Users
     $st2 = $pdo->prepare('SELECT * FROM admin_users ORDER BY admin_name = :a_i DESC, admin_name ASC');
     $st2->bindValue(':a_i',$_SESSION['aid']);
     $st2->execute();
     $members = $st2->fetchAll(PDO::FETCH_ASSOC);
-            $res = $st->fetchAll();
-            $res_img = $st_img->fetchAll();
+            //$res_img = $st_img->fetchAll();
             //print_r($res);
-            if (count($res) >= 1 && count($res_img) >= 1){
+            if (!empty($res)){
                 for ($i= 0; $i < count($res); $i++) { 
                     echo "<div class = 'm-content-panel post'>
-                    <img src='./uploads/posts/".$res_img[$i]['file_name']."'>
+                    <img src='./uploads/posts/".$res[$i]['post_image']."'>
                     <div class = 'content post'>
                         <h4 class = 'post-title'>".$res[$i]['post_title']."</h4>
                         <p class = 'content-body post'>". $res[$i]['post_description']. "</p>
@@ -30,7 +31,7 @@ session_start();
                             <p class = 'post-date'>".$res[$i]['post_date']."</p>
                             <p class = 'post-author'>投稿者 : ".$res[$i]['post_author']."</p>
                         </div>
-                        </div>";
+                    </div>";
                         if (isset($_SESSION['aid'])){
                             
                             echo "
@@ -54,15 +55,18 @@ session_start();
                             <div class = "content">
                                 <h4 class = "post-title">ShicaGOとは</h4>
                                 <p class = "content-body">
-                                    最近話題の42Tokyoで仲良くなったIT好きなメンバーと始めた共同プロジェクトの一環です。
+                                    42Tokyoで仲良くなったIT好きなメンバーと始めた共同プロジェクトの一環です。
                                     名前の由来は「生まれたての小鹿」からです。
                                 </p>
                                 <h4 class = "post-title">将来</h4>
                                 <p class = "content-body">
                                     現在はDiscordのBot制作に力を注いでいますが、様々なプロジェクトのプランはあるので定期的に更新していこうと思ております。
                                 </p>
-                                <h4 class = "post-title">使用技術</h4>
+                                <h4 class = "post-title">開発について</h4>
                                 <p class = "content-body">
+                                    要件定義・設計からUI/UXデザイン、そしてコーディングまでの全てを
+                                    ISHYが開発致しました。
+                                    使用技術は以下の通りです。
                                     Docker, HTML/CSS, JavaScript, PHP, MySQL, Heroku<br>
                                     (フレームワーク未使用)
                                 </p>

@@ -97,7 +97,6 @@
                     continue;
                 }
                 else {
-                    //header('Location: ../index.php?update=invalid_file');
                     exit();
                 }
             }

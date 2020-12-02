@@ -8,7 +8,8 @@ include_once './includes/online.inc.php';
             <hr color = "2C2F3E">
             <div class = 'l-status'>
             <?php
-                $st = $pdo->query('SELECT * FROM admin_users');
+                $st = $pdo->prepare('SELECT * FROM admin_users');
+                $st->execute();
                 $res = $st->fetchAll(PDO::FETCH_ASSOC);
                 for ($i = 0; $i < count($res); $i++){
                     echo "<div class = 'm-member' data-comment = '".$res[$i]['admin_comment']."'>";
@@ -18,37 +19,6 @@ include_once './includes/online.inc.php';
                 }
             ?>
             </div>
-            <!--
-            <div class ="l-status">
-                <div class = "l-online">
-                    <h4>オンライン</h4>
-                            <?php
-                            /*
-                            for ($i = 0; $i < count($resT); $i++){
-
-                            }
-                            
-                            /*
-                            echo
-                            "<img class ='m-member-image is-online' src='./images/robot.jpg' alt='membername image'>
-                            <h5 class ='m-member-name'>".$res['admin_name']."</h5>";
-                            }
-                            */
-                            ?>
-                    </div>
-                <div class = "l-offline">
-                    <h4>オフライン</h4>
-                    <?php
-                        /*
-                        for ($j = 0; $j < count($resF); $j++){
-                        echo "<img class ='m-member-image' src='./images/robot.jpg' alt='membername image'>
-                        <h5 class ='m-member-name'>".$resF[$j]['admin_id']."</h5>";
-                        }
-                        */
-                    ?>
-                </div>
-            </div>
-             -->
        </aside>
     </div>
 </body>

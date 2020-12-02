@@ -27,7 +27,7 @@ if(isset($_POST['pst-submit-btn'])){
                 //$stmt->bindValue(':pst_url',$pst_img);
                 $stmt->bindValue(':pst_title',$pst_title);
                 $stmt->bindValue(':pst_description',$pst_description);
-                $stmt->bindValue(':pst_images',$pst_img);
+                $stmt->bindValue(':pst_images',$file_name_new);
                 $stmt->bindValue(':pst_author',$_SESSION['aid']);
                 $stmt->bindValue(':pst_date',date('Y/m/d H:i:s', time()));
                 $stmt->execute();

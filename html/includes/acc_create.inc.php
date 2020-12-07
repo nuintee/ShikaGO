@@ -22,7 +22,7 @@
                     $ad_pass = $_POST['adm-pwd'];
                     try{
                         // Add Admin Account To DB
-                        $sql = 'INSERT INTO admin_users (admin_id,admin_pwd,admin_name,admin_comment,admin_image,admin_status) VALUES (:aid,:apd,:ana,:aco,:adm,:ads)';
+                        $sql = 'INSERT INTO admin_users (admin_id,admin_pwd,admin_name,admin_comment,admin_image,admin_status,grade) VALUES (:aid,:apd,:ana,:aco,:adm,:ads,:grd)';
                         $add_stmt = $pdo->prepare($sql);
                         $add_stmt->bindValue(':aid',$_POST['adm-id']);
                         $add_stmt->bindValue(':apd',password_hash($ad_pass,PASSWORD_DEFAULT));
@@ -30,6 +30,13 @@
                         $add_stmt->bindValue(':aco',null);
                         $add_stmt->bindValue(':adm',$file_name_new);
                         $add_stmt->bindValue(':ads',0);
+                        //Checks if the account is created by admin or others
+                        if ($_SESSION['grade'] != 1){
+                            $add_stmt->bindValue(':grd',0);
+                        }
+                        else{
+                            $add_stmt->bindValue(':grd',1);
+                        }
                         $add_result = $add_stmt->execute();
                         if ($add_result){
                             header('Location: ../index.php?success=added_user');

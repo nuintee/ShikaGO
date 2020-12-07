@@ -22,7 +22,7 @@ if(isset($_POST['pst-submit-btn'])){
             if ($file_size < 2000000){
                 $file_name_new = uniqid('', true).".".$file_actual_extension;
                 $file_destination = '../uploads/posts/'.$file_name_new;
-                $sql = 'INSERT INTO post_contents (post_title, post_description, post_image, post_author, post_date) VALUES (:pst_title, :pst_description, :pst_images, :pst_author, :pst_date)';
+                $sql = 'INSERT INTO post_contents (post_title, post_description, post_image, post_author, post_date, post_grade) VALUES (:pst_title, :pst_description, :pst_images, :pst_author, :pst_date, :pst_grade)';
                 $stmt = $pdo->prepare($sql);
                 //$stmt->bindValue(':pst_url',$pst_img);
                 $stmt->bindValue(':pst_title',$pst_title);
@@ -30,6 +30,7 @@ if(isset($_POST['pst-submit-btn'])){
                 $stmt->bindValue(':pst_images',$file_name_new);
                 $stmt->bindValue(':pst_author',$_SESSION['aid']);
                 $stmt->bindValue(':pst_date',date('Y/m/d H:i:s', time()));
+                $stmt->bindValue(':pst_grade',$_SESSION['grade']);
                 $stmt->execute();
                 $st = $pdo->query('SELECT * FROM post_contents');
                 $fk_st = $pdo->prepare('INSERT INTO post_images(file_name,file_size,file_type) VALUES (:file_name, :file_size, :file_type)');

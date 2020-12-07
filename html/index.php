@@ -31,7 +31,7 @@ session_start();
                             </div>";
                     if (isset($_SESSION['aid'])){
                         //Regular Account Action
-                        if ($_SESSION['adid'] != 'guest'){
+                        if ($_SESSION['grade'] == 1){
                             echo"<div>
                                     <form action = './includes/post_del.inc.php?posted_id=".$res[$i]['post_id']."' method = 'post' onsubmit = 'return confirm_post_del();' class = 'l-post-del-btn'>
                                         <button type = 'submit' value = 'delete' name = 'post-del-btn' class = 'm-admin_post_del_btn' ><i class='fas fa-trash-alt' style = 'color:#FF5252;pointer-events:none;object-fit:cover;'></i></button>
@@ -41,7 +41,7 @@ session_start();
                         //Guest Account Action
                         else{
                             //Deleteble Pattern
-                            if ($res[$i]['post_author'] == 'Guest' || $res[$i]['post_author'] == 'Target'){
+                            if ($res[$i]['post_grade'] != 1){
                                echo"<div>
                                         <form action = './includes/post_del.inc.php?posted_id=".$res[$i]['post_id']."' method = 'post' onsubmit = 'return confirm_post_del();' class = 'l-post-del-btn'>
                                             <button type = 'submit' value = 'delete' name = 'post-del-btn' class = 'm-admin_post_del_btn' ><i class='fas fa-trash-alt' style = 'color:#FF5252;pointer-events:none;object-fit:cover;'></i></button>
@@ -265,9 +265,9 @@ session_start();
                         }
                         else{
                             //Guest Account Action
-                            if ($_SESSION['adid'] == 'guest'){
+                            if ($res['grade'] != 1){
                                 //Deletable Account
-                                if ($members[$i]['admin_id'] == 'target' || $members[$i]['admin_id'] == 'Target'){
+                                if ($members[$i]['grade'] != 1){
                                     echo "<form action = '../includes/acc_delete.inc.php?account=".$members[$i]['admin_name']."&id=".$members[$i]['admin_id']."'"."method = 'post' style = 'display:flex;align-items:center;justify-content:space-between;' onsubmit='return confirm_test(this)'>
                                             <div>
                                                 <h4 class ='m-member-name' style = 'color:#FFF;margin-right:1em;'>".$members[$i]['admin_name']."</h4>

@@ -11,3 +11,8 @@ function confirm_post_del(){
     let answer　= confirm('この投稿を削除してよろしいですか？');
     return answer;
 }
+
+//ゲストアカウントで削除試行時
+function cannot_post_del(){
+    alert('削除権限がありません。');
+}

@@ -12,36 +12,52 @@ session_start();
     $st = $pdo->prepare('SELECT * FROM post_contents');
     $st->execute();
     $res = $st->fetchAll();
-    //$st_img = $pdo->query('SELECT * FROM post_images');
     //Show Users
     $st2 = $pdo->prepare('SELECT * FROM admin_users ORDER BY admin_name = :a_i DESC, admin_name ASC');
     $st2->bindValue(':a_i',$_SESSION['aid']);
     $st2->execute();
     $members = $st2->fetchAll(PDO::FETCH_ASSOC);
-            //$res_img = $st_img->fetchAll();
-            //print_r($res);
             if (!empty($res)){
                 for ($i= 0; $i < count($res); $i++) { 
                     echo "<div class = 'm-content-panel post'>
-                    <img src='./uploads/posts/".$res[$i]['post_image']."'>
-                    <div class = 'content post'>
-                        <h4 class = 'post-title'>".$res[$i]['post_title']."</h4>
-                        <p class = 'content-body post'>". $res[$i]['post_description']. "</p>
-                        <div class = 'post-footer'>
-                            <p class = 'post-date'>".$res[$i]['post_date']."</p>
-                            <p class = 'post-author'>投稿者 : ".$res[$i]['post_author']."</p>
-                        </div>
-                    </div>";
-                        if (isset($_SESSION['aid'])){
-                            
-                            echo "
-                                <div>
+                            <img src='./uploads/posts/".$res[$i]['post_image']."'>
+                            <div class = 'content post'>
+                                <h4 class = 'post-title'>".$res[$i]['post_title']."</h4>
+                                <p class = 'content-body post'>". $res[$i]['post_description']. "</p>
+                                <div class = 'post-footer'>
+                                    <p class = 'post-date'>".$res[$i]['post_date']."</p>
+                                    <p class = 'post-author'>投稿者 : ".$res[$i]['post_author']."</p>
+                                </div>
+                            </div>";
+                    if (isset($_SESSION['aid'])){
+                        //Regular Account Action
+                        if ($_SESSION['adid'] != 'guest'){
+                            echo"<div>
                                     <form action = './includes/post_del.inc.php?posted_id=".$res[$i]['post_id']."' method = 'post' onsubmit = 'return confirm_post_del();' class = 'l-post-del-btn'>
                                         <button type = 'submit' value = 'delete' name = 'post-del-btn' class = 'm-admin_post_del_btn' ><i class='fas fa-trash-alt' style = 'color:#FF5252;pointer-events:none;object-fit:cover;'></i></button>
                                     </form>
                                 </div>";
+                        }
+                        //Guest Account Action
+                        else{
+                            //Deleteble Pattern
+                            if ($res[$i]['post_author'] == 'Guest' || $res[$i]['post_author'] == 'Target'){
+                               echo"<div>
+                                        <form action = './includes/post_del.inc.php?posted_id=".$res[$i]['post_id']."' method = 'post' onsubmit = 'return confirm_post_del();' class = 'l-post-del-btn'>
+                                            <button type = 'submit' value = 'delete' name = 'post-del-btn' class = 'm-admin_post_del_btn' ><i class='fas fa-trash-alt' style = 'color:#FF5252;pointer-events:none;object-fit:cover;'></i></button>
+                                        </form>
+                                    </div>";
                             }
-                            echo"</div>";
+                            //Undeletable Pattern
+                            else{
+                                echo"<div class = 'l-post-del-btn' onclick = 'cannot_post_del();' >
+                                        <button type = 'submit' value = 'delete' name = 'post-del-btn' class = 'm-admin_post_del_btn' ><i class='fas fa-trash-alt' style = 'color:#FF5252;pointer-events:none;object-fit:cover;'></i></button>
+                                    </div>";
+                            }
+                        }
+                    }
+                    //Closing Div
+                    echo"</div>";
                 }
             }
             else{
@@ -181,13 +197,14 @@ session_start();
                                     <summary class = 'm-summary' id = 'comment-summary'>一言コメントの変更</summary>
                                         <input type='text' name = 'adm-comment' placeholder = 'コメント' value = '".$res['admin_comment']."' class = 'm-input single-line'>
                                 </details>
+                                <!-- 調整中
                                 <details>
                                     <summary class = 'm-summary' id = 'link-summary'>関連リンク</summary>
                                         <input type='text' name = 'adm-github' placeholder = 'Github' value = '".$res['admin_github']."' class = 'm-input single-line'>
                                         <input type='text' name = 'adm-twitter' placeholder = 'Twitter' value = '".$res['admin_twitter']."' class = 'm-input single-line'>
                                         <input type='text' name = 'adm-discord' placeholder = 'Discord' value = '".$res['admin_discord']."' class = 'm-input single-line'>
-                                        
                                 </details>
+                                -->
                                 <div class = 'l-submit-btn'>
                                     <input type='submit' value = '保存' class = 'm-submit-btn white' name = 'adm-update-btn'>
                                 </div>
@@ -212,49 +229,6 @@ session_start();
                         <input type='submit' value='投稿' name = 'pst-submit-btn' style = 'cursor:pointer' class = 'm-submit-btn'>
                     </form>
                 </div>
-                <!--
-                <p class = 'm-page-title'>色設定</p>
-                <div class = 'l-pages' id = 'l-color_page'>
-                    <form action = '../includes/posting.inc.php' method = 'post' enctype = 'multipart/form-data' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'>
-                        <div>
-                            <input type = 'color' class = 'm-page_color' name = 'title_color_input' value = '#FFFFFF'>
-                            <label>タイトル色</label>
-                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
-                        </div>
-                        <div>
-                            <input type = 'color' class = 'm-page_color' name = 'side_panel_color_input' value = '#1A1C27'>
-                            <label>サイドパネル色</label>
-                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
-                        </div>
-                        <div>
-                            <input type = 'color' class = 'm-page_color' name = 'middle_pannel_color_input' value = '#000000'>
-                            <label>ミドルパネル色</label>
-                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
-                        </div>
-                        <div>
-                            <input type = 'color' class = 'm-page_color' name = 'text_color_input' value = '#8D8D8D'>
-                            <label>文字色</label>
-                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
-                        </div>
-                        <div>
-                            <input type = 'color' class = 'm-page_color' name = 'main_panel_color_input' value = '#2C2F3E'>
-                            <label>メインパネル色</label>
-                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
-                        </div>
-                        <div>
-                            <input type = 'color' class = 'm-page_color' name = 'selected_tab_color_input' value = '#2C2F3E'>
-                            <label>選択済みタブ色</label>
-                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
-                        </div>
-                        <div>
-                            <input type = 'color' class = 'm-page_color' name = 'shika_color_input' value = '#F8D86C'>
-                            <label>テーマ色</label>
-                            <button class = 'm-submit-btn white'>デフォルトに変更</button>
-                        </div>
-                        <input type='submit' value='変更' name = 'color-submit-btn' style = 'cursor:pointer' class = 'm-submit-btn white'>
-                    </form>
-                </div>
-                -->
                 <p class = 'm-page-title'>管理者登録</p>
                 <div class = 'l-pages' id = 'post_page'>
                     <form action = '../includes/acc_create.inc.php' method = 'post' id = 'm-admin_post_panel' style = 'color:#FFF;background-color : #2C2F3E;display:flex;flex-flow:column;'  enctype='multipart/form-data'>      
@@ -278,6 +252,7 @@ session_start();
                 <div class = 'l-pages' id = 'admin_list'>";
                     for ($i=0; $i < count($members); $i++){
                         if ($i == 0){
+                            //Current Account
                             echo 
                                 "<form action = '../includes/acc_delete.inc.php?account=".$members[$i]['admin_name']."&id=".$members[$i]['admin_id']."'"."method = 'post' style = 'display:flex;align-items:center;justify-content:space-between;' onsubmit='return confirm_test(this)'>
                                     <div>
@@ -289,15 +264,42 @@ session_start();
                             <hr size = '2' width='100%' color='#1A1C27'>";
                         }
                         else{
-                            echo 
-                                "<form action = '../includes/acc_delete.inc.php?account=".$members[$i]['admin_name']."&id=".$members[$i]['admin_id']."'"."method = 'post' style = 'display:flex;align-items:center;justify-content:space-between;' onsubmit='return confirm_test(this)'>
-                                    <div>
-                                        <h4 class ='m-member-name' style = 'color:#FFF;margin-right:1em;'>".$members[$i]['admin_name']."</h4>
-                                        <h5 class ='m-member-name' style = 'color:var(--category-txt-passive-color)'> "."ID: ".$members[$i]['admin_id']." </h5>
-                                    </div>
-                                <input type='submit' value='アカウント削除' name = 'adm-delete-btn' style = 'background-color:#FF5252;color:#FFF;cursor:pointer' class = 'm-submit-btn'>
-                            </form>
-                            <hr size = '2' width='100%' color='#1A1C27'>";
+                            //Guest Account Action
+                            if ($_SESSION['adid'] == 'guest'){
+                                //Deletable Account
+                                if ($members[$i]['admin_id'] == 'target' || $members[$i]['admin_id'] == 'Target'){
+                                    echo "<form action = '../includes/acc_delete.inc.php?account=".$members[$i]['admin_name']."&id=".$members[$i]['admin_id']."'"."method = 'post' style = 'display:flex;align-items:center;justify-content:space-between;' onsubmit='return confirm_test(this)'>
+                                            <div>
+                                                <h4 class ='m-member-name' style = 'color:#FFF;margin-right:1em;'>".$members[$i]['admin_name']."</h4>
+                                                <h5 class ='m-member-name' style = 'color:var(--category-txt-passive-color)'> "."ID: ".$members[$i]['admin_id']." </h5>
+                                            </div>
+                                            <input type='submit' value='アカウント削除' name = 'adm-delete-btn' style = 'background-color:#FF5252;color:#FFF;cursor:pointer' class = 'm-submit-btn'>
+                                        </form>
+                                        <hr size = '2' width='100%' color='#1A1C27'>";
+                                }
+                                //Undeletable Account
+                                else {
+                                    echo "<div style = 'display:flex;align-items:center;justify-content:space-between;' onclick='cannot_post_del()'>
+                                            <div>
+                                                <h4 class ='m-member-name' style = 'color:#FFF;margin-right:1em;'>".$members[$i]['admin_name']."</h4>
+                                                <h5 class ='m-member-name' style = 'color:var(--category-txt-passive-color)'> "."ID: ".$members[$i]['admin_id']." </h5>
+                                            </div>
+                                            <input type='submit' value='アカウント削除' name = 'adm-delete-btn' style = 'background-color:#FF5252;color:#FFF;cursor:pointer' class = 'm-submit-btn'>
+                                        </div>
+                                    <hr size = '2' width='100%' color='#1A1C27'>";
+                                }
+                            }
+                            //Regular Account Aciton
+                            else{
+                                echo "<form action = '../includes/acc_delete.inc.php?account=".$members[$i]['admin_name']."&id=".$members[$i]['admin_id']."'"."method = 'post' style = 'display:flex;align-items:center;justify-content:space-between;' onsubmit='return confirm_test(this)'>
+                                        <div>
+                                            <h4 class ='m-member-name' style = 'color:#FFF;margin-right:1em;'>".$members[$i]['admin_name']."</h4>
+                                            <h5 class ='m-member-name' style = 'color:var(--category-txt-passive-color)'> "."ID: ".$members[$i]['admin_id']." </h5>
+                                        </div>
+                                        <input type='submit' value='アカウント削除' name = 'adm-delete-btn' style = 'background-color:#FF5252;color:#FFF;cursor:pointer' class = 'm-submit-btn'>
+                                    </form>
+                                <hr size = '2' width='100%' color='#1A1C27'>";
+                            }
                         }
                     }
                 }

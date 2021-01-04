@@ -86,6 +86,14 @@ session_start();
                                     Docker, HTML/CSS, JavaScript, PHP, MySQL, Heroku<br>
                                     (フレームワーク未使用)
                                 </p>
+                                <h4 class = "post-title">ゲストアカウントについて</h4>
+                                <p class = "content-body">
+                                    このウェブサイトの機能を体験できるアカウントをこちらで用意しております。(メンバー一覧のGuest)
+                                    ログイン名:「guest」
+                                    パスワード:「welcome
+                                    左下の「管理者」メニューよりログインいただけます。
+                                    ※ゲストアカウントでは同権限を持つ投稿/アカウントの削除のみ行うことが可能です。
+                                </p>
                             </div>
                         </div>
                    </div>
